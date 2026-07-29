@@ -1,0 +1,72 @@
+[
+  {
+    "key": "Buttons #20",
+    "status": "ok:.not-prose[class*=\"bg\"]",
+    "file": "buttons--20.png"
+  },
+  {
+    "key": "Buttons #21",
+    "status": "ok:.not-prose[class*=\"bg\"]",
+    "file": "buttons--21.png"
+  },
+  {
+    "key": "Buttons #22",
+    "status": "ok:.not-prose[class*=\"bg\"]",
+    "file": "buttons--22.png"
+  },
+  {
+    "key": "Cards #39",
+    "status": "ok:.not-prose[class*=\"bg\"]",
+    "file": "cards--39.png"
+  },
+  {
+    "key": "Cards #40",
+    "status": "ok:.not-prose[class*=\"bg\"]",
+    "file": "cards--40.png"
+  },
+  {
+    "key": "Cards #41",
+    "status": "ok:.not-prose[class*=\"bg\"]",
+    "file": "cards--41.png"
+  },
+  {
+    "key": "Cards #42",
+    "status": "ok:.not-prose[class*=\"bg\"]",
+    "file": "cards--42.png"
+  },
+  {
+    "key": "Cards #43",
+    "status": "ok:.not-prose[class*=\"bg\"]",
+    "file": "cards--43.png"
+  },
+  {
+    "key": "Cards #44",
+    "status": "ok:.not-prose[class*=\"bg\"]",
+    "file": "cards--44.png"
+  },
+  {
+    "key": "Cards #45",
+    "status": "ok:.not-prose[class*=\"bg\"]",
+    "file": "cards--45.png"
+  },
+  {
+    "key": "Cards #46",
+    "status": "unknown",
+    "file": "cards--46.png"
+  },
+  {
+    "key": "Hero Animations #39",
+    "status": "ok:div[class*=\"not-prose\"][class*=\"rounded\"]",
+    "file": "hero-animations--39.png"
+  },
+  {
+    "key": "Buttons #23",
+    "status": "ok:div[class*=\"not-prose\"][class*=\"rounded\"]",
+    "file": "buttons--23.png"
+  },
+  {
+    "key": "Buttons #24",
+    "status": "ok:div[class*=\"not-prose\"][class*=\"rounded\"]",
+    "file": "buttons--24.png"
+  }
+]

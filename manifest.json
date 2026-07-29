@@ -3822,7 +3822,7 @@
     "local_code": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\smoothui-components\\clip-corners-button.tsx",
     "category": "Buttons",
     "demo_url": "https://smoothui.dev/docs/components/clip-corners-button",
-    "link_url": "https://smoothui.dev/docs/components/clip-corners-button"
+    "preview_image": "previews/buttons--20.png"
   },
   "Grid Animations #15": {
     "name": "Contribution Graph",
@@ -3849,7 +3849,7 @@
     "local_code": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\smoothui-components\\dot-morph-button.tsx",
     "category": "Buttons",
     "demo_url": "https://smoothui.dev/docs/components/dot-morph-button",
-    "link_url": "https://smoothui.dev/docs/components/dot-morph-button"
+    "preview_image": "previews/buttons--21.png"
   },
   "Sliders #32": {
     "name": "Exposure Slider",
@@ -4002,7 +4002,7 @@
     "local_code": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\smoothui-components\\smooth-button.tsx",
     "category": "Buttons",
     "demo_url": "https://smoothui.dev/docs/components/smooth-button",
-    "link_url": "https://smoothui.dev/docs/components/smooth-button"
+    "preview_image": "previews/buttons--22.png"
   },
   "Text Animations #66": {
     "name": "Typewriter Text",
@@ -4434,7 +4434,7 @@
     "local_code": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\seraui-components\\src-app-docs-glow-button-glow-button.tsx",
     "category": "Buttons",
     "demo_url": "https://seraui.com/docs/glow-button",
-    "link_url": "https://seraui.com/docs/glow-button"
+    "preview_image": "previews/buttons--23.png"
   },
   "Text Animations #73": {
     "name": "Glowline View",
@@ -4677,7 +4677,7 @@
     "local_code": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\seraui-components\\src-app-docs-modern-button-button.tsx",
     "category": "Buttons",
     "demo_url": "https://seraui.com/docs/modern-button-button",
-    "link_url": "https://seraui.com/docs/glow-button"
+    "preview_image": "previews/buttons--24.png"
   },
   "Buttons #25": {
     "name": "Modern Button Button2",
@@ -12390,49 +12390,49 @@
     "local_tsx": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\smoothui-components\\app-download-stack.tsx",
     "category": "Cards",
     "num": 39,
-    "link_url": "https://www.smoothui.dev/docs/components/app-download-stack"
+    "preview_image": "previews/cards--39.png"
   },
   "Cards #40": {
     "name": "Apple Invites",
     "local_tsx": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\smoothui-components\\apple-invites.tsx",
     "category": "Cards",
     "num": 40,
-    "link_url": "https://www.smoothui.dev/docs/components/apple-invites"
+    "preview_image": "previews/cards--40.png"
   },
   "Cards #41": {
     "name": "Book",
     "local_tsx": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\smoothui-components\\book.tsx",
     "category": "Cards",
     "num": 41,
-    "link_url": "https://www.smoothui.dev/docs/components/book"
+    "preview_image": "previews/cards--41.png"
   },
   "Cards #42": {
     "name": "Glow Hover Card",
     "local_tsx": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\smoothui-components\\glow-hover-card.tsx",
     "category": "Cards",
     "num": 42,
-    "link_url": "https://www.smoothui.dev/docs/components/glow-hover-card"
+    "preview_image": "previews/cards--42.png"
   },
   "Cards #43": {
     "name": "Image Metadata Preview",
     "local_tsx": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\smoothui-components\\image-metadata-preview.tsx",
     "category": "Cards",
     "num": 43,
-    "link_url": "https://www.smoothui.dev/docs/components/image-metadata-preview"
+    "preview_image": "previews/cards--43.png"
   },
   "Cards #44": {
     "name": "Product Card",
     "local_tsx": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\smoothui-components\\product-card.tsx",
     "category": "Cards",
     "num": 44,
-    "link_url": "https://www.smoothui.dev/docs/components/product-card"
+    "preview_image": "previews/cards--44.png"
   },
   "Cards #45": {
     "name": "Scrollable Card Stack",
     "local_tsx": "C:\\Users\\info\\AppData\\Local\\hermes\\skills\\design\\ui-component-libraries\\smoothui-components\\scrollable-card-stack.tsx",
     "category": "Cards",
     "num": 45,
-    "link_url": "https://www.smoothui.dev/docs/components/scrollable-card-stack"
+    "preview_image": "previews/cards--45.png"
   },
   "Cards #46": {
     "name": "Tweet Card",
