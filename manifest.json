@@ -2302,5 +2302,29 @@
     "cdn_video": "https://animmaster-videos.b-cdn.net/files/3d-22-650.webm",
     "local_code_zip": "C:\\Users\\info\\Dropbox\\Google Drive\\Software\\animmasterlib\\3D Animation/22/code.zip",
     "local_folder": "C:\\Users\\info\\Dropbox\\Google Drive\\Software\\animmasterlib\\3D Animation\\22"
+  },
+  "Hover Effects #21": {
+    "name": "Radial Glow Button",
+    "source": "Vengence UI",
+    "demo_html": "demos/vengence-radial-glow.html",
+    "local_tsx": "C:\\Users\\info\\Dropbox\\Google Drive\\Software\\vengenceui\\components\\radial-glow-button.tsx",
+    "category": "Hover Effects",
+    "num": 21
+  },
+  "Hover Effects #22": {
+    "name": "Generate Button",
+    "source": "Vengence UI",
+    "demo_html": "demos/vengence-generate.html",
+    "local_tsx": "C:\\Users\\info\\Dropbox\\Google Drive\\Software\\vengenceui\\components\\generate-button.tsx",
+    "category": "Hover Effects",
+    "num": 22
+  },
+  "Hover Effects #23": {
+    "name": "Liquid Metal Button",
+    "source": "Vengence UI",
+    "demo_html": "demos/vengence-liquid-metal.html",
+    "local_tsx": "C:\\Users\\info\\Dropbox\\Google Drive\\Software\\vengenceui\\components\\liquid-metal.tsx",
+    "category": "Hover Effects",
+    "num": 23
   }
 }
