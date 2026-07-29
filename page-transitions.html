@@ -2,221 +2,119 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Page Transitions - Animation Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Transitions — Component Catalog</title>
 <style>
-
-:root { --bg:#0B0F19; --accent:#0066FF; --card:#131722; --border:#1e2530; --text:#e2e8f0; --muted:#64748b; }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1400px;margin:0 auto;padding:0 24px}
-.header{position:sticky;top:0;z-index:100;background:rgba(11,15,25,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
-.header .container{display:flex;align-items:center;justify-content:space-between}
-.header h1{font-size:20px;font-weight:700;letter-spacing:-.5px}
-.header h1 a{color:var(--text);text-decoration:none}
-.header .nav{display:flex;gap:20px;flex-wrap:wrap}
-.header .nav a{color:var(--muted);font-size:14px;text-decoration:none;transition:color .2s}
-.header .nav a:hover{color:var(--accent);text-decoration:none}
-.cat-header{padding:48px 0 24px}
-.cat-header h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
-.cat-header p{color:var(--muted);font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:24px 0 80px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s,border-color .2s;position:relative}
-.card:hover{transform:translateY(-2px);border-color:var(--accent)}
-.card-video-wrap{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
-.card-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-.card-video-wrap iframe{width:100%;height:100%;border:0;display:block}
-.card-number{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.75);color:var(--accent);font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;z-index:2;letter-spacing:.5px}
-.card-info{padding:12px 16px}
-.card-info h3{font-size:14px;font-weight:600;line-height:1.3;color:var(--text);word-break:break-word}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:24px 0 80px}
-.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px 24px;transition:all .2s;display:block;text-decoration:none}
-.cat-card:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
-.cat-card h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
-.cat-card .count{font-size:14px;color:var(--accent);font-weight:600}
-.cat-card .desc{font-size:13px;color:var(--muted);margin-top:8px}
-.hero{padding:64px 0 32px;text-align:center}
-.hero h2{font-size:48px;font-weight:900;letter-spacing:-1.5px;margin-bottom:12px;background:linear-gradient(135deg,#fff,#64748b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{color:var(--muted);font-size:18px;max-width:600px;margin:0 auto}
-.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.cat-grid{grid-template-columns:1fr}.hero h2{font-size:32px}.header .nav{display:none}}
-
-
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
+  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
+  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
+  .search:focus { outline: none; border-color: #0066FF; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
+  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
+  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
 <body>
-<div class="header"><div class="container">
-<h1><a href="index.html">Animation Catalog</a></h1>
-<nav class="nav">
-<a href="scroll-animation.html">Scroll</a>
-<a href="hero-animations.html">Hero</a>
-<a href="sliders.html">Sliders</a>
-<a href="navigation-menus.html">Navigation</a>
-<a href="hover-effects.html">Hover</a>
-<a href="mouse-effects.html">Mouse</a>
-<a href="webgl-threejs.html">WebGL</a>
-<a href="text-animations.html">Text</a>
-<a href="page-transitions.html">Transitions</a>
-<a href="svg-animations.html">SVG</a>
-<a href="background-animations.html">Background</a>
-<a href="grid-animations.html">Grid</a>
-<a href="physics-effects.html">Physics</a>
-<a href="3d-animation.html">3D</a>
-<a href="buttons.html">Buttons</a>
-<a href="cinematic-intros.html">Intros</a>
-<a href="uncategorized.html">Uncategorized</a>
-</nav>
-</div></div>
-<div class="container">
-<div class="cat-header">
-<h2>Page Transitions</h2>
-<p>20 components</p>
+<div class="header">
+  <h1>Page Transitions <span style="color:#555;font-size:0.8rem">(20)</span></h1>
+  <a href="index.html">← All Categories</a>
+  <input class="search" type="text" placeholder="Search Page Transitions..." id="search">
 </div>
-<div class="grid">
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #01</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-1-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-1-500.webp" autoplay muted loop playsinline preload="metadata"></video>
+<div class="grid" id="grid">
+    <div class="card" data-search="demo #01 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-1-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-1-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Demo</span><span class="num">#01</span></div>
+    </div>
+    <div class="card" data-search="files #02 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-2-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-2-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#02</span></div>
+    </div>
+    <div class="card" data-search="layersanimation #03 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-3-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-3-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Layersanimation</span><span class="num">#03</span></div>
+    </div>
+    <div class="card" data-search="pixeltransition #04 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-4-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-4-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Pixeltransition</span><span class="num">#04</span></div>
+    </div>
+    <div class="card" data-search="svg page transition #05 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-5-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-5-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Svg Page Transition</span><span class="num">#05</span></div>
+    </div>
+    <div class="card" data-search="slicerevealer master #06 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-6-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-6-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Slicerevealer Master</span><span class="num">#06</span></div>
+    </div>
+    <div class="card" data-search="files #07 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-7-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-7-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#07</span></div>
+    </div>
+    <div class="card" data-search="barbajs page transition #08 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-8-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-8-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Barbajs Page Transition</span><span class="num">#08</span></div>
+    </div>
+    <div class="card" data-search="pagetransition waabi #09 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-9-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-9-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Pagetransition Waabi</span><span class="num">#09</span></div>
+    </div>
+    <div class="card" data-search="kinetictypepagetransition #10 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-10-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-10-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Kinetictypepagetransition</span><span class="num">#10</span></div>
+    </div>
+    <div class="card" data-search="files #11 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-11-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-11-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#11</span></div>
+    </div>
+    <div class="card" data-search="block reveal page transition #12 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-12-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-12-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Block Reveal Page Transition</span><span class="num">#12</span></div>
+    </div>
+    <div class="card" data-search="files #13 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-13-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-13-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#13</span></div>
+    </div>
+    <div class="card" data-search="svg page transition master #14 page transitions">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-14-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-14-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Svg Page Transition Master</span><span class="num">#14</span></div>
+    </div>
+    <div class="card" data-search="dynamic island demo #15 page transitions">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dynamic Island Demo</span><span class="num">#15</span></div>
+    </div>
+    <div class="card" data-search="dynamic island #16 page transitions">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dynamic Island</span><span class="num">#16</span></div>
+    </div>
+    <div class="card" data-search="fade in #17 page transitions">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Fade In</span><span class="num">#17</span></div>
+    </div>
+    <div class="card" data-search="power off slide #18 page transitions">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Power Off Slide</span><span class="num">#18</span></div>
+    </div>
+    <div class="card" data-search="twostep #19 page transitions">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Twostep</span><span class="num">#19</span></div>
+    </div>
+    <div class="card" data-search="screen slide template #20 page transitions">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Screen Slide Template</span><span class="num">#20</span></div>
+    </div>
 </div>
-<div class="card-info"><h3>Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #02</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-2-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-2-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #03</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-3-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-3-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Layersanimation</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #04</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-4-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-4-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Pixeltransition</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #05</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-5-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-5-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Svg Page Transition</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #06</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-6-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-6-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Slicerevealer Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #07</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-7-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-7-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #08</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-8-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-8-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Barbajs Page Transition</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #09</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-9-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-9-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Pagetransition Waabi</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #10</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-10-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-10-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Kinetictypepagetransition</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #11</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-11-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-11-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #12</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-12-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-12-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Block Reveal Page Transition</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #13</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-13-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-13-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Pegetr #14</span>
-<video src="https://animmaster-videos.b-cdn.net/files/pegetr-14-650.webm" poster="https://animmasterlib.dev/assets/img/pegetr-14-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Svg Page Transition Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Page #15</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Dynamic Island Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Page #16</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Dynamic Island</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Page #17</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Fade In</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Page #18</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Power Off Slide</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Page #19</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Twostep</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Page #20</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Screen Slide Template</h3></div>
-</div>
-</div>
-</div>
-<div class="footer"><div class="container">Animation Effects Catalog &middot; 20 components across 14 categories</div></div>
+<script>
+const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
+</script>
 </body>
 </html>

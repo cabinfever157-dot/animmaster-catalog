@@ -2,403 +2,223 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sliders - Animation Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sliders — Component Catalog</title>
 <style>
-
-:root { --bg:#0B0F19; --accent:#0066FF; --card:#131722; --border:#1e2530; --text:#e2e8f0; --muted:#64748b; }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1400px;margin:0 auto;padding:0 24px}
-.header{position:sticky;top:0;z-index:100;background:rgba(11,15,25,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
-.header .container{display:flex;align-items:center;justify-content:space-between}
-.header h1{font-size:20px;font-weight:700;letter-spacing:-.5px}
-.header h1 a{color:var(--text);text-decoration:none}
-.header .nav{display:flex;gap:20px;flex-wrap:wrap}
-.header .nav a{color:var(--muted);font-size:14px;text-decoration:none;transition:color .2s}
-.header .nav a:hover{color:var(--accent);text-decoration:none}
-.cat-header{padding:48px 0 24px}
-.cat-header h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
-.cat-header p{color:var(--muted);font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:24px 0 80px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s,border-color .2s;position:relative}
-.card:hover{transform:translateY(-2px);border-color:var(--accent)}
-.card-video-wrap{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
-.card-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-.card-video-wrap iframe{width:100%;height:100%;border:0;display:block}
-.card-number{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.75);color:var(--accent);font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;z-index:2;letter-spacing:.5px}
-.card-info{padding:12px 16px}
-.card-info h3{font-size:14px;font-weight:600;line-height:1.3;color:var(--text);word-break:break-word}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:24px 0 80px}
-.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px 24px;transition:all .2s;display:block;text-decoration:none}
-.cat-card:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
-.cat-card h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
-.cat-card .count{font-size:14px;color:var(--accent);font-weight:600}
-.cat-card .desc{font-size:13px;color:var(--muted);margin-top:8px}
-.hero{padding:64px 0 32px;text-align:center}
-.hero h2{font-size:48px;font-weight:900;letter-spacing:-1.5px;margin-bottom:12px;background:linear-gradient(135deg,#fff,#64748b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{color:var(--muted);font-size:18px;max-width:600px;margin:0 auto}
-.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.cat-grid{grid-template-columns:1fr}.hero h2{font-size:32px}.header .nav{display:none}}
-
-
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
+  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
+  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
+  .search:focus { outline: none; border-color: #0066FF; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
+  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
+  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
 <body>
-<div class="header"><div class="container">
-<h1><a href="index.html">Animation Catalog</a></h1>
-<nav class="nav">
-<a href="scroll-animation.html">Scroll</a>
-<a href="hero-animations.html">Hero</a>
-<a href="sliders.html">Sliders</a>
-<a href="navigation-menus.html">Navigation</a>
-<a href="hover-effects.html">Hover</a>
-<a href="mouse-effects.html">Mouse</a>
-<a href="webgl-threejs.html">WebGL</a>
-<a href="text-animations.html">Text</a>
-<a href="page-transitions.html">Transitions</a>
-<a href="svg-animations.html">SVG</a>
-<a href="background-animations.html">Background</a>
-<a href="grid-animations.html">Grid</a>
-<a href="physics-effects.html">Physics</a>
-<a href="3d-animation.html">3D</a>
-<a href="buttons.html">Buttons</a>
-<a href="cinematic-intros.html">Intros</a>
-<a href="uncategorized.html">Uncategorized</a>
-</nav>
-</div></div>
-<div class="container">
-<div class="cat-header">
-<h2>Sliders</h2>
-<p>46 components</p>
-</div>
-<div class="grid">
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #01</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-1-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-1-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #02</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-2-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-2-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #03</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-3-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-3-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #04</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-4-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-4-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #05</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-5-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-5-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #06</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-6-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-6-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #07</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-7-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-7-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #08</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-8-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-8-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #09</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-9-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-9-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #10</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-10-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-10-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #11</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-11-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-11-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Webgl Carousel</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #12</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-12-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-12-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Crossroadsslideshow Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #13</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-13-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-13-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Shapesslideshow</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #14</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-14-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-14-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Ripple Displacement Slider</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #15</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-15-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-15-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #16</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-16-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-16-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #17</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-17-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-17-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #18</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-18-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-18-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #19</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-19-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-19-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Modular Slider</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #20</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-20-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-20-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #21</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-21-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-21-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Overlapping Swiper Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #22</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-22-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-22-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #23</span>
-<video src="https://animmaster-videos.b-cdn.net/files/sliders-23-650.webm" poster="https://animmasterlib.dev/assets/img/sliders-23-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Circular Gallery</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #24</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Animated Testimonials</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #25</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Card Stack</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #26</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Carousel</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #27</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Draggable Card</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #28</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Expandable Cards</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #29</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Images Slider</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #30</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Infinite Moving Cards</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #31</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Slider</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #32</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Exposure Slider</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #33</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Infinite Slider</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #34</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Reviews Carousel</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #35</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Scrubber</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #36</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Carousel Carousel2</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #37</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Carousel Enhanced Carousel</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #38</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Carousel Imagecarousel</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #39</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Imageswiper</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #40</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Masonary</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #41</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Nftmarketplace</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #42</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Orbit Carousel Orbit Carousel</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #43</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Orbit Carousel Orbit Carousel2</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #44</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Testimonial Testimonial2</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #45</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Video Gallery Video Gallery</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Sliders #46</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Carousel2</h3></div>
-</div>
-</div>
-</div>
-<div class="footer"><div class="container">Animation Effects Catalog &middot; 46 components across 14 categories</div></div>
+<div class="header">
+  <h1>Sliders <span style="color:#555;font-size:0.8rem">(46)</span></h1>
+  <a href="index.html">← All Categories</a>
+  <input class="search" type="text" placeholder="Search Sliders..." id="search">
+</div>
+<div class="grid" id="grid">
+    <div class="card" data-search="files #01 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-1-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-1-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#01</span></div>
+    </div>
+    <div class="card" data-search="files #02 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-2-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-2-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#02</span></div>
+    </div>
+    <div class="card" data-search="files #03 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-3-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-3-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#03</span></div>
+    </div>
+    <div class="card" data-search="files #04 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-4-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-4-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#04</span></div>
+    </div>
+    <div class="card" data-search="files #05 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-5-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-5-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#05</span></div>
+    </div>
+    <div class="card" data-search="files #06 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-6-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-6-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#06</span></div>
+    </div>
+    <div class="card" data-search="files #07 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-7-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-7-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#07</span></div>
+    </div>
+    <div class="card" data-search="files #08 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-8-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-8-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#08</span></div>
+    </div>
+    <div class="card" data-search="files #09 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-9-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-9-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#09</span></div>
+    </div>
+    <div class="card" data-search="files #10 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-10-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-10-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#10</span></div>
+    </div>
+    <div class="card" data-search="webgl carousel #11 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-11-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-11-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Webgl Carousel</span><span class="num">#11</span></div>
+    </div>
+    <div class="card" data-search="crossroadsslideshow master #12 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-12-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-12-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Crossroadsslideshow Master</span><span class="num">#12</span></div>
+    </div>
+    <div class="card" data-search="shapesslideshow #13 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-13-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-13-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Shapesslideshow</span><span class="num">#13</span></div>
+    </div>
+    <div class="card" data-search="ripple displacement slider #14 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-14-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-14-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Ripple Displacement Slider</span><span class="num">#14</span></div>
+    </div>
+    <div class="card" data-search="files #15 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-15-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-15-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#15</span></div>
+    </div>
+    <div class="card" data-search="files #16 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-16-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-16-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#16</span></div>
+    </div>
+    <div class="card" data-search="files #17 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-17-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-17-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#17</span></div>
+    </div>
+    <div class="card" data-search="files #18 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-18-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-18-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#18</span></div>
+    </div>
+    <div class="card" data-search="modular slider #19 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-19-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-19-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Modular Slider</span><span class="num">#19</span></div>
+    </div>
+    <div class="card" data-search="files #20 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-20-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-20-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#20</span></div>
+    </div>
+    <div class="card" data-search="overlapping swiper master #21 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-21-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-21-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Overlapping Swiper Master</span><span class="num">#21</span></div>
+    </div>
+    <div class="card" data-search="files #22 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-22-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-22-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#22</span></div>
+    </div>
+    <div class="card" data-search="circular gallery #23 sliders">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-23-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-23-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Circular Gallery</span><span class="num">#23</span></div>
+    </div>
+    <div class="card" data-search="animated testimonials #24 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Animated Testimonials</span><span class="num">#24</span></div>
+    </div>
+    <div class="card" data-search="card stack #25 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Card Stack</span><span class="num">#25</span></div>
+    </div>
+    <div class="card" data-search="carousel #26 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Carousel</span><span class="num">#26</span></div>
+    </div>
+    <div class="card" data-search="draggable card #27 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Draggable Card</span><span class="num">#27</span></div>
+    </div>
+    <div class="card" data-search="expandable cards #28 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Expandable Cards</span><span class="num">#28</span></div>
+    </div>
+    <div class="card" data-search="images slider #29 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Images Slider</span><span class="num">#29</span></div>
+    </div>
+    <div class="card" data-search="infinite moving cards #30 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Infinite Moving Cards</span><span class="num">#30</span></div>
+    </div>
+    <div class="card" data-search="slider #31 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Slider</span><span class="num">#31</span></div>
+    </div>
+    <div class="card" data-search="exposure slider #32 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Exposure Slider</span><span class="num">#32</span></div>
+    </div>
+    <div class="card" data-search="infinite slider #33 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Infinite Slider</span><span class="num">#33</span></div>
+    </div>
+    <div class="card" data-search="reviews carousel #34 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Reviews Carousel</span><span class="num">#34</span></div>
+    </div>
+    <div class="card" data-search="scrubber #35 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Scrubber</span><span class="num">#35</span></div>
+    </div>
+    <div class="card" data-search="carousel carousel2 #36 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Carousel Carousel2</span><span class="num">#36</span></div>
+    </div>
+    <div class="card" data-search="carousel enhanced carousel #37 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Carousel Enhanced Carousel</span><span class="num">#37</span></div>
+    </div>
+    <div class="card" data-search="carousel imagecarousel #38 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Carousel Imagecarousel</span><span class="num">#38</span></div>
+    </div>
+    <div class="card" data-search="imageswiper #39 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Imageswiper</span><span class="num">#39</span></div>
+    </div>
+    <div class="card" data-search="masonary #40 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Masonary</span><span class="num">#40</span></div>
+    </div>
+    <div class="card" data-search="nftmarketplace #41 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Nftmarketplace</span><span class="num">#41</span></div>
+    </div>
+    <div class="card" data-search="orbit carousel orbit carousel #42 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Orbit Carousel Orbit Carousel</span><span class="num">#42</span></div>
+    </div>
+    <div class="card" data-search="orbit carousel orbit carousel2 #43 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Orbit Carousel Orbit Carousel2</span><span class="num">#43</span></div>
+    </div>
+    <div class="card" data-search="testimonial testimonial2 #44 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Testimonial Testimonial2</span><span class="num">#44</span></div>
+    </div>
+    <div class="card" data-search="video gallery video gallery #45 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Video Gallery Video Gallery</span><span class="num">#45</span></div>
+    </div>
+    <div class="card" data-search="carousel2 #46 sliders">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Carousel2</span><span class="num">#46</span></div>
+    </div>
+</div>
+<script>
+const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
+</script>
 </body>
 </html>

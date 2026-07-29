@@ -2,193 +2,103 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Physics Effects - Animation Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physics Effects — Component Catalog</title>
 <style>
-
-:root { --bg:#0B0F19; --accent:#0066FF; --card:#131722; --border:#1e2530; --text:#e2e8f0; --muted:#64748b; }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1400px;margin:0 auto;padding:0 24px}
-.header{position:sticky;top:0;z-index:100;background:rgba(11,15,25,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
-.header .container{display:flex;align-items:center;justify-content:space-between}
-.header h1{font-size:20px;font-weight:700;letter-spacing:-.5px}
-.header h1 a{color:var(--text);text-decoration:none}
-.header .nav{display:flex;gap:20px;flex-wrap:wrap}
-.header .nav a{color:var(--muted);font-size:14px;text-decoration:none;transition:color .2s}
-.header .nav a:hover{color:var(--accent);text-decoration:none}
-.cat-header{padding:48px 0 24px}
-.cat-header h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
-.cat-header p{color:var(--muted);font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:24px 0 80px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s,border-color .2s;position:relative}
-.card:hover{transform:translateY(-2px);border-color:var(--accent)}
-.card-video-wrap{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
-.card-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-.card-video-wrap iframe{width:100%;height:100%;border:0;display:block}
-.card-number{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.75);color:var(--accent);font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;z-index:2;letter-spacing:.5px}
-.card-info{padding:12px 16px}
-.card-info h3{font-size:14px;font-weight:600;line-height:1.3;color:var(--text);word-break:break-word}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:24px 0 80px}
-.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px 24px;transition:all .2s;display:block;text-decoration:none}
-.cat-card:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
-.cat-card h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
-.cat-card .count{font-size:14px;color:var(--accent);font-weight:600}
-.cat-card .desc{font-size:13px;color:var(--muted);margin-top:8px}
-.hero{padding:64px 0 32px;text-align:center}
-.hero h2{font-size:48px;font-weight:900;letter-spacing:-1.5px;margin-bottom:12px;background:linear-gradient(135deg,#fff,#64748b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{color:var(--muted);font-size:18px;max-width:600px;margin:0 auto}
-.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.cat-grid{grid-template-columns:1fr}.hero h2{font-size:32px}.header .nav{display:none}}
-
-
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
+  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
+  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
+  .search:focus { outline: none; border-color: #0066FF; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
+  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
+  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
 <body>
-<div class="header"><div class="container">
-<h1><a href="index.html">Animation Catalog</a></h1>
-<nav class="nav">
-<a href="scroll-animation.html">Scroll</a>
-<a href="hero-animations.html">Hero</a>
-<a href="sliders.html">Sliders</a>
-<a href="navigation-menus.html">Navigation</a>
-<a href="hover-effects.html">Hover</a>
-<a href="mouse-effects.html">Mouse</a>
-<a href="webgl-threejs.html">WebGL</a>
-<a href="text-animations.html">Text</a>
-<a href="page-transitions.html">Transitions</a>
-<a href="svg-animations.html">SVG</a>
-<a href="background-animations.html">Background</a>
-<a href="grid-animations.html">Grid</a>
-<a href="physics-effects.html">Physics</a>
-<a href="3d-animation.html">3D</a>
-<a href="buttons.html">Buttons</a>
-<a href="cinematic-intros.html">Intros</a>
-<a href="uncategorized.html">Uncategorized</a>
-</nav>
-</div></div>
-<div class="container">
-<div class="cat-header">
-<h2>Physics Effects</h2>
-<p>16 components</p>
+<div class="header">
+  <h1>Physics Effects <span style="color:#555;font-size:0.8rem">(16)</span></h1>
+  <a href="index.html">← All Categories</a>
+  <input class="search" type="text" placeholder="Search Physics Effects..." id="search">
 </div>
-<div class="grid">
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physic #01</span>
-<video src="https://animmaster-videos.b-cdn.net/files/physic-1-650.webm" poster="https://animmasterlib.dev/assets/img/physic-1-500.webp" autoplay muted loop playsinline preload="metadata"></video>
+<div class="grid" id="grid">
+    <div class="card" data-search="sticky cursor #01 physics effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-1-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/physic-1-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Sticky Cursor</span><span class="num">#01</span></div>
+    </div>
+    <div class="card" data-search="svg bezier curve master #02 physics effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-2-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/physic-2-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Svg Bezier Curve Master</span><span class="num">#02</span></div>
+    </div>
+    <div class="card" data-search="magnetic button #03 physics effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-3-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/physic-3-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Magnetic Button</span><span class="num">#03</span></div>
+    </div>
+    <div class="card" data-search="fluid triangle #04 physics effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-4-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/physic-4-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Fluid Triangle</span><span class="num">#04</span></div>
+    </div>
+    <div class="card" data-search="files #05 physics effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-5-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/physic-5-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#05</span></div>
+    </div>
+    <div class="card" data-search="files #06 physics effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-6-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/physic-6-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#06</span></div>
+    </div>
+    <div class="card" data-search="files #07 physics effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-7-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/physic-7-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#07</span></div>
+    </div>
+    <div class="card" data-search="sphere packing #08 physics effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-8-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/physic-8-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Sphere Packing</span><span class="num">#08</span></div>
+    </div>
+    <div class="card" data-search="works #09 physics effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-9-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/physic-9-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Works</span><span class="num">#09</span></div>
+    </div>
+    <div class="card" data-search="r3f rapier ball of glass #10 physics effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-10-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/physic-10-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">R3F Rapier Ball Of Glass</span><span class="num">#10</span></div>
+    </div>
+    <div class="card" data-search="ripple #11 physics effects">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Ripple</span><span class="num">#11</span></div>
+    </div>
+    <div class="card" data-search="siri orb #12 physics effects">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Siri ORB</span><span class="num">#12</span></div>
+    </div>
+    <div class="card" data-search="orbiting #13 physics effects">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Orbiting</span><span class="num">#13</span></div>
+    </div>
+    <div class="card" data-search="orbits nexusorb #14 physics effects">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Orbits Nexusorb</span><span class="num">#14</span></div>
+    </div>
+    <div class="card" data-search="orbits nexusorbsup #15 physics effects">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Orbits Nexusorbsup</span><span class="num">#15</span></div>
+    </div>
+    <div class="card" data-search="orbits spider #16 physics effects">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Orbits Spider</span><span class="num">#16</span></div>
+    </div>
 </div>
-<div class="card-info"><h3>Sticky Cursor</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physic #02</span>
-<video src="https://animmaster-videos.b-cdn.net/files/physic-2-650.webm" poster="https://animmasterlib.dev/assets/img/physic-2-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Svg Bezier Curve Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physic #03</span>
-<video src="https://animmaster-videos.b-cdn.net/files/physic-3-650.webm" poster="https://animmasterlib.dev/assets/img/physic-3-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Magnetic Button</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physic #04</span>
-<video src="https://animmaster-videos.b-cdn.net/files/physic-4-650.webm" poster="https://animmasterlib.dev/assets/img/physic-4-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Fluid Triangle</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physic #05</span>
-<video src="https://animmaster-videos.b-cdn.net/files/physic-5-650.webm" poster="https://animmasterlib.dev/assets/img/physic-5-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physic #06</span>
-<video src="https://animmaster-videos.b-cdn.net/files/physic-6-650.webm" poster="https://animmasterlib.dev/assets/img/physic-6-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physic #07</span>
-<video src="https://animmaster-videos.b-cdn.net/files/physic-7-650.webm" poster="https://animmasterlib.dev/assets/img/physic-7-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physic #08</span>
-<video src="https://animmaster-videos.b-cdn.net/files/physic-8-650.webm" poster="https://animmasterlib.dev/assets/img/physic-8-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Sphere Packing</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physic #09</span>
-<video src="https://animmaster-videos.b-cdn.net/files/physic-9-650.webm" poster="https://animmasterlib.dev/assets/img/physic-9-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Works</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physic #10</span>
-<video src="https://animmaster-videos.b-cdn.net/files/physic-10-650.webm" poster="https://animmasterlib.dev/assets/img/physic-10-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>R3F Rapier Ball Of Glass</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physics #11</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Ripple</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physics #12</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Siri ORB</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physics #13</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Orbiting</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physics #14</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Orbits Nexusorb</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physics #15</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Orbits Nexusorbsup</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Physics #16</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Orbits Spider</h3></div>
-</div>
-</div>
-</div>
-<div class="footer"><div class="container">Animation Effects Catalog &middot; 16 components across 14 categories</div></div>
+<script>
+const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
+</script>
 </body>
 </html>

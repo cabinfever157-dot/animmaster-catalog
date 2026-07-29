@@ -2,235 +2,127 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mouse Effects - Animation Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouse Effects — Component Catalog</title>
 <style>
-
-:root { --bg:#0B0F19; --accent:#0066FF; --card:#131722; --border:#1e2530; --text:#e2e8f0; --muted:#64748b; }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1400px;margin:0 auto;padding:0 24px}
-.header{position:sticky;top:0;z-index:100;background:rgba(11,15,25,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
-.header .container{display:flex;align-items:center;justify-content:space-between}
-.header h1{font-size:20px;font-weight:700;letter-spacing:-.5px}
-.header h1 a{color:var(--text);text-decoration:none}
-.header .nav{display:flex;gap:20px;flex-wrap:wrap}
-.header .nav a{color:var(--muted);font-size:14px;text-decoration:none;transition:color .2s}
-.header .nav a:hover{color:var(--accent);text-decoration:none}
-.cat-header{padding:48px 0 24px}
-.cat-header h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
-.cat-header p{color:var(--muted);font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:24px 0 80px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s,border-color .2s;position:relative}
-.card:hover{transform:translateY(-2px);border-color:var(--accent)}
-.card-video-wrap{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
-.card-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-.card-video-wrap iframe{width:100%;height:100%;border:0;display:block}
-.card-number{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.75);color:var(--accent);font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;z-index:2;letter-spacing:.5px}
-.card-info{padding:12px 16px}
-.card-info h3{font-size:14px;font-weight:600;line-height:1.3;color:var(--text);word-break:break-word}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:24px 0 80px}
-.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px 24px;transition:all .2s;display:block;text-decoration:none}
-.cat-card:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
-.cat-card h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
-.cat-card .count{font-size:14px;color:var(--accent);font-weight:600}
-.cat-card .desc{font-size:13px;color:var(--muted);margin-top:8px}
-.hero{padding:64px 0 32px;text-align:center}
-.hero h2{font-size:48px;font-weight:900;letter-spacing:-1.5px;margin-bottom:12px;background:linear-gradient(135deg,#fff,#64748b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{color:var(--muted);font-size:18px;max-width:600px;margin:0 auto}
-.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.cat-grid{grid-template-columns:1fr}.hero h2{font-size:32px}.header .nav{display:none}}
-
-
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
+  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
+  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
+  .search:focus { outline: none; border-color: #0066FF; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
+  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
+  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
 <body>
-<div class="header"><div class="container">
-<h1><a href="index.html">Animation Catalog</a></h1>
-<nav class="nav">
-<a href="scroll-animation.html">Scroll</a>
-<a href="hero-animations.html">Hero</a>
-<a href="sliders.html">Sliders</a>
-<a href="navigation-menus.html">Navigation</a>
-<a href="hover-effects.html">Hover</a>
-<a href="mouse-effects.html">Mouse</a>
-<a href="webgl-threejs.html">WebGL</a>
-<a href="text-animations.html">Text</a>
-<a href="page-transitions.html">Transitions</a>
-<a href="svg-animations.html">SVG</a>
-<a href="background-animations.html">Background</a>
-<a href="grid-animations.html">Grid</a>
-<a href="physics-effects.html">Physics</a>
-<a href="3d-animation.html">3D</a>
-<a href="buttons.html">Buttons</a>
-<a href="cinematic-intros.html">Intros</a>
-<a href="uncategorized.html">Uncategorized</a>
-</nav>
-</div></div>
-<div class="container">
-<div class="cat-header">
-<h2>Mouse Effects</h2>
-<p>22 components</p>
+<div class="header">
+  <h1>Mouse Effects <span style="color:#555;font-size:0.8rem">(22)</span></h1>
+  <a href="index.html">← All Categories</a>
+  <input class="search" type="text" placeholder="Search Mouse Effects..." id="search">
 </div>
-<div class="grid">
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #01</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-1-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-1-500.webp" autoplay muted loop playsinline preload="metadata"></video>
+<div class="grid" id="grid">
+    <div class="card" data-search="files #01 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-1-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-1-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#01</span></div>
+    </div>
+    <div class="card" data-search="files #02 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-2-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-2-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#02</span></div>
+    </div>
+    <div class="card" data-search="files #03 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-3-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-3-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#03</span></div>
+    </div>
+    <div class="card" data-search="three skull #04 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-4-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-4-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Three Skull</span><span class="num">#04</span></div>
+    </div>
+    <div class="card" data-search="dist #05 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-5-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-5-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Dist</span><span class="num">#05</span></div>
+    </div>
+    <div class="card" data-search="files #06 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-6-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-6-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#06</span></div>
+    </div>
+    <div class="card" data-search="files #07 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-7-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-7-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#07</span></div>
+    </div>
+    <div class="card" data-search="files #08 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-8-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-8-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#08</span></div>
+    </div>
+    <div class="card" data-search="files #09 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-9-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-9-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#09</span></div>
+    </div>
+    <div class="card" data-search="files #10 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-10-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-10-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#10</span></div>
+    </div>
+    <div class="card" data-search="cursor trail #11 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-11-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-11-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Cursor Trail</span><span class="num">#11</span></div>
+    </div>
+    <div class="card" data-search="the spirit master #12 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-12-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-12-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">The Spirit Master</span><span class="num">#12</span></div>
+    </div>
+    <div class="card" data-search="canvas cursor #13 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-13-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-13-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Canvas Cursor</span><span class="num">#13</span></div>
+    </div>
+    <div class="card" data-search="satisfying curly cursor 3kb of vanilla js on canvas #14 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-14-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-14-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Satisfying Curly Cursor 3Kb Of Vanilla Js On Canvas</span><span class="num">#14</span></div>
+    </div>
+    <div class="card" data-search="shooting star #15 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-15-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-15-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Shooting Star</span><span class="num">#15</span></div>
+    </div>
+    <div class="card" data-search="gsap hero section with advanced image cursor trail effects #16 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-16-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-16-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Gsap Hero Section With Advanced Image Cursor Trail Effects</span><span class="num">#16</span></div>
+    </div>
+    <div class="card" data-search="text trail effect on mousemove #17 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-17-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-17-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Text Trail Effect On Mousemove</span><span class="num">#17</span></div>
+    </div>
+    <div class="card" data-search="files #18 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-18-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-18-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#18</span></div>
+    </div>
+    <div class="card" data-search="files #19 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-19-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-19-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#19</span></div>
+    </div>
+    <div class="card" data-search="files #20 mouse effects">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-20-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/mouse-20-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#20</span></div>
+    </div>
+    <div class="card" data-search="cursor follow #21 mouse effects">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Cursor Follow</span><span class="num">#21</span></div>
+    </div>
+    <div class="card" data-search="draggable event #22 mouse effects">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Draggable Event</span><span class="num">#22</span></div>
+    </div>
 </div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #02</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-2-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-2-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #03</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-3-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-3-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #04</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-4-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-4-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Three Skull</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #05</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-5-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-5-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Dist</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #06</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-6-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-6-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #07</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-7-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-7-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #08</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-8-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-8-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #09</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-9-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-9-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #10</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-10-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-10-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #11</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-11-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-11-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Cursor Trail</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #12</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-12-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-12-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>The Spirit Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #13</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-13-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-13-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Canvas Cursor</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #14</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-14-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-14-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Satisfying Curly Cursor 3Kb Of Vanilla Js On Canvas</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #15</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-15-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-15-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Shooting Star</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #16</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-16-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-16-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Gsap Hero Section With Advanced Image Cursor Trail Effects</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #17</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-17-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-17-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Text Trail Effect On Mousemove</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #18</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-18-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-18-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #19</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-19-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-19-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #20</span>
-<video src="https://animmaster-videos.b-cdn.net/files/mouse-20-650.webm" poster="https://animmasterlib.dev/assets/img/mouse-20-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #21</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Cursor Follow</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Mouse #22</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Draggable Event</h3></div>
-</div>
-</div>
-</div>
-<div class="footer"><div class="container">Animation Effects Catalog &middot; 22 components across 14 categories</div></div>
+<script>
+const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
+</script>
 </body>
 </html>

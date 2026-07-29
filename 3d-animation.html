@@ -2,452 +2,251 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>3D Animation - Animation Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Animation — Component Catalog</title>
 <style>
-
-:root { --bg:#0B0F19; --accent:#0066FF; --card:#131722; --border:#1e2530; --text:#e2e8f0; --muted:#64748b; }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1400px;margin:0 auto;padding:0 24px}
-.header{position:sticky;top:0;z-index:100;background:rgba(11,15,25,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
-.header .container{display:flex;align-items:center;justify-content:space-between}
-.header h1{font-size:20px;font-weight:700;letter-spacing:-.5px}
-.header h1 a{color:var(--text);text-decoration:none}
-.header .nav{display:flex;gap:20px;flex-wrap:wrap}
-.header .nav a{color:var(--muted);font-size:14px;text-decoration:none;transition:color .2s}
-.header .nav a:hover{color:var(--accent);text-decoration:none}
-.cat-header{padding:48px 0 24px}
-.cat-header h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
-.cat-header p{color:var(--muted);font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:24px 0 80px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s,border-color .2s;position:relative}
-.card:hover{transform:translateY(-2px);border-color:var(--accent)}
-.card-video-wrap{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
-.card-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-.card-video-wrap iframe{width:100%;height:100%;border:0;display:block}
-.card-number{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.75);color:var(--accent);font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;z-index:2;letter-spacing:.5px}
-.card-info{padding:12px 16px}
-.card-info h3{font-size:14px;font-weight:600;line-height:1.3;color:var(--text);word-break:break-word}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:24px 0 80px}
-.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px 24px;transition:all .2s;display:block;text-decoration:none}
-.cat-card:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
-.cat-card h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
-.cat-card .count{font-size:14px;color:var(--accent);font-weight:600}
-.cat-card .desc{font-size:13px;color:var(--muted);margin-top:8px}
-.hero{padding:64px 0 32px;text-align:center}
-.hero h2{font-size:48px;font-weight:900;letter-spacing:-1.5px;margin-bottom:12px;background:linear-gradient(135deg,#fff,#64748b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{color:var(--muted);font-size:18px;max-width:600px;margin:0 auto}
-.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.cat-grid{grid-template-columns:1fr}.hero h2{font-size:32px}.header .nav{display:none}}
-
-
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
+  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
+  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
+  .search:focus { outline: none; border-color: #0066FF; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
+  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
+  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
 <body>
-<div class="header"><div class="container">
-<h1><a href="index.html">Animation Catalog</a></h1>
-<nav class="nav">
-<a href="scroll-animation.html">Scroll</a>
-<a href="hero-animations.html">Hero</a>
-<a href="sliders.html">Sliders</a>
-<a href="navigation-menus.html">Navigation</a>
-<a href="hover-effects.html">Hover</a>
-<a href="mouse-effects.html">Mouse</a>
-<a href="webgl-threejs.html">WebGL</a>
-<a href="text-animations.html">Text</a>
-<a href="page-transitions.html">Transitions</a>
-<a href="svg-animations.html">SVG</a>
-<a href="background-animations.html">Background</a>
-<a href="grid-animations.html">Grid</a>
-<a href="physics-effects.html">Physics</a>
-<a href="3d-animation.html">3D</a>
-<a href="buttons.html">Buttons</a>
-<a href="cinematic-intros.html">Intros</a>
-<a href="uncategorized.html">Uncategorized</a>
-</nav>
-</div></div>
-<div class="container">
-<div class="cat-header">
-<h2>3D Animation</h2>
-<p>53 components</p>
-</div>
-<div class="grid">
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #01</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-1-650.webm" poster="https://animmasterlib.dev/assets/img/3d-1-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Threejs Font Grid</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #02</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-2-650.webm" poster="https://animmasterlib.dev/assets/img/3d-2-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Three Html To Canvas</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #03</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-3-650.webm" poster="https://animmasterlib.dev/assets/img/3d-3-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Cinematic Scroll Animations</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #04</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-4-650.webm" poster="https://animmasterlib.dev/assets/img/3d-4-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Delphi</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #05</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-5-650.webm" poster="https://animmasterlib.dev/assets/img/3d-5-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Shoe Finder</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #06</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-6-650.webm" poster="https://animmasterlib.dev/assets/img/3d-6-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Video Projection</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #07</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-7-650.webm" poster="https://animmasterlib.dev/assets/img/3d-7-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>3Dcarousel</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #08</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-8-650.webm" poster="https://animmasterlib.dev/assets/img/3d-8-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Creative 404</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #09</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-9-650.webm" poster="https://animmasterlib.dev/assets/img/3d-9-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Dithering Shader</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #10</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-10-650.webm" poster="https://animmasterlib.dev/assets/img/3d-10-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Interactive Styling Canvas</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #11</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-11-650.webm" poster="https://animmasterlib.dev/assets/img/3d-11-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Threepipe Device Mockup Codrops Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #12</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-12-650.webm" poster="https://animmasterlib.dev/assets/img/3d-12-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Helmet</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #13</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-13-650.webm" poster="https://animmasterlib.dev/assets/img/3d-13-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>3D Earth Scroll</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #14</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-14-650.webm" poster="https://animmasterlib.dev/assets/img/3d-14-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Repetition Image Animation</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #15</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-15-650.webm" poster="https://animmasterlib.dev/assets/img/3d-15-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>F</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #16</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-16-650.webm" poster="https://animmasterlib.dev/assets/img/3d-16-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Living Words</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #17</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-17-650.webm" poster="https://animmasterlib.dev/assets/img/3d-17-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Code</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #18</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-18-650.webm" poster="https://animmasterlib.dev/assets/img/3d-18-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Circular Image Layout</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #19</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-19-650.webm" poster="https://animmasterlib.dev/assets/img/3d-19-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #20</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-20-650.webm" poster="https://animmasterlib.dev/assets/img/3d-20-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #21</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-21-650.webm" poster="https://animmasterlib.dev/assets/img/3d-21-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Fiels</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3d #22</span>
-<video src="https://animmaster-videos.b-cdn.net/files/3d-22-650.webm" poster="https://animmasterlib.dev/assets/img/3d-22-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #23</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>3D Card Effect</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #24</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>3D Card</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #25</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>3D Globe</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #26</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>3D Marquee</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #27</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>3D Pin</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #28</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Apple Cards Carousel</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #29</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Apple</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #30</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Comet Card</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #31</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Evervault Card</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #32</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Focus Cards</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #33</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Glare Card</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #34</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Globe</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #35</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Lens</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #36</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Notch</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #37</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Pixelated Canvas</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #38</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Scales</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #39</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Three Element</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #40</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Webcam Pixel Grid</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #41</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>World Map</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #42</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Dither Image Demo Upload</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #43</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Dither Image Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #44</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Dither Image</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #45</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Hero Dithering Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #46</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Hero Dithering</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #47</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Shader Lens Blur Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #48</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Shader Lens Blur</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #49</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Three D Carousel Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #50</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Three D Carousel</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #51</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Hover 3D</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #52</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>3D Carousel 3D Carousel</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">3D #53</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Threed Card Threed Card</h3></div>
-</div>
-</div>
-</div>
-<div class="footer"><div class="container">Animation Effects Catalog &middot; 53 components across 14 categories</div></div>
+<div class="header">
+  <h1>3D Animation <span style="color:#555;font-size:0.8rem">(53)</span></h1>
+  <a href="index.html">← All Categories</a>
+  <input class="search" type="text" placeholder="Search 3D Animation..." id="search">
+</div>
+<div class="grid" id="grid">
+    <div class="card" data-search="threejs font grid #01 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-1-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-1-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Threejs Font Grid</span><span class="num">#01</span></div>
+    </div>
+    <div class="card" data-search="three html to canvas #02 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-2-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-2-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Three Html To Canvas</span><span class="num">#02</span></div>
+    </div>
+    <div class="card" data-search="cinematic scroll animations #03 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-3-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-3-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Cinematic Scroll Animations</span><span class="num">#03</span></div>
+    </div>
+    <div class="card" data-search="delphi #04 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-4-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-4-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Delphi</span><span class="num">#04</span></div>
+    </div>
+    <div class="card" data-search="shoe finder #05 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-5-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-5-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Shoe Finder</span><span class="num">#05</span></div>
+    </div>
+    <div class="card" data-search="video projection #06 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-6-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-6-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Video Projection</span><span class="num">#06</span></div>
+    </div>
+    <div class="card" data-search="3dcarousel #07 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-7-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-7-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">3Dcarousel</span><span class="num">#07</span></div>
+    </div>
+    <div class="card" data-search="creative 404 #08 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-8-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-8-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Creative 404</span><span class="num">#08</span></div>
+    </div>
+    <div class="card" data-search="dithering shader #09 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-9-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-9-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Dithering Shader</span><span class="num">#09</span></div>
+    </div>
+    <div class="card" data-search="interactive styling canvas #10 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-10-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-10-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Interactive Styling Canvas</span><span class="num">#10</span></div>
+    </div>
+    <div class="card" data-search="threepipe device mockup codrops master #11 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-11-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-11-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Threepipe Device Mockup Codrops Master</span><span class="num">#11</span></div>
+    </div>
+    <div class="card" data-search="helmet #12 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-12-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-12-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Helmet</span><span class="num">#12</span></div>
+    </div>
+    <div class="card" data-search="3d earth scroll #13 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-13-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-13-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">3D Earth Scroll</span><span class="num">#13</span></div>
+    </div>
+    <div class="card" data-search="repetition image animation #14 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-14-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-14-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Repetition Image Animation</span><span class="num">#14</span></div>
+    </div>
+    <div class="card" data-search="f #15 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-15-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-15-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">F</span><span class="num">#15</span></div>
+    </div>
+    <div class="card" data-search="living words #16 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-16-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-16-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Living Words</span><span class="num">#16</span></div>
+    </div>
+    <div class="card" data-search="code #17 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-17-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-17-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Code</span><span class="num">#17</span></div>
+    </div>
+    <div class="card" data-search="circular image layout #18 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-18-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-18-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Circular Image Layout</span><span class="num">#18</span></div>
+    </div>
+    <div class="card" data-search="files #19 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-19-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-19-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#19</span></div>
+    </div>
+    <div class="card" data-search="files #20 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-20-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-20-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#20</span></div>
+    </div>
+    <div class="card" data-search="fiels #21 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-21-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-21-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Fiels</span><span class="num">#21</span></div>
+    </div>
+    <div class="card" data-search="files #22 3d animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-22-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/3d-22-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#22</span></div>
+    </div>
+    <div class="card" data-search="3d card effect #23 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">3D Card Effect</span><span class="num">#23</span></div>
+    </div>
+    <div class="card" data-search="3d card #24 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">3D Card</span><span class="num">#24</span></div>
+    </div>
+    <div class="card" data-search="3d globe #25 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">3D Globe</span><span class="num">#25</span></div>
+    </div>
+    <div class="card" data-search="3d marquee #26 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">3D Marquee</span><span class="num">#26</span></div>
+    </div>
+    <div class="card" data-search="3d pin #27 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">3D Pin</span><span class="num">#27</span></div>
+    </div>
+    <div class="card" data-search="apple cards carousel #28 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Apple Cards Carousel</span><span class="num">#28</span></div>
+    </div>
+    <div class="card" data-search="apple #29 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Apple</span><span class="num">#29</span></div>
+    </div>
+    <div class="card" data-search="comet card #30 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Comet Card</span><span class="num">#30</span></div>
+    </div>
+    <div class="card" data-search="evervault card #31 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Evervault Card</span><span class="num">#31</span></div>
+    </div>
+    <div class="card" data-search="focus cards #32 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Focus Cards</span><span class="num">#32</span></div>
+    </div>
+    <div class="card" data-search="glare card #33 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Glare Card</span><span class="num">#33</span></div>
+    </div>
+    <div class="card" data-search="globe #34 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Globe</span><span class="num">#34</span></div>
+    </div>
+    <div class="card" data-search="lens #35 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Lens</span><span class="num">#35</span></div>
+    </div>
+    <div class="card" data-search="notch #36 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Notch</span><span class="num">#36</span></div>
+    </div>
+    <div class="card" data-search="pixelated canvas #37 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pixelated Canvas</span><span class="num">#37</span></div>
+    </div>
+    <div class="card" data-search="scales #38 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Scales</span><span class="num">#38</span></div>
+    </div>
+    <div class="card" data-search="three element #39 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Three Element</span><span class="num">#39</span></div>
+    </div>
+    <div class="card" data-search="webcam pixel grid #40 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Webcam Pixel Grid</span><span class="num">#40</span></div>
+    </div>
+    <div class="card" data-search="world map #41 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">World Map</span><span class="num">#41</span></div>
+    </div>
+    <div class="card" data-search="dither image demo upload #42 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dither Image Demo Upload</span><span class="num">#42</span></div>
+    </div>
+    <div class="card" data-search="dither image demo #43 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dither Image Demo</span><span class="num">#43</span></div>
+    </div>
+    <div class="card" data-search="dither image #44 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dither Image</span><span class="num">#44</span></div>
+    </div>
+    <div class="card" data-search="hero dithering demo #45 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Hero Dithering Demo</span><span class="num">#45</span></div>
+    </div>
+    <div class="card" data-search="hero dithering #46 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Hero Dithering</span><span class="num">#46</span></div>
+    </div>
+    <div class="card" data-search="shader lens blur demo #47 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Shader Lens Blur Demo</span><span class="num">#47</span></div>
+    </div>
+    <div class="card" data-search="shader lens blur #48 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Shader Lens Blur</span><span class="num">#48</span></div>
+    </div>
+    <div class="card" data-search="three d carousel demo #49 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Three D Carousel Demo</span><span class="num">#49</span></div>
+    </div>
+    <div class="card" data-search="three d carousel #50 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Three D Carousel</span><span class="num">#50</span></div>
+    </div>
+    <div class="card" data-search="hover 3d #51 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Hover 3D</span><span class="num">#51</span></div>
+    </div>
+    <div class="card" data-search="3d carousel 3d carousel #52 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">3D Carousel 3D Carousel</span><span class="num">#52</span></div>
+    </div>
+    <div class="card" data-search="threed card threed card #53 3d animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Threed Card Threed Card</span><span class="num">#53</span></div>
+    </div>
+</div>
+<script>
+const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
+</script>
 </body>
 </html>

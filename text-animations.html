@@ -2,788 +2,499 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Text Animations - Animation Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Animations — Component Catalog</title>
 <style>
-
-:root { --bg:#0B0F19; --accent:#0066FF; --card:#131722; --border:#1e2530; --text:#e2e8f0; --muted:#64748b; }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1400px;margin:0 auto;padding:0 24px}
-.header{position:sticky;top:0;z-index:100;background:rgba(11,15,25,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
-.header .container{display:flex;align-items:center;justify-content:space-between}
-.header h1{font-size:20px;font-weight:700;letter-spacing:-.5px}
-.header h1 a{color:var(--text);text-decoration:none}
-.header .nav{display:flex;gap:20px;flex-wrap:wrap}
-.header .nav a{color:var(--muted);font-size:14px;text-decoration:none;transition:color .2s}
-.header .nav a:hover{color:var(--accent);text-decoration:none}
-.cat-header{padding:48px 0 24px}
-.cat-header h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
-.cat-header p{color:var(--muted);font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:24px 0 80px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s,border-color .2s;position:relative}
-.card:hover{transform:translateY(-2px);border-color:var(--accent)}
-.card-video-wrap{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
-.card-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-.card-video-wrap iframe{width:100%;height:100%;border:0;display:block}
-.card-number{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.75);color:var(--accent);font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;z-index:2;letter-spacing:.5px}
-.card-info{padding:12px 16px}
-.card-info h3{font-size:14px;font-weight:600;line-height:1.3;color:var(--text);word-break:break-word}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:24px 0 80px}
-.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px 24px;transition:all .2s;display:block;text-decoration:none}
-.cat-card:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
-.cat-card h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
-.cat-card .count{font-size:14px;color:var(--accent);font-weight:600}
-.cat-card .desc{font-size:13px;color:var(--muted);margin-top:8px}
-.hero{padding:64px 0 32px;text-align:center}
-.hero h2{font-size:48px;font-weight:900;letter-spacing:-1.5px;margin-bottom:12px;background:linear-gradient(135deg,#fff,#64748b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{color:var(--muted);font-size:18px;max-width:600px;margin:0 auto}
-.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.cat-grid{grid-template-columns:1fr}.hero h2{font-size:32px}.header .nav{display:none}}
-
-
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
+  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
+  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
+  .search:focus { outline: none; border-color: #0066FF; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
+  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
+  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
 <body>
-<div class="header"><div class="container">
-<h1><a href="index.html">Animation Catalog</a></h1>
-<nav class="nav">
-<a href="scroll-animation.html">Scroll</a>
-<a href="hero-animations.html">Hero</a>
-<a href="sliders.html">Sliders</a>
-<a href="navigation-menus.html">Navigation</a>
-<a href="hover-effects.html">Hover</a>
-<a href="mouse-effects.html">Mouse</a>
-<a href="webgl-threejs.html">WebGL</a>
-<a href="text-animations.html">Text</a>
-<a href="page-transitions.html">Transitions</a>
-<a href="svg-animations.html">SVG</a>
-<a href="background-animations.html">Background</a>
-<a href="grid-animations.html">Grid</a>
-<a href="physics-effects.html">Physics</a>
-<a href="3d-animation.html">3D</a>
-<a href="buttons.html">Buttons</a>
-<a href="cinematic-intros.html">Intros</a>
-<a href="uncategorized.html">Uncategorized</a>
-</nav>
-</div></div>
-<div class="container">
-<div class="cat-header">
-<h2>Text Animations</h2>
-<p>101 components</p>
-</div>
-<div class="grid">
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #01</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-1-650.webm" poster="https://animmasterlib.dev/assets/img/text-1-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Scrolltextmotion</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #02</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-2-650.webm" poster="https://animmasterlib.dev/assets/img/text-2-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>3D Text Circle Animation</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #03</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-3-650.webm" poster="https://animmasterlib.dev/assets/img/text-3-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Sketch492</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #04</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-4-650.webm" poster="https://animmasterlib.dev/assets/img/text-4-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #05</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-5-650.webm" poster="https://animmasterlib.dev/assets/img/text-5-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Onscrolltypographyanimations</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #06</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-6-650.webm" poster="https://animmasterlib.dev/assets/img/text-6-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Onscrolltypographyanimations</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #07</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-7-650.webm" poster="https://animmasterlib.dev/assets/img/text-7-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Sketch491</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #08</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-8-650.webm" poster="https://animmasterlib.dev/assets/img/text-8-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Animated Verbs Ii</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #09</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-9-650.webm" poster="https://animmasterlib.dev/assets/img/text-9-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Morphsvg Converttopath</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #10</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-10-650.webm" poster="https://animmasterlib.dev/assets/img/text-10-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #11</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-11-650.webm" poster="https://animmasterlib.dev/assets/img/text-11-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #12</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-12-650.webm" poster="https://animmasterlib.dev/assets/img/text-12-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Next Text Reveal Animation</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #13</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-13-650.webm" poster="https://animmasterlib.dev/assets/img/text-13-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Seventeenagency Scroll Animation</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #14</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-14-650.webm" poster="https://animmasterlib.dev/assets/img/text-14-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #15</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-15-650.webm" poster="https://animmasterlib.dev/assets/img/text-15-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>text-15</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #16</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-16-650.webm" poster="https://animmasterlib.dev/assets/img/text-16-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Menuxl Text Displacement Animation</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #17</span>
-<video src="https://animmaster-videos.b-cdn.net/files/text-17-650.webm" poster="https://animmasterlib.dev/assets/img/text-17-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #18</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Animated Shiny Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #19</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Ascii Art</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #20</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Aurora Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #21</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Canvas Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #22</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Colourful Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #23</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Container Text Flip</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #24</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Cover</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #25</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Encrypted Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #26</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Flip Words</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #27</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Layout Text Flip</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #28</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Moving Line</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #29</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Numberticker</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #30</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Pointer Highlight</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #31</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Shimmer Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #32</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Squiggly Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #33</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Flip Board</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #34</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Flip</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #35</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Flipping Board</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #36</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Generate Effect</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #37</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Hover Effect</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #38</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Reveal Card</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #39</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Typewriter Effect</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #40</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Blur Fade</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #41</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Number Ticker</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #42</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Animate</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #43</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Reveal</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #44</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Animated Number Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #45</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Animated Number</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #46</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Pixel Heading Character Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #47</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Pixel Heading Character</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #48</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Pixel Heading Word Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #49</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Pixel Heading Word</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #50</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Pixel Paragraph Words Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #51</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Pixel Paragraph Words Inverse Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #52</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Pixel Paragraph Words Inverse</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #53</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Pixel Paragraph Words</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #54</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Shimmer</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #55</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Squiggle Arrow Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #56</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Squiggle Arrow</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #57</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Animate Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #58</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Two Tone Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #59</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Type Animate</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #60</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Typewriter Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #61</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Typewriter</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #62</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Number Flow</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #63</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Price Flow</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #64</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Reveal Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #65</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Scramble Hover</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #66</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Typewriter Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #67</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Wave Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #68</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Curved Text Curved Text View</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #69</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Curved Text Curved Text</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #70</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Decrypting</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #71</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Flipwords View</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #72</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Flipwords</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #73</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Glowline View</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #74</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Glowline</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #75</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Gradient View</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #76</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Gradient</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #77</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Gradientgen Components Angleknob</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #78</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Gradientgen Components Codeoutput</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #79</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Gradientgen Components Colorswatch</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #80</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Gradientgen Components Conicanglecontrol</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #81</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Gradientgen Components Gradienttypetabs</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #82</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Gradientgen Components Radialpositioncontrol</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #83</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Gradientgen</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #84</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Randomtextreveal</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #85</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Blurin</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #86</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Bouncy</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #87</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Gradient</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #88</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Highlighter Text Highlighter View</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #89</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Highlighter Text Highlighter</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #90</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Morphing</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #91</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Particle</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #92</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Scalein</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #93</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Shiny</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #94</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Slidein</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #95</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Staggeredpopin</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #96</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Typewriter</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #97</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Text Wavy</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #98</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Textreveal</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #99</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Ticker View</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #100</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Ticker</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Text #101</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Video Text Video Text</h3></div>
-</div>
-</div>
-</div>
-<div class="footer"><div class="container">Animation Effects Catalog &middot; 101 components across 14 categories</div></div>
+<div class="header">
+  <h1>Text Animations <span style="color:#555;font-size:0.8rem">(115)</span></h1>
+  <a href="index.html">← All Categories</a>
+  <input class="search" type="text" placeholder="Search Text Animations..." id="search">
+</div>
+<div class="grid" id="grid">
+    <div class="card" data-search="scrolltextmotion #01 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-1-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-1-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Scrolltextmotion</span><span class="num">#01</span></div>
+    </div>
+    <div class="card" data-search="3d text circle animation #02 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-2-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-2-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">3D Text Circle Animation</span><span class="num">#02</span></div>
+    </div>
+    <div class="card" data-search="sketch492 #03 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-3-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-3-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Sketch492</span><span class="num">#03</span></div>
+    </div>
+    <div class="card" data-search="files #04 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-4-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-4-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#04</span></div>
+    </div>
+    <div class="card" data-search="onscrolltypographyanimations #05 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-5-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-5-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Onscrolltypographyanimations</span><span class="num">#05</span></div>
+    </div>
+    <div class="card" data-search="onscrolltypographyanimations #06 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-6-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-6-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Onscrolltypographyanimations</span><span class="num">#06</span></div>
+    </div>
+    <div class="card" data-search="sketch491 #07 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-7-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-7-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Sketch491</span><span class="num">#07</span></div>
+    </div>
+    <div class="card" data-search="animated verbs ii #08 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-8-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-8-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Animated Verbs Ii</span><span class="num">#08</span></div>
+    </div>
+    <div class="card" data-search="morphsvg converttopath #09 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-9-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-9-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Morphsvg Converttopath</span><span class="num">#09</span></div>
+    </div>
+    <div class="card" data-search="files #10 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-10-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-10-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#10</span></div>
+    </div>
+    <div class="card" data-search="files #11 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-11-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-11-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#11</span></div>
+    </div>
+    <div class="card" data-search="next text reveal animation #12 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-12-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-12-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Next Text Reveal Animation</span><span class="num">#12</span></div>
+    </div>
+    <div class="card" data-search="seventeenagency scroll animation #13 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-13-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-13-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Seventeenagency Scroll Animation</span><span class="num">#13</span></div>
+    </div>
+    <div class="card" data-search="files #14 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-14-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-14-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#14</span></div>
+    </div>
+    <div class="card" data-search="text-15 #15 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-15-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-15-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">text-15</span><span class="num">#15</span></div>
+    </div>
+    <div class="card" data-search="menuxl text displacement animation #16 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-16-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-16-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Menuxl Text Displacement Animation</span><span class="num">#16</span></div>
+    </div>
+    <div class="card" data-search="files #17 text animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-17-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/text-17-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#17</span></div>
+    </div>
+    <div class="card" data-search="animated shiny text #18 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Animated Shiny Text</span><span class="num">#18</span></div>
+    </div>
+    <div class="card" data-search="ascii art #19 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Ascii Art</span><span class="num">#19</span></div>
+    </div>
+    <div class="card" data-search="aurora text #20 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Aurora Text</span><span class="num">#20</span></div>
+    </div>
+    <div class="card" data-search="canvas text #21 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Canvas Text</span><span class="num">#21</span></div>
+    </div>
+    <div class="card" data-search="colourful text #22 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Colourful Text</span><span class="num">#22</span></div>
+    </div>
+    <div class="card" data-search="container text flip #23 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Container Text Flip</span><span class="num">#23</span></div>
+    </div>
+    <div class="card" data-search="cover #24 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Cover</span><span class="num">#24</span></div>
+    </div>
+    <div class="card" data-search="encrypted text #25 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Encrypted Text</span><span class="num">#25</span></div>
+    </div>
+    <div class="card" data-search="flip words #26 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Flip Words</span><span class="num">#26</span></div>
+    </div>
+    <div class="card" data-search="layout text flip #27 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Layout Text Flip</span><span class="num">#27</span></div>
+    </div>
+    <div class="card" data-search="moving line #28 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Moving Line</span><span class="num">#28</span></div>
+    </div>
+    <div class="card" data-search="numberticker #29 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Numberticker</span><span class="num">#29</span></div>
+    </div>
+    <div class="card" data-search="pointer highlight #30 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pointer Highlight</span><span class="num">#30</span></div>
+    </div>
+    <div class="card" data-search="shimmer text #31 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Shimmer Text</span><span class="num">#31</span></div>
+    </div>
+    <div class="card" data-search="squiggly text #32 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Squiggly Text</span><span class="num">#32</span></div>
+    </div>
+    <div class="card" data-search="text flip board #33 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Flip Board</span><span class="num">#33</span></div>
+    </div>
+    <div class="card" data-search="text flip #34 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Flip</span><span class="num">#34</span></div>
+    </div>
+    <div class="card" data-search="text flipping board #35 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Flipping Board</span><span class="num">#35</span></div>
+    </div>
+    <div class="card" data-search="text generate effect #36 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Generate Effect</span><span class="num">#36</span></div>
+    </div>
+    <div class="card" data-search="text hover effect #37 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Hover Effect</span><span class="num">#37</span></div>
+    </div>
+    <div class="card" data-search="text reveal card #38 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Reveal Card</span><span class="num">#38</span></div>
+    </div>
+    <div class="card" data-search="typewriter effect #39 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Typewriter Effect</span><span class="num">#39</span></div>
+    </div>
+    <div class="card" data-search="blur fade #40 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Blur Fade</span><span class="num">#40</span></div>
+    </div>
+    <div class="card" data-search="number ticker #41 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Number Ticker</span><span class="num">#41</span></div>
+    </div>
+    <div class="card" data-search="text animate #42 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Animate</span><span class="num">#42</span></div>
+    </div>
+    <div class="card" data-search="text reveal #43 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Reveal</span><span class="num">#43</span></div>
+    </div>
+    <div class="card" data-search="animated number demo #44 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Animated Number Demo</span><span class="num">#44</span></div>
+    </div>
+    <div class="card" data-search="animated number #45 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Animated Number</span><span class="num">#45</span></div>
+    </div>
+    <div class="card" data-search="pixel heading character demo #46 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pixel Heading Character Demo</span><span class="num">#46</span></div>
+    </div>
+    <div class="card" data-search="pixel heading character #47 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pixel Heading Character</span><span class="num">#47</span></div>
+    </div>
+    <div class="card" data-search="pixel heading word demo #48 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pixel Heading Word Demo</span><span class="num">#48</span></div>
+    </div>
+    <div class="card" data-search="pixel heading word #49 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pixel Heading Word</span><span class="num">#49</span></div>
+    </div>
+    <div class="card" data-search="pixel paragraph words demo #50 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pixel Paragraph Words Demo</span><span class="num">#50</span></div>
+    </div>
+    <div class="card" data-search="pixel paragraph words inverse demo #51 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pixel Paragraph Words Inverse Demo</span><span class="num">#51</span></div>
+    </div>
+    <div class="card" data-search="pixel paragraph words inverse #52 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pixel Paragraph Words Inverse</span><span class="num">#52</span></div>
+    </div>
+    <div class="card" data-search="pixel paragraph words #53 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pixel Paragraph Words</span><span class="num">#53</span></div>
+    </div>
+    <div class="card" data-search="shimmer #54 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Shimmer</span><span class="num">#54</span></div>
+    </div>
+    <div class="card" data-search="squiggle arrow demo #55 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Squiggle Arrow Demo</span><span class="num">#55</span></div>
+    </div>
+    <div class="card" data-search="squiggle arrow #56 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Squiggle Arrow</span><span class="num">#56</span></div>
+    </div>
+    <div class="card" data-search="text animate demo #57 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Animate Demo</span><span class="num">#57</span></div>
+    </div>
+    <div class="card" data-search="two tone text #58 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Two Tone Text</span><span class="num">#58</span></div>
+    </div>
+    <div class="card" data-search="type animate #59 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Type Animate</span><span class="num">#59</span></div>
+    </div>
+    <div class="card" data-search="typewriter demo #60 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Typewriter Demo</span><span class="num">#60</span></div>
+    </div>
+    <div class="card" data-search="typewriter #61 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Typewriter</span><span class="num">#61</span></div>
+    </div>
+    <div class="card" data-search="number flow #62 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Number Flow</span><span class="num">#62</span></div>
+    </div>
+    <div class="card" data-search="price flow #63 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Price Flow</span><span class="num">#63</span></div>
+    </div>
+    <div class="card" data-search="reveal text #64 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Reveal Text</span><span class="num">#64</span></div>
+    </div>
+    <div class="card" data-search="scramble hover #65 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Scramble Hover</span><span class="num">#65</span></div>
+    </div>
+    <div class="card" data-search="typewriter text #66 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Typewriter Text</span><span class="num">#66</span></div>
+    </div>
+    <div class="card" data-search="wave text #67 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Wave Text</span><span class="num">#67</span></div>
+    </div>
+    <div class="card" data-search="curved text curved text view #68 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Curved Text Curved Text View</span><span class="num">#68</span></div>
+    </div>
+    <div class="card" data-search="curved text curved text #69 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Curved Text Curved Text</span><span class="num">#69</span></div>
+    </div>
+    <div class="card" data-search="decrypting #70 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Decrypting</span><span class="num">#70</span></div>
+    </div>
+    <div class="card" data-search="flipwords view #71 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Flipwords View</span><span class="num">#71</span></div>
+    </div>
+    <div class="card" data-search="flipwords #72 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Flipwords</span><span class="num">#72</span></div>
+    </div>
+    <div class="card" data-search="glowline view #73 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Glowline View</span><span class="num">#73</span></div>
+    </div>
+    <div class="card" data-search="glowline #74 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Glowline</span><span class="num">#74</span></div>
+    </div>
+    <div class="card" data-search="gradient view #75 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Gradient View</span><span class="num">#75</span></div>
+    </div>
+    <div class="card" data-search="gradient #76 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Gradient</span><span class="num">#76</span></div>
+    </div>
+    <div class="card" data-search="gradientgen components angleknob #77 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Gradientgen Components Angleknob</span><span class="num">#77</span></div>
+    </div>
+    <div class="card" data-search="gradientgen components codeoutput #78 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Gradientgen Components Codeoutput</span><span class="num">#78</span></div>
+    </div>
+    <div class="card" data-search="gradientgen components colorswatch #79 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Gradientgen Components Colorswatch</span><span class="num">#79</span></div>
+    </div>
+    <div class="card" data-search="gradientgen components conicanglecontrol #80 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Gradientgen Components Conicanglecontrol</span><span class="num">#80</span></div>
+    </div>
+    <div class="card" data-search="gradientgen components gradienttypetabs #81 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Gradientgen Components Gradienttypetabs</span><span class="num">#81</span></div>
+    </div>
+    <div class="card" data-search="gradientgen components radialpositioncontrol #82 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Gradientgen Components Radialpositioncontrol</span><span class="num">#82</span></div>
+    </div>
+    <div class="card" data-search="gradientgen #83 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Gradientgen</span><span class="num">#83</span></div>
+    </div>
+    <div class="card" data-search="randomtextreveal #84 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Randomtextreveal</span><span class="num">#84</span></div>
+    </div>
+    <div class="card" data-search="text blurin #85 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Blurin</span><span class="num">#85</span></div>
+    </div>
+    <div class="card" data-search="text bouncy #86 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Bouncy</span><span class="num">#86</span></div>
+    </div>
+    <div class="card" data-search="text gradient #87 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Gradient</span><span class="num">#87</span></div>
+    </div>
+    <div class="card" data-search="text highlighter text highlighter view #88 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Highlighter Text Highlighter View</span><span class="num">#88</span></div>
+    </div>
+    <div class="card" data-search="text highlighter text highlighter #89 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Highlighter Text Highlighter</span><span class="num">#89</span></div>
+    </div>
+    <div class="card" data-search="text morphing #90 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Morphing</span><span class="num">#90</span></div>
+    </div>
+    <div class="card" data-search="text particle #91 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Particle</span><span class="num">#91</span></div>
+    </div>
+    <div class="card" data-search="text scalein #92 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Scalein</span><span class="num">#92</span></div>
+    </div>
+    <div class="card" data-search="text shiny #93 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Shiny</span><span class="num">#93</span></div>
+    </div>
+    <div class="card" data-search="text slidein #94 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Slidein</span><span class="num">#94</span></div>
+    </div>
+    <div class="card" data-search="text staggeredpopin #95 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Staggeredpopin</span><span class="num">#95</span></div>
+    </div>
+    <div class="card" data-search="text typewriter #96 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Typewriter</span><span class="num">#96</span></div>
+    </div>
+    <div class="card" data-search="text wavy #97 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Wavy</span><span class="num">#97</span></div>
+    </div>
+    <div class="card" data-search="textreveal #98 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Textreveal</span><span class="num">#98</span></div>
+    </div>
+    <div class="card" data-search="ticker view #99 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Ticker View</span><span class="num">#99</span></div>
+    </div>
+    <div class="card" data-search="ticker #100 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Ticker</span><span class="num">#100</span></div>
+    </div>
+    <div class="card" data-search="video text video text #101 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Video Text Video Text</span><span class="num">#101</span></div>
+    </div>
+    <div class="card" data-search="text gradient #102 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Gradient</span><span class="num">#102</span></div>
+    </div>
+    <div class="card" data-search="text highlighter text highlighter #103 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Highlighter Text Highlighter</span><span class="num">#103</span></div>
+    </div>
+    <div class="card" data-search="text highlighter text highlighter #104 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Highlighter Text Highlighter</span><span class="num">#104</span></div>
+    </div>
+    <div class="card" data-search="text morphing #105 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Morphing</span><span class="num">#105</span></div>
+    </div>
+    <div class="card" data-search="text particle #106 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Particle</span><span class="num">#106</span></div>
+    </div>
+    <div class="card" data-search="text shiny #107 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Shiny</span><span class="num">#107</span></div>
+    </div>
+    <div class="card" data-search="text slidein #108 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Slidein</span><span class="num">#108</span></div>
+    </div>
+    <div class="card" data-search="text staggeredpopin #109 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Staggeredpopin</span><span class="num">#109</span></div>
+    </div>
+    <div class="card" data-search="text texturedmask #110 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Texturedmask</span><span class="num">#110</span></div>
+    </div>
+    <div class="card" data-search="text typewriter #111 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Typewriter</span><span class="num">#111</span></div>
+    </div>
+    <div class="card" data-search="text wavy #112 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Text Wavy</span><span class="num">#112</span></div>
+    </div>
+    <div class="card" data-search="textreveal textreveal #113 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Textreveal Textreveal</span><span class="num">#113</span></div>
+    </div>
+    <div class="card" data-search="video text video text #114 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Video Text Video Text</span><span class="num">#114</span></div>
+    </div>
+    <div class="card" data-search="src components ui border beam #115 text animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Src Components UI Border Beam</span><span class="num">#115</span></div>
+    </div>
+</div>
+<script>
+const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
+</script>
 </body>
 </html>

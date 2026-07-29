@@ -2,501 +2,331 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Background Animations - Animation Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Animations — Component Catalog</title>
 <style>
-
-:root { --bg:#0B0F19; --accent:#0066FF; --card:#131722; --border:#1e2530; --text:#e2e8f0; --muted:#64748b; }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1400px;margin:0 auto;padding:0 24px}
-.header{position:sticky;top:0;z-index:100;background:rgba(11,15,25,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
-.header .container{display:flex;align-items:center;justify-content:space-between}
-.header h1{font-size:20px;font-weight:700;letter-spacing:-.5px}
-.header h1 a{color:var(--text);text-decoration:none}
-.header .nav{display:flex;gap:20px;flex-wrap:wrap}
-.header .nav a{color:var(--muted);font-size:14px;text-decoration:none;transition:color .2s}
-.header .nav a:hover{color:var(--accent);text-decoration:none}
-.cat-header{padding:48px 0 24px}
-.cat-header h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
-.cat-header p{color:var(--muted);font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:24px 0 80px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s,border-color .2s;position:relative}
-.card:hover{transform:translateY(-2px);border-color:var(--accent)}
-.card-video-wrap{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
-.card-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-.card-video-wrap iframe{width:100%;height:100%;border:0;display:block}
-.card-number{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.75);color:var(--accent);font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;z-index:2;letter-spacing:.5px}
-.card-info{padding:12px 16px}
-.card-info h3{font-size:14px;font-weight:600;line-height:1.3;color:var(--text);word-break:break-word}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:24px 0 80px}
-.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px 24px;transition:all .2s;display:block;text-decoration:none}
-.cat-card:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
-.cat-card h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
-.cat-card .count{font-size:14px;color:var(--accent);font-weight:600}
-.cat-card .desc{font-size:13px;color:var(--muted);margin-top:8px}
-.hero{padding:64px 0 32px;text-align:center}
-.hero h2{font-size:48px;font-weight:900;letter-spacing:-1.5px;margin-bottom:12px;background:linear-gradient(135deg,#fff,#64748b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{color:var(--muted);font-size:18px;max-width:600px;margin:0 auto}
-.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.cat-grid{grid-template-columns:1fr}.hero h2{font-size:32px}.header .nav{display:none}}
-
-
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
+  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
+  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
+  .search:focus { outline: none; border-color: #0066FF; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
+  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
+  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
 <body>
-<div class="header"><div class="container">
-<h1><a href="index.html">Animation Catalog</a></h1>
-<nav class="nav">
-<a href="scroll-animation.html">Scroll</a>
-<a href="hero-animations.html">Hero</a>
-<a href="sliders.html">Sliders</a>
-<a href="navigation-menus.html">Navigation</a>
-<a href="hover-effects.html">Hover</a>
-<a href="mouse-effects.html">Mouse</a>
-<a href="webgl-threejs.html">WebGL</a>
-<a href="text-animations.html">Text</a>
-<a href="page-transitions.html">Transitions</a>
-<a href="svg-animations.html">SVG</a>
-<a href="background-animations.html">Background</a>
-<a href="grid-animations.html">Grid</a>
-<a href="physics-effects.html">Physics</a>
-<a href="3d-animation.html">3D</a>
-<a href="buttons.html">Buttons</a>
-<a href="cinematic-intros.html">Intros</a>
-<a href="uncategorized.html">Uncategorized</a>
-</nav>
-</div></div>
-<div class="container">
-<div class="cat-header">
-<h2>Background Animations</h2>
-<p>60 components</p>
-</div>
-<div class="grid">
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Bg #01</span>
-<video src="https://animmaster-videos.b-cdn.net/files/bg-1-650.webm" poster="https://animmasterlib.dev/assets/img/bg-1-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Bg #02</span>
-<video src="https://animmaster-videos.b-cdn.net/files/bg-2-650.webm" poster="https://animmasterlib.dev/assets/img/bg-2-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Bg #03</span>
-<video src="https://animmaster-videos.b-cdn.net/files/bg-3-650.webm" poster="https://animmasterlib.dev/assets/img/bg-3-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Bg #04</span>
-<video src="https://animmaster-videos.b-cdn.net/files/bg-4-650.webm" poster="https://animmasterlib.dev/assets/img/bg-4-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Bg #05</span>
-<video src="https://animmaster-videos.b-cdn.net/files/bg-5-650.webm" poster="https://animmasterlib.dev/assets/img/bg-5-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Bg #06</span>
-<video src="https://animmaster-videos.b-cdn.net/files/bg-6-650.webm" poster="https://animmasterlib.dev/assets/img/bg-6-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Bg #07</span>
-<video src="https://animmaster-videos.b-cdn.net/files/bg-7-650.webm" poster="https://animmasterlib.dev/assets/img/bg-7-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Bg #08</span>
-<video src="https://animmaster-videos.b-cdn.net/files/bg-8-650.webm" poster="https://animmasterlib.dev/assets/img/bg-8-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Bg #09</span>
-<video src="https://animmaster-videos.b-cdn.net/files/bg-9-650.webm" poster="https://animmasterlib.dev/assets/img/bg-9-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Bg #10</span>
-<video src="https://animmaster-videos.b-cdn.net/files/bg-10-650.webm" poster="https://animmasterlib.dev/assets/img/bg-10-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #11</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Aurora Background</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #12</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Background Beams With Collision</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #13</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Background Beams</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #14</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Background Boxes</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #15</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Background Gradient Animation</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #16</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Background Gradient</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #17</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Background Lines</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #18</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Background Ripple Effect</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #19</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Dither Shader</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #20</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Dot Background Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #21</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Dot Pattern</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #22</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Dots Background</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #23</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Dotted Glow Background</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #24</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Glowing Background Stars Card</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #25</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Glowing Stars</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #26</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Grid Background Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #27</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Grid Pattern</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #28</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Grid Small Background Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #29</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Meteors</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #30</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Noise Background</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #31</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Shooting Stars And Stars Background</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #32</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Shooting Stars</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #33</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Sparkles</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #34</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Stars Background</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #35</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Tracing Beam</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #36</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Vortex Background</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #37</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Vortex</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #38</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Wavy Background</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #39</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Animated Beam</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #40</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Border Beam</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #41</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Flickering Grid</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #42</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Particles</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #43</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Shine Border</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #44</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Background Guides</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #45</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Background Texture Client</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #46</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Bg Animated Gradient Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #47</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Bg Animated Gradient</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #48</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Bg Image Texture Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #49</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Bg Image Texture</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #50</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Bg Media Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #51</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Bg Media</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #52</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Gradient Heading Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #53</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Gradient Heading</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #54</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Grid Beam Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #55</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Grid Beam</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #56</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Stripe Bg Guides Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #57</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Stripe Bg Guides</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #58</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Aurora</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #59</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Sparklestext View</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Background #60</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Sparklestext</h3></div>
-</div>
-</div>
-</div>
-<div class="footer"><div class="container">Animation Effects Catalog &middot; 60 components across 14 categories</div></div>
+<div class="header">
+  <h1>Background Animations <span style="color:#555;font-size:0.8rem">(73)</span></h1>
+  <a href="index.html">← All Categories</a>
+  <input class="search" type="text" placeholder="Search Background Animations..." id="search">
+</div>
+<div class="grid" id="grid">
+    <div class="card" data-search="files #01 background animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-1-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/bg-1-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#01</span></div>
+    </div>
+    <div class="card" data-search="files #02 background animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-2-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/bg-2-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#02</span></div>
+    </div>
+    <div class="card" data-search="files #03 background animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-3-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/bg-3-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#03</span></div>
+    </div>
+    <div class="card" data-search="files #04 background animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-4-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/bg-4-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#04</span></div>
+    </div>
+    <div class="card" data-search="files #05 background animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-5-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/bg-5-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#05</span></div>
+    </div>
+    <div class="card" data-search="files #06 background animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-6-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/bg-6-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#06</span></div>
+    </div>
+    <div class="card" data-search="files #07 background animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-7-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/bg-7-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#07</span></div>
+    </div>
+    <div class="card" data-search="files #08 background animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-8-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/bg-8-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#08</span></div>
+    </div>
+    <div class="card" data-search="files #09 background animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-9-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/bg-9-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#09</span></div>
+    </div>
+    <div class="card" data-search="files #10 background animations">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-10-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/bg-10-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#10</span></div>
+    </div>
+    <div class="card" data-search="aurora background #11 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Aurora Background</span><span class="num">#11</span></div>
+    </div>
+    <div class="card" data-search="background beams with collision #12 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Background Beams With Collision</span><span class="num">#12</span></div>
+    </div>
+    <div class="card" data-search="background beams #13 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Background Beams</span><span class="num">#13</span></div>
+    </div>
+    <div class="card" data-search="background boxes #14 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Background Boxes</span><span class="num">#14</span></div>
+    </div>
+    <div class="card" data-search="background gradient animation #15 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Background Gradient Animation</span><span class="num">#15</span></div>
+    </div>
+    <div class="card" data-search="background gradient #16 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Background Gradient</span><span class="num">#16</span></div>
+    </div>
+    <div class="card" data-search="background lines #17 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Background Lines</span><span class="num">#17</span></div>
+    </div>
+    <div class="card" data-search="background ripple effect #18 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Background Ripple Effect</span><span class="num">#18</span></div>
+    </div>
+    <div class="card" data-search="dither shader #19 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dither Shader</span><span class="num">#19</span></div>
+    </div>
+    <div class="card" data-search="dot background demo #20 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dot Background Demo</span><span class="num">#20</span></div>
+    </div>
+    <div class="card" data-search="dot pattern #21 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dot Pattern</span><span class="num">#21</span></div>
+    </div>
+    <div class="card" data-search="dots background #22 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dots Background</span><span class="num">#22</span></div>
+    </div>
+    <div class="card" data-search="dotted glow background #23 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dotted Glow Background</span><span class="num">#23</span></div>
+    </div>
+    <div class="card" data-search="glowing background stars card #24 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Glowing Background Stars Card</span><span class="num">#24</span></div>
+    </div>
+    <div class="card" data-search="glowing stars #25 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Glowing Stars</span><span class="num">#25</span></div>
+    </div>
+    <div class="card" data-search="grid background demo #26 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Grid Background Demo</span><span class="num">#26</span></div>
+    </div>
+    <div class="card" data-search="grid pattern #27 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Grid Pattern</span><span class="num">#27</span></div>
+    </div>
+    <div class="card" data-search="grid small background demo #28 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Grid Small Background Demo</span><span class="num">#28</span></div>
+    </div>
+    <div class="card" data-search="meteors #29 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Meteors</span><span class="num">#29</span></div>
+    </div>
+    <div class="card" data-search="noise background #30 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Noise Background</span><span class="num">#30</span></div>
+    </div>
+    <div class="card" data-search="shooting stars and stars background #31 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Shooting Stars And Stars Background</span><span class="num">#31</span></div>
+    </div>
+    <div class="card" data-search="shooting stars #32 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Shooting Stars</span><span class="num">#32</span></div>
+    </div>
+    <div class="card" data-search="sparkles #33 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Sparkles</span><span class="num">#33</span></div>
+    </div>
+    <div class="card" data-search="stars background #34 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Stars Background</span><span class="num">#34</span></div>
+    </div>
+    <div class="card" data-search="tracing beam #35 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Tracing Beam</span><span class="num">#35</span></div>
+    </div>
+    <div class="card" data-search="vortex background #36 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Vortex Background</span><span class="num">#36</span></div>
+    </div>
+    <div class="card" data-search="vortex #37 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Vortex</span><span class="num">#37</span></div>
+    </div>
+    <div class="card" data-search="wavy background #38 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Wavy Background</span><span class="num">#38</span></div>
+    </div>
+    <div class="card" data-search="animated beam #39 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Animated Beam</span><span class="num">#39</span></div>
+    </div>
+    <div class="card" data-search="border beam #40 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Border Beam</span><span class="num">#40</span></div>
+    </div>
+    <div class="card" data-search="flickering grid #41 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Flickering Grid</span><span class="num">#41</span></div>
+    </div>
+    <div class="card" data-search="particles #42 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Particles</span><span class="num">#42</span></div>
+    </div>
+    <div class="card" data-search="shine border #43 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Shine Border</span><span class="num">#43</span></div>
+    </div>
+    <div class="card" data-search="background guides #44 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Background Guides</span><span class="num">#44</span></div>
+    </div>
+    <div class="card" data-search="background texture client #45 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Background Texture Client</span><span class="num">#45</span></div>
+    </div>
+    <div class="card" data-search="bg animated gradient demo #46 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Bg Animated Gradient Demo</span><span class="num">#46</span></div>
+    </div>
+    <div class="card" data-search="bg animated gradient #47 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Bg Animated Gradient</span><span class="num">#47</span></div>
+    </div>
+    <div class="card" data-search="bg image texture demo #48 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Bg Image Texture Demo</span><span class="num">#48</span></div>
+    </div>
+    <div class="card" data-search="bg image texture #49 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Bg Image Texture</span><span class="num">#49</span></div>
+    </div>
+    <div class="card" data-search="bg media demo #50 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Bg Media Demo</span><span class="num">#50</span></div>
+    </div>
+    <div class="card" data-search="bg media #51 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Bg Media</span><span class="num">#51</span></div>
+    </div>
+    <div class="card" data-search="gradient heading demo #52 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Gradient Heading Demo</span><span class="num">#52</span></div>
+    </div>
+    <div class="card" data-search="gradient heading #53 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Gradient Heading</span><span class="num">#53</span></div>
+    </div>
+    <div class="card" data-search="grid beam demo #54 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Grid Beam Demo</span><span class="num">#54</span></div>
+    </div>
+    <div class="card" data-search="grid beam #55 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Grid Beam</span><span class="num">#55</span></div>
+    </div>
+    <div class="card" data-search="stripe bg guides demo #56 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Stripe Bg Guides Demo</span><span class="num">#56</span></div>
+    </div>
+    <div class="card" data-search="stripe bg guides #57 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Stripe Bg Guides</span><span class="num">#57</span></div>
+    </div>
+    <div class="card" data-search="aurora #58 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Aurora</span><span class="num">#58</span></div>
+    </div>
+    <div class="card" data-search="sparklestext view #59 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Sparklestext View</span><span class="num">#59</span></div>
+    </div>
+    <div class="card" data-search="sparklestext #60 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Sparklestext</span><span class="num">#60</span></div>
+    </div>
+    <div class="card" data-search="svg bands #61 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">SVG Bands</span><span class="num">#61</span></div>
+    </div>
+    <div class="card" data-search="svg shapes animated demo #62 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Svg Shapes Animated Demo</span><span class="num">#62</span></div>
+    </div>
+    <div class="card" data-search="svg shapes animated #63 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">SVG Shapes Animated</span><span class="num">#63</span></div>
+    </div>
+    <div class="card" data-search="svg shapes demo #64 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Svg Shapes Demo</span><span class="num">#64</span></div>
+    </div>
+    <div class="card" data-search="svg shapes #65 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">SVG Shapes</span><span class="num">#65</span></div>
+    </div>
+    <div class="card" data-search="infinite grid infinite grid #66 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Infinite Grid Infinite Grid</span><span class="num">#66</span></div>
+    </div>
+    <div class="card" data-search="letter glitch letter glitch #67 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Letter Glitch Letter Glitch</span><span class="num">#67</span></div>
+    </div>
+    <div class="card" data-search="liquid glass liquid glass demo #68 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Liquid Glass Liquid Glass Demo</span><span class="num">#68</span></div>
+    </div>
+    <div class="card" data-search="liquid glass liquid glass #69 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Liquid Glass Liquid Glass</span><span class="num">#69</span></div>
+    </div>
+    <div class="card" data-search="moving grid moving grid #70 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Moving Grid Moving Grid</span><span class="num">#70</span></div>
+    </div>
+    <div class="card" data-search="noise noise #71 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Noise Noise</span><span class="num">#71</span></div>
+    </div>
+    <div class="card" data-search="pattern pattern craft interface #72 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pattern Pattern Craft Interface</span><span class="num">#72</span></div>
+    </div>
+    <div class="card" data-search="form pattern #73 background animations">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Form Pattern</span><span class="num">#73</span></div>
+    </div>
+</div>
+<script>
+const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
+</script>
 </body>
 </html>

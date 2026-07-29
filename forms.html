@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forms — Component Catalog</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
+  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
+  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
+  .search:focus { outline: none; border-color: #0066FF; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
+  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
+  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Forms <span style="color:#555;font-size:0.8rem">(40)</span></h1>
+  <a href="index.html">← All Categories</a>
+  <input class="search" type="text" placeholder="Search Forms..." id="search">
+</div>
+<div class="grid" id="grid">
+    <div class="card" data-search="label #01 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Label</span><span class="num">#01</span></div>
+    </div>
+    <div class="card" data-search="form #02 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Form</span><span class="num">#02</span></div>
+    </div>
+    <div class="card" data-search="onboarding demo #03 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Onboarding Demo</span><span class="num">#03</span></div>
+    </div>
+    <div class="card" data-search="onboarding #04 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Onboarding</span><span class="num">#04</span></div>
+    </div>
+    <div class="card" data-search="field #05 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field</span><span class="num">#05</span></div>
+    </div>
+    <div class="card" data-search="fieldset #06 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Fieldset</span><span class="num">#06</span></div>
+    </div>
+    <div class="card" data-search="field 1 #07 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 1</span><span class="num">#07</span></div>
+    </div>
+    <div class="card" data-search="field 10 #08 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 10</span><span class="num">#08</span></div>
+    </div>
+    <div class="card" data-search="field 11 #09 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 11</span><span class="num">#09</span></div>
+    </div>
+    <div class="card" data-search="field 12 #10 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 12</span><span class="num">#10</span></div>
+    </div>
+    <div class="card" data-search="field 13 #11 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 13</span><span class="num">#11</span></div>
+    </div>
+    <div class="card" data-search="field 14 #12 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 14</span><span class="num">#12</span></div>
+    </div>
+    <div class="card" data-search="field 15 #13 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 15</span><span class="num">#13</span></div>
+    </div>
+    <div class="card" data-search="field 16 #14 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 16</span><span class="num">#14</span></div>
+    </div>
+    <div class="card" data-search="field 17 #15 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 17</span><span class="num">#15</span></div>
+    </div>
+    <div class="card" data-search="field 18 #16 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 18</span><span class="num">#16</span></div>
+    </div>
+    <div class="card" data-search="field 2 #17 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 2</span><span class="num">#17</span></div>
+    </div>
+    <div class="card" data-search="field 3 #18 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 3</span><span class="num">#18</span></div>
+    </div>
+    <div class="card" data-search="field 4 #19 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 4</span><span class="num">#19</span></div>
+    </div>
+    <div class="card" data-search="field 5 #20 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 5</span><span class="num">#20</span></div>
+    </div>
+    <div class="card" data-search="field 6 #21 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 6</span><span class="num">#21</span></div>
+    </div>
+    <div class="card" data-search="field 7 #22 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 7</span><span class="num">#22</span></div>
+    </div>
+    <div class="card" data-search="field 8 #23 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 8</span><span class="num">#23</span></div>
+    </div>
+    <div class="card" data-search="field 9 #24 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Field 9</span><span class="num">#24</span></div>
+    </div>
+    <div class="card" data-search="fieldset 1 #25 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Fieldset 1</span><span class="num">#25</span></div>
+    </div>
+    <div class="card" data-search="form 1 #26 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Form 1</span><span class="num">#26</span></div>
+    </div>
+    <div class="card" data-search="form 2 #27 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Form 2</span><span class="num">#27</span></div>
+    </div>
+    <div class="card" data-search="fieldset #28 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Fieldset</span><span class="num">#28</span></div>
+    </div>
+    <div class="card" data-search="label #29 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Label</span><span class="num">#29</span></div>
+    </div>
+    <div class="card" data-search="login login #30 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Login Login</span><span class="num">#30</span></div>
+    </div>
+    <div class="card" data-search="login login2 #31 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Login Login2</span><span class="num">#31</span></div>
+    </div>
+    <div class="card" data-search="login login3 #32 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Login Login3</span><span class="num">#32</span></div>
+    </div>
+    <div class="card" data-search="login login4 #33 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Login Login4</span><span class="num">#33</span></div>
+    </div>
+    <div class="card" data-search="login login5 #34 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Login Login5</span><span class="num">#34</span></div>
+    </div>
+    <div class="card" data-search="retro style form retroform #35 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Retro Style Form Retroform</span><span class="num">#35</span></div>
+    </div>
+    <div class="card" data-search="retro style form retroform #36 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Retro Style Form Retroform</span><span class="num">#36</span></div>
+    </div>
+    <div class="card" data-search="signin signin1 #37 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Signin Signin1</span><span class="num">#37</span></div>
+    </div>
+    <div class="card" data-search="signin signin2 #38 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Signin Signin2</span><span class="num">#38</span></div>
+    </div>
+    <div class="card" data-search="signin signin3 #39 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Signin Signin3</span><span class="num">#39</span></div>
+    </div>
+    <div class="card" data-search="signin signin4 #40 forms">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Signin Signin4</span><span class="num">#40</span></div>
+    </div>
+</div>
+<script>
+const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
+</script>
+</body>
+</html>

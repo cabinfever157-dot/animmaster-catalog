@@ -215,8 +215,17 @@ def categorize_hyperui(filename):
         return "Display"
     
     # Navigation
-    if any(x in name for x in ["breadcrumb", "vertical-menu", "footer", "header", "navbar"]):
+    if any(x in name for x in ["breadcrumb", "vertical-menu", "footer", "header", "navbar",
+                              "dropdown", "side-menu", "pagination", "skip-link"]):
         return "Navigation Menus"
+    
+    # Forms
+    if any(x in name for x in ["contact-form", "newsletter-signup", "signup"]):
+        return "Forms"
+    
+    # Cards
+    if "pricing" in name or "cart" in name:
+        return "Cards"
     
     # Hero
     if "hero" in name:
@@ -553,6 +562,44 @@ def categorize(filename, filepath, lib):
         return "Buttons"
     if any(x in n for x in ["nav", "menu", "breadcrumb", "pagination", "sidebar", "dock", "dropdown"]):
         return "Navigation Menus"
+    
+    # ── Additional SeraUI / HyperUI / DaisyUI patterns ──
+    if any(x in n for x in ["sidebar", "side-menu", "vertical-menu"]):
+        return "Navigation Menus"
+    if any(x in n for x in ["tabs", "collapse", "mask", "collapsible"]):
+        return "Layout"
+    if any(x in n for x in ["table", "tree", "stat"]):
+        return "Display"
+    if "fab" in n:
+        return "Navigation Menus"
+    if "pricing" in n:
+        return "Cards"
+    if "cart" in n:
+        return "Display"
+    if any(x in n for x in ["contact-form", "newsletter-signup", "signup"]):
+        return "Forms"
+    if "empty" in n:
+        return "Feedback"
+    if "logo" in n:
+        return "Display"
+    if "combo-box" in n or "combobox" in n:
+        return "Inputs"
+    if "prompt" in n and "input" not in n:
+        return "Forms"
+    if "amazongift" in n or "colorpalette" in n:
+        return "Display"
+    if "animated-tags" in n:
+        return "Layout"
+    if "animated-file-upload" in n:
+        return "Inputs"
+    if "ai-branch" in n:
+        return "Display"
+    if "authentication" in n:
+        return "Forms"
+    if "install" in n:
+        return None  # skip installation files
+    if "standalone" in n or "component-template" in n or "screen-slide-template" in n or "walkthroughcomposition" in n:
+        return "Uncategorized"
     
     return "Uncategorized"
 

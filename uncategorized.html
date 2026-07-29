@@ -2,133 +2,1103 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Uncategorized - Animation Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uncategorized — Component Catalog</title>
 <style>
-:root { --bg:#0B0F19; --accent:#0066FF; --card:#131722; --border:#1e2530; --text:#e2e8f0; --muted:#64748b; }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1400px;margin:0 auto;padding:0 24px}
-.header{position:sticky;top:0;z-index:100;background:rgba(11,15,25,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
-.header .container{display:flex;align-items:center;justify-content:space-between}
-.header h1{font-size:20px;font-weight:700;letter-spacing:-.5px}
-.header h1 a{color:var(--text);text-decoration:none}
-.header .nav{display:flex;gap:20px;flex-wrap:wrap}
-.header .nav a{color:var(--muted);font-size:14px;text-decoration:none;transition:color .2s}
-.header .nav a:hover{color:var(--accent);text-decoration:none}
-.cat-header{padding:48px 0 24px}
-.cat-header h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
-.cat-header p{color:var(--muted);font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:24px 0 80px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s,border-color .2s;position:relative}
-.card:hover{transform:translateY(-2px);border-color:var(--accent)}
-.card-video-wrap{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#0f172a,#1e2530);overflow:hidden;display:flex;align-items:center;justify-content:center}
-.card-preview-placeholder{color:var(--muted);font-size:12px;text-align:center;padding:20px}
-.card-number{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.75);color:var(--accent);font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;z-index:2;letter-spacing:.5px}
-.card-info{padding:12px 16px}
-.card-info h3{font-size:14px;font-weight:600;line-height:1.3;color:var(--text);word-break:break-word}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:24px 0 80px}
-.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px 24px;transition:all .2s;display:block;text-decoration:none}
-.cat-card:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
-.cat-card h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
-.cat-card .count{font-size:14px;color:var(--accent);font-weight:600}
-.cat-card .desc{font-size:13px;color:var(--muted);margin-top:8px}
-.hero{padding:64px 0 32px;text-align:center}
-.hero h2{font-size:48px;font-weight:900;letter-spacing:-1.5px;margin-bottom:12px;background:linear-gradient(135deg,#fff,#64748b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{color:var(--muted);font-size:18px;max-width:600px;margin:0 auto}
-.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.cat-grid{grid-template-columns:1fr}.hero h2{font-size:32px}.header .nav{display:none}}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
+  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
+  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
+  .search:focus { outline: none; border-color: #0066FF; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
+  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
+  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
 <body>
-<div class="header"><div class="container">
-<h1><a href="index.html">Animation Catalog</a></h1>
-<nav class="nav">
-<a href="scroll-animation.html">Scroll</a>
-<a href="hero-animations.html">Hero</a>
-<a href="sliders.html">Sliders</a>
-<a href="navigation-menus.html">Navigation</a>
-<a href="hover-effects.html">Hover</a>
-<a href="mouse-effects.html">Mouse</a>
-<a href="webgl-threejs.html">WebGL</a>
-<a href="text-animations.html">Text</a>
-<a href="page-transitions.html">Transitions</a>
-<a href="svg-animations.html">SVG</a>
-<a href="background-animations.html">Background</a>
-<a href="grid-animations.html">Grid</a>
-<a href="physics-effects.html">Physics</a>
-<a href="3d-animation.html">3D</a>
-<a href="buttons.html">Buttons</a>
-<a href="cinematic-intros.html">Intros</a>
-<a href="uncategorized.html">Uncategorized</a>
-</nav>
-</div></div>
-<div class="container">
-<div class="cat-header">
-<h2>Uncategorized</h2>
-<p>8 components</p>
+<div class="header">
+  <h1>Uncategorized <span style="color:#555;font-size:0.8rem">(266)</span></h1>
+  <a href="index.html">← All Categories</a>
+  <input class="search" type="text" placeholder="Search Uncategorized..." id="search">
 </div>
-<div class="grid">
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Uncategorized #01</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
+<div class="grid" id="grid">
+    <div class="card" data-search="sidebar #01 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Sidebar</span><span class="num">#01</span></div>
+    </div>
+    <div class="card" data-search="tabs #02 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Tabs</span><span class="num">#02</span></div>
+    </div>
+    <div class="card" data-search="edge #03 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Edge</span><span class="num">#03</span></div>
+    </div>
+    <div class="card" data-search="list #04 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">List</span><span class="num">#04</span></div>
+    </div>
+    <div class="card" data-search="table #05 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Table</span><span class="num">#05</span></div>
+    </div>
+    <div class="card" data-search="index #06 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Index</span><span class="num">#06</span></div>
+    </div>
+    <div class="card" data-search="menu #07 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Menu</span><span class="num">#07</span></div>
+    </div>
+    <div class="card" data-search="tree #08 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Tree</span><span class="num">#08</span></div>
+    </div>
+    <div class="card" data-search="grid #09 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Grid</span><span class="num">#09</span></div>
+    </div>
+    <div class="card" data-search="pointer highlight #10 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pointer Highlight</span><span class="num">#10</span></div>
+    </div>
+    <div class="card" data-search="agent #11 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Agent</span><span class="num">#11</span></div>
+    </div>
+    <div class="card" data-search="ai instructions demo #12 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Ai Instructions Demo</span><span class="num">#12</span></div>
+    </div>
+    <div class="card" data-search="ai instructions #13 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">AI Instructions</span><span class="num">#13</span></div>
+    </div>
+    <div class="card" data-search="artifact #14 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Artifact</span><span class="num">#14</span></div>
+    </div>
+    <div class="card" data-search="attachments #15 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Attachments</span><span class="num">#15</span></div>
+    </div>
+    <div class="card" data-search="authentication 01 #16 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Authentication 01</span><span class="num">#16</span></div>
+    </div>
+    <div class="card" data-search="background texture client #17 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Background Texture Client</span><span class="num">#17</span></div>
+    </div>
+    <div class="card" data-search="bg image texture demo #18 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Bg Image Texture Demo</span><span class="num">#18</span></div>
+    </div>
+    <div class="card" data-search="bg image texture #19 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Bg Image Texture</span><span class="num">#19</span></div>
+    </div>
+    <div class="card" data-search="block chunk #20 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Block Chunk</span><span class="num">#20</span></div>
+    </div>
+    <div class="card" data-search="block display #21 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Block Display</span><span class="num">#21</span></div>
+    </div>
+    <div class="card" data-search="block preview #22 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Block Preview</span><span class="num">#22</span></div>
+    </div>
+    <div class="card" data-search="block toolbar #23 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Block Toolbar</span><span class="num">#23</span></div>
+    </div>
+    <div class="card" data-search="block wrapper #24 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Block Wrapper</span><span class="num">#24</span></div>
+    </div>
+    <div class="card" data-search="chain of thought #25 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Chain Of Thought</span><span class="num">#25</span></div>
+    </div>
+    <div class="card" data-search="checkpoint #26 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Checkpoint</span><span class="num">#26</span></div>
+    </div>
+    <div class="card" data-search="commit #27 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Commit</span><span class="num">#27</span></div>
+    </div>
+    <div class="card" data-search="confirmation #28 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Confirmation</span><span class="num">#28</span></div>
+    </div>
+    <div class="card" data-search="connection #29 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Connection</span><span class="num">#29</span></div>
+    </div>
+    <div class="card" data-search="context #30 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Context</span><span class="num">#30</span></div>
+    </div>
+    <div class="card" data-search="controls #31 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Controls</span><span class="num">#31</span></div>
+    </div>
+    <div class="card" data-search="conversation #32 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Conversation</span><span class="num">#32</span></div>
+    </div>
+    <div class="card" data-search="feature section #33 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Feature Section</span><span class="num">#33</span></div>
+    </div>
+    <div class="card" data-search="icons #34 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Icons</span><span class="num">#34</span></div>
+    </div>
+    <div class="card" data-search="image #35 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Image</span><span class="num">#35</span></div>
+    </div>
+    <div class="card" data-search="inline citation #36 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Inline Citation</span><span class="num">#36</span></div>
+    </div>
+    <div class="card" data-search="intro disclosure demo #37 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Intro Disclosure Demo</span><span class="num">#37</span></div>
+    </div>
+    <div class="card" data-search="intro disclosure #38 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Intro Disclosure</span><span class="num">#38</span></div>
+    </div>
+    <div class="card" data-search="jsx preview #39 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Jsx Preview</span><span class="num">#39</span></div>
+    </div>
+    <div class="card" data-search="list #40 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">List</span><span class="num">#40</span></div>
+    </div>
+    <div class="card" data-search="message #41 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Message</span><span class="num">#41</span></div>
+    </div>
+    <div class="card" data-search="neumorph eyebrow demo #42 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Neumorph Eyebrow Demo</span><span class="num">#42</span></div>
+    </div>
+    <div class="card" data-search="neumorph eyebrow #43 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Neumorph Eyebrow</span><span class="num">#43</span></div>
+    </div>
+    <div class="card" data-search="node #44 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Node</span><span class="num">#44</span></div>
+    </div>
+    <div class="card" data-search="persona #45 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Persona</span><span class="num">#45</span></div>
+    </div>
+    <div class="card" data-search="plan #46 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Plan</span><span class="num">#46</span></div>
+    </div>
+    <div class="card" data-search="prompt library demo #47 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Prompt Library Demo</span><span class="num">#47</span></div>
+    </div>
+    <div class="card" data-search="prompt library #48 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Prompt Library</span><span class="num">#48</span></div>
+    </div>
+    <div class="card" data-search="providers #49 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Providers</span><span class="num">#49</span></div>
+    </div>
+    <div class="card" data-search="queue #50 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Queue</span><span class="num">#50</span></div>
+    </div>
+    <div class="card" data-search="reasoning #51 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Reasoning</span><span class="num">#51</span></div>
+    </div>
+    <div class="card" data-search="sandbox #52 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Sandbox</span><span class="num">#52</span></div>
+    </div>
+    <div class="card" data-search="schema display #53 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Schema Display</span><span class="num">#53</span></div>
+    </div>
+    <div class="card" data-search="snippet #54 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Snippet</span><span class="num">#54</span></div>
+    </div>
+    <div class="card" data-search="sources #55 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Sources</span><span class="num">#55</span></div>
+    </div>
+    <div class="card" data-search="suggestion #56 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Suggestion</span><span class="num">#56</span></div>
+    </div>
+    <div class="card" data-search="task #57 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Task</span><span class="num">#57</span></div>
+    </div>
+    <div class="card" data-search="test results #58 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Test Results</span><span class="num">#58</span></div>
+    </div>
+    <div class="card" data-search="texture overlay demo #59 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Texture Overlay Demo</span><span class="num">#59</span></div>
+    </div>
+    <div class="card" data-search="texture overlay #60 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Texture Overlay</span><span class="num">#60</span></div>
+    </div>
+    <div class="card" data-search="texture wrapper #61 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Texture Wrapper</span><span class="num">#61</span></div>
+    </div>
+    <div class="card" data-search="timer demo #62 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Timer Demo</span><span class="num">#62</span></div>
+    </div>
+    <div class="card" data-search="timer #63 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Timer</span><span class="num">#63</span></div>
+    </div>
+    <div class="card" data-search="tool #64 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Tool</span><span class="num">#64</span></div>
+    </div>
+    <div class="card" data-search="toolbar #65 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Toolbar</span><span class="num">#65</span></div>
+    </div>
+    <div class="card" data-search="transcription #66 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Transcription</span><span class="num">#66</span></div>
+    </div>
+    <div class="card" data-search="ai branch #67 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">AI Branch</span><span class="num">#67</span></div>
+    </div>
+    <div class="card" data-search="animated file upload #68 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Animated File Upload</span><span class="num">#68</span></div>
+    </div>
+    <div class="card" data-search="animated tags #69 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Animated Tags</span><span class="num">#69</span></div>
+    </div>
+    <div class="card" data-search="dropdown 1 #70 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dropdown 1</span><span class="num">#70</span></div>
+    </div>
+    <div class="card" data-search="dropdown 1 #71 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dropdown 1</span><span class="num">#71</span></div>
+    </div>
+    <div class="card" data-search="dropdown 2 #72 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dropdown 2</span><span class="num">#72</span></div>
+    </div>
+    <div class="card" data-search="dropdown 2 #73 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dropdown 2</span><span class="num">#73</span></div>
+    </div>
+    <div class="card" data-search="dropdown 3 #74 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dropdown 3</span><span class="num">#74</span></div>
+    </div>
+    <div class="card" data-search="dropdown 3 #75 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Dropdown 3</span><span class="num">#75</span></div>
+    </div>
+    <div class="card" data-search="pagination 1 #76 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pagination 1</span><span class="num">#76</span></div>
+    </div>
+    <div class="card" data-search="pagination 1 #77 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pagination 1</span><span class="num">#77</span></div>
+    </div>
+    <div class="card" data-search="pagination 2 #78 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pagination 2</span><span class="num">#78</span></div>
+    </div>
+    <div class="card" data-search="pagination 2 #79 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pagination 2</span><span class="num">#79</span></div>
+    </div>
+    <div class="card" data-search="pagination 3 #80 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pagination 3</span><span class="num">#80</span></div>
+    </div>
+    <div class="card" data-search="pagination 3 #81 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pagination 3</span><span class="num">#81</span></div>
+    </div>
+    <div class="card" data-search="side menu 1 #82 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Side Menu 1</span><span class="num">#82</span></div>
+    </div>
+    <div class="card" data-search="side menu 1 #83 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Side Menu 1</span><span class="num">#83</span></div>
+    </div>
+    <div class="card" data-search="side menu 2 #84 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Side Menu 2</span><span class="num">#84</span></div>
+    </div>
+    <div class="card" data-search="side menu 2 #85 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Side Menu 2</span><span class="num">#85</span></div>
+    </div>
+    <div class="card" data-search="carts 1 #86 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Carts 1</span><span class="num">#86</span></div>
+    </div>
+    <div class="card" data-search="carts 1 #87 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Carts 1</span><span class="num">#87</span></div>
+    </div>
+    <div class="card" data-search="carts 2 #88 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Carts 2</span><span class="num">#88</span></div>
+    </div>
+    <div class="card" data-search="carts 2 #89 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Carts 2</span><span class="num">#89</span></div>
+    </div>
+    <div class="card" data-search="carts 3 #90 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Carts 3</span><span class="num">#90</span></div>
+    </div>
+    <div class="card" data-search="carts 3 #91 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Carts 3</span><span class="num">#91</span></div>
+    </div>
+    <div class="card" data-search="contact forms 1 #92 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Contact Forms 1</span><span class="num">#92</span></div>
+    </div>
+    <div class="card" data-search="contact forms 1 #93 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Contact Forms 1</span><span class="num">#93</span></div>
+    </div>
+    <div class="card" data-search="contact forms 2 #94 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Contact Forms 2</span><span class="num">#94</span></div>
+    </div>
+    <div class="card" data-search="contact forms 2 #95 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Contact Forms 2</span><span class="num">#95</span></div>
+    </div>
+    <div class="card" data-search="contact forms 3 #96 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Contact Forms 3</span><span class="num">#96</span></div>
+    </div>
+    <div class="card" data-search="contact forms 3 #97 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Contact Forms 3</span><span class="num">#97</span></div>
+    </div>
+    <div class="card" data-search="contact forms 4 #98 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Contact Forms 4</span><span class="num">#98</span></div>
+    </div>
+    <div class="card" data-search="contact forms 4 #99 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Contact Forms 4</span><span class="num">#99</span></div>
+    </div>
+    <div class="card" data-search="contact forms 5 #100 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Contact Forms 5</span><span class="num">#100</span></div>
+    </div>
+    <div class="card" data-search="contact forms 5 #101 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Contact Forms 5</span><span class="num">#101</span></div>
+    </div>
+    <div class="card" data-search="newsletter signup 1 #102 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Newsletter Signup 1</span><span class="num">#102</span></div>
+    </div>
+    <div class="card" data-search="newsletter signup 1 #103 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Newsletter Signup 1</span><span class="num">#103</span></div>
+    </div>
+    <div class="card" data-search="newsletter signup 2 #104 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Newsletter Signup 2</span><span class="num">#104</span></div>
+    </div>
+    <div class="card" data-search="newsletter signup 2 #105 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Newsletter Signup 2</span><span class="num">#105</span></div>
+    </div>
+    <div class="card" data-search="pricing 1 #106 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pricing 1</span><span class="num">#106</span></div>
+    </div>
+    <div class="card" data-search="pricing 2 #107 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Pricing 2</span><span class="num">#107</span></div>
+    </div>
+    <div class="card" data-search="component 107 #108 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 107</span><span class="num">#108</span></div>
+    </div>
+    <div class="card" data-search="component 109 #109 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 109</span><span class="num">#109</span></div>
+    </div>
+    <div class="card" data-search="component 110 #110 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 110</span><span class="num">#110</span></div>
+    </div>
+    <div class="card" data-search="component 150 #111 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 150</span><span class="num">#111</span></div>
+    </div>
+    <div class="card" data-search="component 216 #112 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 216</span><span class="num">#112</span></div>
+    </div>
+    <div class="card" data-search="component 217 #113 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 217</span><span class="num">#113</span></div>
+    </div>
+    <div class="card" data-search="component 267 #114 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 267</span><span class="num">#114</span></div>
+    </div>
+    <div class="card" data-search="component 268 #115 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 268</span><span class="num">#115</span></div>
+    </div>
+    <div class="card" data-search="component 269 #116 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 269</span><span class="num">#116</span></div>
+    </div>
+    <div class="card" data-search="component 270 #117 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 270</span><span class="num">#117</span></div>
+    </div>
+    <div class="card" data-search="component 271 #118 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 271</span><span class="num">#118</span></div>
+    </div>
+    <div class="card" data-search="component 272 #119 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 272</span><span class="num">#119</span></div>
+    </div>
+    <div class="card" data-search="component 273 #120 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 273</span><span class="num">#120</span></div>
+    </div>
+    <div class="card" data-search="component 274 #121 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 274</span><span class="num">#121</span></div>
+    </div>
+    <div class="card" data-search="component 275 #122 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 275</span><span class="num">#122</span></div>
+    </div>
+    <div class="card" data-search="component 276 #123 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 276</span><span class="num">#123</span></div>
+    </div>
+    <div class="card" data-search="component 277 #124 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 277</span><span class="num">#124</span></div>
+    </div>
+    <div class="card" data-search="component 278 #125 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 278</span><span class="num">#125</span></div>
+    </div>
+    <div class="card" data-search="component 28 #126 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 28</span><span class="num">#126</span></div>
+    </div>
+    <div class="card" data-search="component 29 #127 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 29</span><span class="num">#127</span></div>
+    </div>
+    <div class="card" data-search="component 302 #128 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 302</span><span class="num">#128</span></div>
+    </div>
+    <div class="card" data-search="component 303 #129 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 303</span><span class="num">#129</span></div>
+    </div>
+    <div class="card" data-search="component 304 #130 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 304</span><span class="num">#130</span></div>
+    </div>
+    <div class="card" data-search="component 311 #131 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 311</span><span class="num">#131</span></div>
+    </div>
+    <div class="card" data-search="component 33 #132 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 33</span><span class="num">#132</span></div>
+    </div>
+    <div class="card" data-search="component 333 #133 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 333</span><span class="num">#133</span></div>
+    </div>
+    <div class="card" data-search="component 334 #134 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 334</span><span class="num">#134</span></div>
+    </div>
+    <div class="card" data-search="component 335 #135 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 335</span><span class="num">#135</span></div>
+    </div>
+    <div class="card" data-search="component 336 #136 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 336</span><span class="num">#136</span></div>
+    </div>
+    <div class="card" data-search="component 337 #137 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 337</span><span class="num">#137</span></div>
+    </div>
+    <div class="card" data-search="component 338 #138 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 338</span><span class="num">#138</span></div>
+    </div>
+    <div class="card" data-search="component 339 #139 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 339</span><span class="num">#139</span></div>
+    </div>
+    <div class="card" data-search="component 340 #140 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 340</span><span class="num">#140</span></div>
+    </div>
+    <div class="card" data-search="component 341 #141 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 341</span><span class="num">#141</span></div>
+    </div>
+    <div class="card" data-search="component 342 #142 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 342</span><span class="num">#142</span></div>
+    </div>
+    <div class="card" data-search="component 343 #143 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 343</span><span class="num">#143</span></div>
+    </div>
+    <div class="card" data-search="component 344 #144 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 344</span><span class="num">#144</span></div>
+    </div>
+    <div class="card" data-search="component 345 #145 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 345</span><span class="num">#145</span></div>
+    </div>
+    <div class="card" data-search="component 346 #146 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 346</span><span class="num">#146</span></div>
+    </div>
+    <div class="card" data-search="component 347 #147 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 347</span><span class="num">#147</span></div>
+    </div>
+    <div class="card" data-search="component 348 #148 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 348</span><span class="num">#148</span></div>
+    </div>
+    <div class="card" data-search="component 349 #149 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 349</span><span class="num">#149</span></div>
+    </div>
+    <div class="card" data-search="component 350 #150 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 350</span><span class="num">#150</span></div>
+    </div>
+    <div class="card" data-search="component 351 #151 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 351</span><span class="num">#151</span></div>
+    </div>
+    <div class="card" data-search="component 352 #152 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 352</span><span class="num">#152</span></div>
+    </div>
+    <div class="card" data-search="component 353 #153 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 353</span><span class="num">#153</span></div>
+    </div>
+    <div class="card" data-search="component 364 #154 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 364</span><span class="num">#154</span></div>
+    </div>
+    <div class="card" data-search="component 365 #155 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 365</span><span class="num">#155</span></div>
+    </div>
+    <div class="card" data-search="component 390 #156 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 390</span><span class="num">#156</span></div>
+    </div>
+    <div class="card" data-search="component 393 #157 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 393</span><span class="num">#157</span></div>
+    </div>
+    <div class="card" data-search="component 394 #158 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 394</span><span class="num">#158</span></div>
+    </div>
+    <div class="card" data-search="component 395 #159 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 395</span><span class="num">#159</span></div>
+    </div>
+    <div class="card" data-search="component 396 #160 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 396</span><span class="num">#160</span></div>
+    </div>
+    <div class="card" data-search="component 397 #161 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 397</span><span class="num">#161</span></div>
+    </div>
+    <div class="card" data-search="component 400 #162 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 400</span><span class="num">#162</span></div>
+    </div>
+    <div class="card" data-search="component 401 #163 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 401</span><span class="num">#163</span></div>
+    </div>
+    <div class="card" data-search="component 402 #164 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 402</span><span class="num">#164</span></div>
+    </div>
+    <div class="card" data-search="component 403 #165 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 403</span><span class="num">#165</span></div>
+    </div>
+    <div class="card" data-search="component 404 #166 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 404</span><span class="num">#166</span></div>
+    </div>
+    <div class="card" data-search="component 405 #167 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 405</span><span class="num">#167</span></div>
+    </div>
+    <div class="card" data-search="component 406 #168 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 406</span><span class="num">#168</span></div>
+    </div>
+    <div class="card" data-search="component 407 #169 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 407</span><span class="num">#169</span></div>
+    </div>
+    <div class="card" data-search="component 408 #170 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 408</span><span class="num">#170</span></div>
+    </div>
+    <div class="card" data-search="component 412 #171 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 412</span><span class="num">#171</span></div>
+    </div>
+    <div class="card" data-search="component 426 #172 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 426</span><span class="num">#172</span></div>
+    </div>
+    <div class="card" data-search="component 427 #173 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 427</span><span class="num">#173</span></div>
+    </div>
+    <div class="card" data-search="component 428 #174 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 428</span><span class="num">#174</span></div>
+    </div>
+    <div class="card" data-search="component 429 #175 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 429</span><span class="num">#175</span></div>
+    </div>
+    <div class="card" data-search="component 430 #176 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 430</span><span class="num">#176</span></div>
+    </div>
+    <div class="card" data-search="component 431 #177 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 431</span><span class="num">#177</span></div>
+    </div>
+    <div class="card" data-search="component 432 #178 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 432</span><span class="num">#178</span></div>
+    </div>
+    <div class="card" data-search="component 434 #179 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 434</span><span class="num">#179</span></div>
+    </div>
+    <div class="card" data-search="component 435 #180 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 435</span><span class="num">#180</span></div>
+    </div>
+    <div class="card" data-search="component 436 #181 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 436</span><span class="num">#181</span></div>
+    </div>
+    <div class="card" data-search="component 438 #182 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 438</span><span class="num">#182</span></div>
+    </div>
+    <div class="card" data-search="component 442 #183 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 442</span><span class="num">#183</span></div>
+    </div>
+    <div class="card" data-search="component 443 #184 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 443</span><span class="num">#184</span></div>
+    </div>
+    <div class="card" data-search="component 444 #185 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 444</span><span class="num">#185</span></div>
+    </div>
+    <div class="card" data-search="component 445 #186 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 445</span><span class="num">#186</span></div>
+    </div>
+    <div class="card" data-search="component 446 #187 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 446</span><span class="num">#187</span></div>
+    </div>
+    <div class="card" data-search="component 447 #188 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 447</span><span class="num">#188</span></div>
+    </div>
+    <div class="card" data-search="component 448 #189 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 448</span><span class="num">#189</span></div>
+    </div>
+    <div class="card" data-search="component 449 #190 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 449</span><span class="num">#190</span></div>
+    </div>
+    <div class="card" data-search="component 450 #191 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 450</span><span class="num">#191</span></div>
+    </div>
+    <div class="card" data-search="component 451 #192 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 451</span><span class="num">#192</span></div>
+    </div>
+    <div class="card" data-search="component 452 #193 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 452</span><span class="num">#193</span></div>
+    </div>
+    <div class="card" data-search="component 453 #194 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 453</span><span class="num">#194</span></div>
+    </div>
+    <div class="card" data-search="component 457 #195 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 457</span><span class="num">#195</span></div>
+    </div>
+    <div class="card" data-search="component 464 #196 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 464</span><span class="num">#196</span></div>
+    </div>
+    <div class="card" data-search="component 466 #197 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 466</span><span class="num">#197</span></div>
+    </div>
+    <div class="card" data-search="component 467 #198 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 467</span><span class="num">#198</span></div>
+    </div>
+    <div class="card" data-search="component 468 #199 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 468</span><span class="num">#199</span></div>
+    </div>
+    <div class="card" data-search="component 469 #200 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 469</span><span class="num">#200</span></div>
+    </div>
+    <div class="card" data-search="component 470 #201 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 470</span><span class="num">#201</span></div>
+    </div>
+    <div class="card" data-search="component 471 #202 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 471</span><span class="num">#202</span></div>
+    </div>
+    <div class="card" data-search="component 474 #203 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 474</span><span class="num">#203</span></div>
+    </div>
+    <div class="card" data-search="component 475 #204 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 475</span><span class="num">#204</span></div>
+    </div>
+    <div class="card" data-search="component 476 #205 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 476</span><span class="num">#205</span></div>
+    </div>
+    <div class="card" data-search="component 479 #206 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 479</span><span class="num">#206</span></div>
+    </div>
+    <div class="card" data-search="component 513 #207 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 513</span><span class="num">#207</span></div>
+    </div>
+    <div class="card" data-search="component 514 #208 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 514</span><span class="num">#208</span></div>
+    </div>
+    <div class="card" data-search="component 515 #209 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 515</span><span class="num">#209</span></div>
+    </div>
+    <div class="card" data-search="component 518 #210 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 518</span><span class="num">#210</span></div>
+    </div>
+    <div class="card" data-search="component 519 #211 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 519</span><span class="num">#211</span></div>
+    </div>
+    <div class="card" data-search="component 522 #212 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 522</span><span class="num">#212</span></div>
+    </div>
+    <div class="card" data-search="component 523 #213 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 523</span><span class="num">#213</span></div>
+    </div>
+    <div class="card" data-search="component 524 #214 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 524</span><span class="num">#214</span></div>
+    </div>
+    <div class="card" data-search="component 525 #215 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 525</span><span class="num">#215</span></div>
+    </div>
+    <div class="card" data-search="component 526 #216 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 526</span><span class="num">#216</span></div>
+    </div>
+    <div class="card" data-search="component 528 #217 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 528</span><span class="num">#217</span></div>
+    </div>
+    <div class="card" data-search="component 529 #218 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 529</span><span class="num">#218</span></div>
+    </div>
+    <div class="card" data-search="component 530 #219 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 530</span><span class="num">#219</span></div>
+    </div>
+    <div class="card" data-search="component 531 #220 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 531</span><span class="num">#220</span></div>
+    </div>
+    <div class="card" data-search="component 532 #221 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 532</span><span class="num">#221</span></div>
+    </div>
+    <div class="card" data-search="component 533 #222 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 533</span><span class="num">#222</span></div>
+    </div>
+    <div class="card" data-search="component 534 #223 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 534</span><span class="num">#223</span></div>
+    </div>
+    <div class="card" data-search="component 535 #224 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 535</span><span class="num">#224</span></div>
+    </div>
+    <div class="card" data-search="component 536 #225 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 536</span><span class="num">#225</span></div>
+    </div>
+    <div class="card" data-search="component 537 #226 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 537</span><span class="num">#226</span></div>
+    </div>
+    <div class="card" data-search="component 538 #227 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 538</span><span class="num">#227</span></div>
+    </div>
+    <div class="card" data-search="component 539 #228 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 539</span><span class="num">#228</span></div>
+    </div>
+    <div class="card" data-search="component 540 #229 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 540</span><span class="num">#229</span></div>
+    </div>
+    <div class="card" data-search="component 541 #230 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 541</span><span class="num">#230</span></div>
+    </div>
+    <div class="card" data-search="component 542 #231 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 542</span><span class="num">#231</span></div>
+    </div>
+    <div class="card" data-search="component 544 #232 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 544</span><span class="num">#232</span></div>
+    </div>
+    <div class="card" data-search="component 555 #233 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 555</span><span class="num">#233</span></div>
+    </div>
+    <div class="card" data-search="component 556 #234 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 556</span><span class="num">#234</span></div>
+    </div>
+    <div class="card" data-search="component 557 #235 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 557</span><span class="num">#235</span></div>
+    </div>
+    <div class="card" data-search="component 558 #236 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 558</span><span class="num">#236</span></div>
+    </div>
+    <div class="card" data-search="component 559 #237 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 559</span><span class="num">#237</span></div>
+    </div>
+    <div class="card" data-search="component 560 #238 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 560</span><span class="num">#238</span></div>
+    </div>
+    <div class="card" data-search="component 562 #239 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 562</span><span class="num">#239</span></div>
+    </div>
+    <div class="card" data-search="component 563 #240 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 563</span><span class="num">#240</span></div>
+    </div>
+    <div class="card" data-search="component 569 #241 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 569</span><span class="num">#241</span></div>
+    </div>
+    <div class="card" data-search="component 73 #242 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component 73</span><span class="num">#242</span></div>
+    </div>
+    <div class="card" data-search="empty #243 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Empty</span><span class="num">#243</span></div>
+    </div>
+    <div class="card" data-search="logo #244 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Logo</span><span class="num">#244</span></div>
+    </div>
+    <div class="card" data-search="empty 1 #245 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Empty 1</span><span class="num">#245</span></div>
+    </div>
+    <div class="card" data-search="toolbar 1 #246 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Toolbar 1</span><span class="num">#246</span></div>
+    </div>
+    <div class="card" data-search="tree #247 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Tree</span><span class="num">#247</span></div>
+    </div>
+    <div class="card" data-search="collapse #248 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Collapse</span><span class="num">#248</span></div>
+    </div>
+    <div class="card" data-search="fab #249 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Fab</span><span class="num">#249</span></div>
+    </div>
+    <div class="card" data-search="mask #250 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Mask</span><span class="num">#250</span></div>
+    </div>
+    <div class="card" data-search="landing page #251 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Landing Page</span><span class="num">#251</span></div>
+    </div>
+    <div class="card" data-search="landing components feature #252 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Landing Components Feature</span><span class="num">#252</span></div>
+    </div>
+    <div class="card" data-search="landing components icons #253 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Landing Components Icons</span><span class="num">#253</span></div>
+    </div>
+    <div class="card" data-search="amazongift amazongift #254 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Amazongift Amazongift</span><span class="num">#254</span></div>
+    </div>
+    <div class="card" data-search="colorpalette colorpalette #255 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Colorpalette Colorpalette</span><span class="num">#255</span></div>
+    </div>
+    <div class="card" data-search="combo box combo box #256 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Combo Box Combo Box</span><span class="num">#256</span></div>
+    </div>
+    <div class="card" data-search="combo box combo box #257 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Combo Box Combo Box</span><span class="num">#257</span></div>
+    </div>
+    <div class="card" data-search="installation install #258 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Installation Install</span><span class="num">#258</span></div>
+    </div>
+    <div class="card" data-search="prompt prompt #259 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Prompt Prompt</span><span class="num">#259</span></div>
+    </div>
+    <div class="card" data-search="prompt prompt2 #260 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Prompt Prompt2</span><span class="num">#260</span></div>
+    </div>
+    <div class="card" data-search="prompt v0 #261 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Prompt V0</span><span class="num">#261</span></div>
+    </div>
+    <div class="card" data-search="standalone [component] page #262 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Standalone [component] Page</span><span class="num">#262</span></div>
+    </div>
+    <div class="card" data-search="component template #263 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Component Template</span><span class="num">#263</span></div>
+    </div>
+    <div class="card" data-search="walkthroughcomposition #264 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Walkthroughcomposition</span><span class="num">#264</span></div>
+    </div>
+    <div class="card" data-search="screen slide template #265 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Screen Slide Template</span><span class="num">#265</span></div>
+    </div>
+    <div class="card" data-search="auth layout #266 uncategorized">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Auth Layout</span><span class="num">#266</span></div>
+    </div>
 </div>
-<div class="card-info"><h3>Sidebar</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Uncategorized #02</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Tabs</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Uncategorized #03</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Edge</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Uncategorized #04</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>List</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Uncategorized #05</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Table</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Uncategorized #06</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Index</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Uncategorized #07</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Menu</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Uncategorized #08</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Tree</h3></div>
-</div>
-</div>
-</div>
-<div class="footer"><div class="container">Animation Effects Catalog &middot; 8 components</div></div>
+<script>
+const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
+</script>
 </body>
 </html>

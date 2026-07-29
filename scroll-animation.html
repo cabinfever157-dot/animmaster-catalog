@@ -2,718 +2,403 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Scroll Animation - Animation Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll Animation — Component Catalog</title>
 <style>
-
-:root { --bg:#0B0F19; --accent:#0066FF; --card:#131722; --border:#1e2530; --text:#e2e8f0; --muted:#64748b; }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1400px;margin:0 auto;padding:0 24px}
-.header{position:sticky;top:0;z-index:100;background:rgba(11,15,25,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
-.header .container{display:flex;align-items:center;justify-content:space-between}
-.header h1{font-size:20px;font-weight:700;letter-spacing:-.5px}
-.header h1 a{color:var(--text);text-decoration:none}
-.header .nav{display:flex;gap:20px;flex-wrap:wrap}
-.header .nav a{color:var(--muted);font-size:14px;text-decoration:none;transition:color .2s}
-.header .nav a:hover{color:var(--accent);text-decoration:none}
-.cat-header{padding:48px 0 24px}
-.cat-header h2{font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
-.cat-header p{color:var(--muted);font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:24px 0 80px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s,border-color .2s;position:relative}
-.card:hover{transform:translateY(-2px);border-color:var(--accent)}
-.card-video-wrap{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
-.card-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-.card-video-wrap iframe{width:100%;height:100%;border:0;display:block}
-.card-number{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.75);color:var(--accent);font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;z-index:2;letter-spacing:.5px}
-.card-info{padding:12px 16px}
-.card-info h3{font-size:14px;font-weight:600;line-height:1.3;color:var(--text);word-break:break-word}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:24px 0 80px}
-.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px 24px;transition:all .2s;display:block;text-decoration:none}
-.cat-card:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
-.cat-card h3{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px}
-.cat-card .count{font-size:14px;color:var(--accent);font-weight:600}
-.cat-card .desc{font-size:13px;color:var(--muted);margin-top:8px}
-.hero{padding:64px 0 32px;text-align:center}
-.hero h2{font-size:48px;font-weight:900;letter-spacing:-1.5px;margin-bottom:12px;background:linear-gradient(135deg,#fff,#64748b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{color:var(--muted);font-size:18px;max-width:600px;margin:0 auto}
-.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.cat-grid{grid-template-columns:1fr}.hero h2{font-size:32px}.header .nav{display:none}}
-
-
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
+  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
+  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
+  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
+  .search:focus { outline: none; border-color: #0066FF; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
+  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
+  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
 <body>
-<div class="header"><div class="container">
-<h1><a href="index.html">Animation Catalog</a></h1>
-<nav class="nav">
-<a href="scroll-animation.html">Scroll</a>
-<a href="hero-animations.html">Hero</a>
-<a href="sliders.html">Sliders</a>
-<a href="navigation-menus.html">Navigation</a>
-<a href="hover-effects.html">Hover</a>
-<a href="mouse-effects.html">Mouse</a>
-<a href="webgl-threejs.html">WebGL</a>
-<a href="text-animations.html">Text</a>
-<a href="page-transitions.html">Transitions</a>
-<a href="svg-animations.html">SVG</a>
-<a href="background-animations.html">Background</a>
-<a href="grid-animations.html">Grid</a>
-<a href="physics-effects.html">Physics</a>
-<a href="3d-animation.html">3D</a>
-<a href="buttons.html">Buttons</a>
-<a href="cinematic-intros.html">Intros</a>
-<a href="uncategorized.html">Uncategorized</a>
-</nav>
-</div></div>
-<div class="container">
-<div class="cat-header">
-<h2>Scroll Animation</h2>
-<p>92 components</p>
-</div>
-<div class="grid">
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #01</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-1-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-1-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Rgb Split Distortion Scroll Effect</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #02</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-2-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-2-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Textclipscroll</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #03</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-3-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-3-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Text Demo</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #04</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-4-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-4-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Fullscreenclipeffect</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #05</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-5-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-5-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Scroll3Dgrid</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #06</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-6-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-6-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Staggered3Dgridanimations</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #07</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-7-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-7-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Crt Like Effect With Vfx Js</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #08</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-8-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-8-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Text Clip Mask On Scroll Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #09</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-9-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-9-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Scroll Transition</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #10</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-10-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-10-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Telescope Zoom</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #11</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-11-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-11-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Gsap Threejs Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #12</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-12-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-12-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Webgl Progressive Blur</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #13</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-13-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-13-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Pixel Scan Effect With Vfx Js</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #14</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-14-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-14-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Vfx Js Scroll Animation</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #15</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-15-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-15-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Containeranimation Splittext</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #16</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-16-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-16-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Sticky Grid Scroll</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #17</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-17-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-17-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Imageexpansiontypography</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #18</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-18-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-18-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>3Dstackmotion</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #19</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-19-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-19-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Connectedgrid</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #20</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-20-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-20-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Loopscrolling</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #21</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-21-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-21-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Scrollbasedlayoutanimations</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #22</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-22-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-22-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Imagepixelloading</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #23</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-23-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-23-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Textrepetitioneffect</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #24</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-24-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-24-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Animated Continuous Sections With Gsap Observer</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #25</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-25-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-25-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Backgroundshift</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #26</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-26-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-26-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Foldingdom Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #27</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-27-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-27-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Animatesvgtextpath Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #28</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-28-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-28-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Fullscreenscroll</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #29</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-29-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-29-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Gsap Pinned Image Mask Reveal On Scroll</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #30</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-30-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-30-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Oneelementscroll</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #31</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-31-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-31-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Tutorial Text Animation</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #32</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-32-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-32-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #33</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-33-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-33-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #34</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-34-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-34-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Dist</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #35</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-35-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-35-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #36</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-36-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-36-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Ingamana Scroll Animation Nextjs</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #37</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-37-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-37-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Ascii Image Reveal Effect</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #38</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-38-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-38-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Maximatherapy Sticky Cards</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #39</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-39-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-39-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #40</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-40-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-40-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #41</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-41-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-41-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #42</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-42-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-42-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #43</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-43-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-43-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #44</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-44-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-44-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Code</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #45</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-45-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-45-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #46</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-46-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-46-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Code</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #47</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-47-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-47-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Code</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #48</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-48-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-48-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Code</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #49</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-49-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-49-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Infinite Scroll With Parallax</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #50</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-50-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-50-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #51</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-51-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-51-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Code</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #52</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-52-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-52-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Code</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #53</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-53-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-53-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #54</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-54-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-54-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Code</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #56</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-56-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-56-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Fall Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #57</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-57-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-57-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Pixel Image Master</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #58</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-58-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-58-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Abstract Cards</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #59</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-59-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-59-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>scroll-59</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #60</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-60-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-60-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Deadspace</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #61</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-61-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-61-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #62</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-62-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-62-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Show Case Effect</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #63</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-63-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-63-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #64</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-64-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-64-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #65</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-65-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-65-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #66</span>
-<video src="https://animmaster-videos.b-cdn.net/files/scroll-66-650.webm" poster="https://animmasterlib.dev/assets/img/scroll-66-500.webp" autoplay muted loop playsinline preload="metadata"></video>
-</div>
-<div class="card-info"><h3>Files</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #67</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Container Scroll Animation</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #68</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Parallax Hero Images</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #69</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Parallax Scroll 2</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #70</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Parallax Scroll</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #71</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Sticky Banner</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #72</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Sticky Scroll Reveal</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #73</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Timeline</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #74</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Marquee</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #75</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Progress</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #76</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Scroll Reveal Paragraph</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #77</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Scrollable Card Stack</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #78</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Application Timelines 1 Dark</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #79</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Application Timelines 1</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #80</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Application Timelines 2 Dark</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #81</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Application Timelines 2</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #82</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Application Timelines 3 Dark</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #83</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Application Timelines 3</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #84</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Countdown</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #85</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Radial Progress</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #86</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Stack</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #87</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Marquee View</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #88</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Marquee Marqueetext</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #89</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Progress View</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #90</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Timeline Timeline2</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #91</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Timeline Timeline3</h3></div>
-</div>
-<div class="card">
-<div class="card-video-wrap">
-<span class="card-number">Scroll #92</span>
-<div class="card-preview-placeholder">Preview unavailable</div>
-</div>
-<div class="card-info"><h3>Scrollprogress</h3></div>
-</div>
-</div>
-</div>
-<div class="footer"><div class="container">Animation Effects Catalog &middot; 92 components across 14 categories</div></div>
+<div class="header">
+  <h1>Scroll Animation <span style="color:#555;font-size:0.8rem">(91)</span></h1>
+  <a href="index.html">← All Categories</a>
+  <input class="search" type="text" placeholder="Search Scroll Animation..." id="search">
+</div>
+<div class="grid" id="grid">
+    <div class="card" data-search="rgb split distortion scroll effect #01 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-1-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-1-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Rgb Split Distortion Scroll Effect</span><span class="num">#01</span></div>
+    </div>
+    <div class="card" data-search="textclipscroll #02 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-2-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-2-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Textclipscroll</span><span class="num">#02</span></div>
+    </div>
+    <div class="card" data-search="text demo #03 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-3-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-3-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Text Demo</span><span class="num">#03</span></div>
+    </div>
+    <div class="card" data-search="fullscreenclipeffect #04 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-4-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-4-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Fullscreenclipeffect</span><span class="num">#04</span></div>
+    </div>
+    <div class="card" data-search="scroll3dgrid #05 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-5-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-5-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Scroll3Dgrid</span><span class="num">#05</span></div>
+    </div>
+    <div class="card" data-search="staggered3dgridanimations #06 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-6-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-6-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Staggered3Dgridanimations</span><span class="num">#06</span></div>
+    </div>
+    <div class="card" data-search="crt like effect with vfx js #07 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-7-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-7-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Crt Like Effect With Vfx Js</span><span class="num">#07</span></div>
+    </div>
+    <div class="card" data-search="text clip mask on scroll master #08 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-8-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-8-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Text Clip Mask On Scroll Master</span><span class="num">#08</span></div>
+    </div>
+    <div class="card" data-search="scroll transition #09 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-9-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-9-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Scroll Transition</span><span class="num">#09</span></div>
+    </div>
+    <div class="card" data-search="telescope zoom #10 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-10-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-10-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Telescope Zoom</span><span class="num">#10</span></div>
+    </div>
+    <div class="card" data-search="gsap threejs master #11 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-11-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-11-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Gsap Threejs Master</span><span class="num">#11</span></div>
+    </div>
+    <div class="card" data-search="webgl progressive blur #12 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-12-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-12-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Webgl Progressive Blur</span><span class="num">#12</span></div>
+    </div>
+    <div class="card" data-search="pixel scan effect with vfx js #13 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-13-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-13-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Pixel Scan Effect With Vfx Js</span><span class="num">#13</span></div>
+    </div>
+    <div class="card" data-search="vfx js scroll animation #14 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-14-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-14-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Vfx Js Scroll Animation</span><span class="num">#14</span></div>
+    </div>
+    <div class="card" data-search="containeranimation splittext #15 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-15-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-15-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Containeranimation Splittext</span><span class="num">#15</span></div>
+    </div>
+    <div class="card" data-search="sticky grid scroll #16 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-16-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-16-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Sticky Grid Scroll</span><span class="num">#16</span></div>
+    </div>
+    <div class="card" data-search="imageexpansiontypography #17 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-17-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-17-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Imageexpansiontypography</span><span class="num">#17</span></div>
+    </div>
+    <div class="card" data-search="3dstackmotion #18 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-18-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-18-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">3Dstackmotion</span><span class="num">#18</span></div>
+    </div>
+    <div class="card" data-search="connectedgrid #19 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-19-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-19-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Connectedgrid</span><span class="num">#19</span></div>
+    </div>
+    <div class="card" data-search="loopscrolling #20 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-20-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-20-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Loopscrolling</span><span class="num">#20</span></div>
+    </div>
+    <div class="card" data-search="scrollbasedlayoutanimations #21 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-21-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-21-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Scrollbasedlayoutanimations</span><span class="num">#21</span></div>
+    </div>
+    <div class="card" data-search="imagepixelloading #22 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-22-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-22-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Imagepixelloading</span><span class="num">#22</span></div>
+    </div>
+    <div class="card" data-search="textrepetitioneffect #23 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-23-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-23-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Textrepetitioneffect</span><span class="num">#23</span></div>
+    </div>
+    <div class="card" data-search="animated continuous sections with gsap observer #24 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-24-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-24-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Animated Continuous Sections With Gsap Observer</span><span class="num">#24</span></div>
+    </div>
+    <div class="card" data-search="backgroundshift #25 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-25-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-25-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Backgroundshift</span><span class="num">#25</span></div>
+    </div>
+    <div class="card" data-search="foldingdom master #26 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-26-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-26-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Foldingdom Master</span><span class="num">#26</span></div>
+    </div>
+    <div class="card" data-search="animatesvgtextpath master #27 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-27-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-27-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Animatesvgtextpath Master</span><span class="num">#27</span></div>
+    </div>
+    <div class="card" data-search="fullscreenscroll #28 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-28-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-28-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Fullscreenscroll</span><span class="num">#28</span></div>
+    </div>
+    <div class="card" data-search="gsap pinned image mask reveal on scroll #29 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-29-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-29-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Gsap Pinned Image Mask Reveal On Scroll</span><span class="num">#29</span></div>
+    </div>
+    <div class="card" data-search="oneelementscroll #30 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-30-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-30-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Oneelementscroll</span><span class="num">#30</span></div>
+    </div>
+    <div class="card" data-search="tutorial text animation #31 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-31-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-31-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Tutorial Text Animation</span><span class="num">#31</span></div>
+    </div>
+    <div class="card" data-search="files #32 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-32-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-32-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#32</span></div>
+    </div>
+    <div class="card" data-search="files #33 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-33-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-33-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#33</span></div>
+    </div>
+    <div class="card" data-search="dist #34 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-34-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-34-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Dist</span><span class="num">#34</span></div>
+    </div>
+    <div class="card" data-search="files #35 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-35-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-35-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#35</span></div>
+    </div>
+    <div class="card" data-search="ingamana scroll animation nextjs #36 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-36-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-36-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Ingamana Scroll Animation Nextjs</span><span class="num">#36</span></div>
+    </div>
+    <div class="card" data-search="ascii image reveal effect #37 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-37-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-37-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Ascii Image Reveal Effect</span><span class="num">#37</span></div>
+    </div>
+    <div class="card" data-search="maximatherapy sticky cards #38 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-38-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-38-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Maximatherapy Sticky Cards</span><span class="num">#38</span></div>
+    </div>
+    <div class="card" data-search="files #39 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-39-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-39-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#39</span></div>
+    </div>
+    <div class="card" data-search="files #40 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-40-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-40-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#40</span></div>
+    </div>
+    <div class="card" data-search="files #41 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-41-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-41-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#41</span></div>
+    </div>
+    <div class="card" data-search="files #42 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-42-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-42-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#42</span></div>
+    </div>
+    <div class="card" data-search="files #43 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-43-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-43-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#43</span></div>
+    </div>
+    <div class="card" data-search="code #44 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-44-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-44-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Code</span><span class="num">#44</span></div>
+    </div>
+    <div class="card" data-search="files #45 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-45-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-45-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#45</span></div>
+    </div>
+    <div class="card" data-search="code #46 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-46-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-46-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Code</span><span class="num">#46</span></div>
+    </div>
+    <div class="card" data-search="code #47 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-47-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-47-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Code</span><span class="num">#47</span></div>
+    </div>
+    <div class="card" data-search="code #48 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-48-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-48-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Code</span><span class="num">#48</span></div>
+    </div>
+    <div class="card" data-search="infinite scroll with parallax #49 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-49-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-49-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Infinite Scroll With Parallax</span><span class="num">#49</span></div>
+    </div>
+    <div class="card" data-search="files #50 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-50-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-50-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#50</span></div>
+    </div>
+    <div class="card" data-search="code #51 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-51-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-51-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Code</span><span class="num">#51</span></div>
+    </div>
+    <div class="card" data-search="code #52 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-52-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-52-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Code</span><span class="num">#52</span></div>
+    </div>
+    <div class="card" data-search="files #53 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-53-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-53-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#53</span></div>
+    </div>
+    <div class="card" data-search="code #54 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-54-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-54-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Code</span><span class="num">#54</span></div>
+    </div>
+    <div class="card" data-search="fall master #56 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-56-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-56-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Fall Master</span><span class="num">#56</span></div>
+    </div>
+    <div class="card" data-search="pixel image master #57 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-57-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-57-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Pixel Image Master</span><span class="num">#57</span></div>
+    </div>
+    <div class="card" data-search="abstract cards #58 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-58-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-58-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Abstract Cards</span><span class="num">#58</span></div>
+    </div>
+    <div class="card" data-search="scroll-59 #59 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-59-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-59-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">scroll-59</span><span class="num">#59</span></div>
+    </div>
+    <div class="card" data-search="deadspace #60 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-60-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-60-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Deadspace</span><span class="num">#60</span></div>
+    </div>
+    <div class="card" data-search="files #61 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-61-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-61-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#61</span></div>
+    </div>
+    <div class="card" data-search="show case effect #62 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-62-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-62-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Show Case Effect</span><span class="num">#62</span></div>
+    </div>
+    <div class="card" data-search="files #63 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-63-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-63-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#63</span></div>
+    </div>
+    <div class="card" data-search="files #64 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-64-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-64-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#64</span></div>
+    </div>
+    <div class="card" data-search="files #65 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-65-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-65-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#65</span></div>
+    </div>
+    <div class="card" data-search="files #66 scroll animation">
+      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-66-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/scroll-66-650.webm" type="video/webm"></video></div>
+      <div class="label"><span class="name">Files</span><span class="num">#66</span></div>
+    </div>
+    <div class="card" data-search="container scroll animation #67 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Container Scroll Animation</span><span class="num">#67</span></div>
+    </div>
+    <div class="card" data-search="parallax hero images #68 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Parallax Hero Images</span><span class="num">#68</span></div>
+    </div>
+    <div class="card" data-search="parallax scroll 2 #69 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Parallax Scroll 2</span><span class="num">#69</span></div>
+    </div>
+    <div class="card" data-search="parallax scroll #70 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Parallax Scroll</span><span class="num">#70</span></div>
+    </div>
+    <div class="card" data-search="sticky banner #71 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Sticky Banner</span><span class="num">#71</span></div>
+    </div>
+    <div class="card" data-search="sticky scroll reveal #72 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Sticky Scroll Reveal</span><span class="num">#72</span></div>
+    </div>
+    <div class="card" data-search="timeline #73 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Timeline</span><span class="num">#73</span></div>
+    </div>
+    <div class="card" data-search="marquee #74 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Marquee</span><span class="num">#74</span></div>
+    </div>
+    <div class="card" data-search="progress #75 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Progress</span><span class="num">#75</span></div>
+    </div>
+    <div class="card" data-search="scroll reveal paragraph #76 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Scroll Reveal Paragraph</span><span class="num">#76</span></div>
+    </div>
+    <div class="card" data-search="scrollable card stack #77 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Scrollable Card Stack</span><span class="num">#77</span></div>
+    </div>
+    <div class="card" data-search="application timelines 1 dark #78 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Application Timelines 1 Dark</span><span class="num">#78</span></div>
+    </div>
+    <div class="card" data-search="application timelines 1 #79 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Application Timelines 1</span><span class="num">#79</span></div>
+    </div>
+    <div class="card" data-search="application timelines 2 dark #80 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Application Timelines 2 Dark</span><span class="num">#80</span></div>
+    </div>
+    <div class="card" data-search="application timelines 2 #81 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Application Timelines 2</span><span class="num">#81</span></div>
+    </div>
+    <div class="card" data-search="application timelines 3 dark #82 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Application Timelines 3 Dark</span><span class="num">#82</span></div>
+    </div>
+    <div class="card" data-search="application timelines 3 #83 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Application Timelines 3</span><span class="num">#83</span></div>
+    </div>
+    <div class="card" data-search="countdown #84 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Countdown</span><span class="num">#84</span></div>
+    </div>
+    <div class="card" data-search="radial progress #85 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Radial Progress</span><span class="num">#85</span></div>
+    </div>
+    <div class="card" data-search="stack #86 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Stack</span><span class="num">#86</span></div>
+    </div>
+    <div class="card" data-search="marquee view #87 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Marquee View</span><span class="num">#87</span></div>
+    </div>
+    <div class="card" data-search="marquee marqueetext #88 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Marquee Marqueetext</span><span class="num">#88</span></div>
+    </div>
+    <div class="card" data-search="progress view #89 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Progress View</span><span class="num">#89</span></div>
+    </div>
+    <div class="card" data-search="timeline timeline2 #90 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Timeline Timeline2</span><span class="num">#90</span></div>
+    </div>
+    <div class="card" data-search="timeline timeline3 #91 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Timeline Timeline3</span><span class="num">#91</span></div>
+    </div>
+    <div class="card" data-search="scrollprogress #92 scroll animation">
+      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="label"><span class="name">Scrollprogress</span><span class="num">#92</span></div>
+    </div>
+</div>
+<script>
+const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
+</script>
 </body>
 </html>
