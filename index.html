@@ -1,52 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Component Catalog</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-  .header { padding: 40px 20px; text-align: center; }
-  .header h1 { font-size: 2rem; color: #fff; margin-bottom: 8px; }
-  .header p { color: #888; font-size: 0.9rem; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 20px; max-width: 1200px; margin: 0 auto; }
-  .cat-card { background: #131722; border-radius: 10px; padding: 20px; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; text-decoration: none; color: inherit; display: block; }
-  .cat-card:hover { transform: translateY(-3px); border-color: #0066FF; }
-  .cat-card .cat-name { font-size: 1.1rem; color: #fff; margin-bottom: 4px; }
-  .cat-card .cat-count { font-size: 0.85rem; color: #0066FF; }
-</style>
-</head>
-<body>
-<div class="header">
-  <h1>Component Catalog</h1>
-  <p>2880 components with live previews</p>
-</div>
-<div class="grid">
-  <a class="cat-card" href="scroll-animation.html"><div class="cat-name">Scroll Animation</div><div class="cat-count">91 components</div></a>
-  <a class="cat-card" href="hero-animations.html"><div class="cat-name">Hero Animations</div><div class="cat-count">50 components</div></a>
-  <a class="cat-card" href="sliders.html"><div class="cat-name">Sliders</div><div class="cat-count">46 components</div></a>
-  <a class="cat-card" href="navigation-menus.html"><div class="cat-name">Navigation Menus</div><div class="cat-count">166 components</div></a>
-  <a class="cat-card" href="hover-effects.html"><div class="cat-name">Hover Effects</div><div class="cat-count">51 components</div></a>
-  <a class="cat-card" href="mouse-effects.html"><div class="cat-name">Mouse Effects</div><div class="cat-count">22 components</div></a>
-  <a class="cat-card" href="webgl-threejs.html"><div class="cat-name">Webgl & ThreeJS Effects</div><div class="cat-count">43 components</div></a>
-  <a class="cat-card" href="text-animations.html"><div class="cat-name">Text Animations</div><div class="cat-count">115 components</div></a>
-  <a class="cat-card" href="page-transitions.html"><div class="cat-name">Page Transitions</div><div class="cat-count">20 components</div></a>
-  <a class="cat-card" href="svg-animations.html"><div class="cat-name">SVG Animations</div><div class="cat-count">16 components</div></a>
-  <a class="cat-card" href="background-animations.html"><div class="cat-name">Background Animations</div><div class="cat-count">73 components</div></a>
-  <a class="cat-card" href="grid-animations.html"><div class="cat-name">Grid Animations</div><div class="cat-count">19 components</div></a>
-  <a class="cat-card" href="physics-effects.html"><div class="cat-name">Physics Effects</div><div class="cat-count">16 components</div></a>
-  <a class="cat-card" href="3d-animation.html"><div class="cat-name">3D Animation</div><div class="cat-count">53 components</div></a>
-  <a class="cat-card" href="buttons.html"><div class="cat-name">Buttons</div><div class="cat-count">301 components</div></a>
-  <a class="cat-card" href="inputs.html"><div class="cat-name">Inputs</div><div class="cat-count">594 components</div></a>
-  <a class="cat-card" href="cards.html"><div class="cat-name">Cards</div><div class="cat-count">139 components</div></a>
-  <a class="cat-card" href="modals-dialogs.html"><div class="cat-name">Modals & Dialogs</div><div class="cat-count">68 components</div></a>
-  <a class="cat-card" href="feedback.html"><div class="cat-name">Feedback</div><div class="cat-count">235 components</div></a>
-  <a class="cat-card" href="layout.html"><div class="cat-name">Layout</div><div class="cat-count">241 components</div></a>
-  <a class="cat-card" href="display.html"><div class="cat-name">Display</div><div class="cat-count">191 components</div></a>
-  <a class="cat-card" href="forms.html"><div class="cat-name">Forms</div><div class="cat-count">40 components</div></a>
-  <a class="cat-card" href="cinematic-intros.html"><div class="cat-name">Cinematic Intros</div><div class="cat-count">24 components</div></a>
-  <a class="cat-card" href="uncategorized.html"><div class="cat-name">Uncategorized</div><div class="cat-count">266 components</div></a>
-</div>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Component Catalog</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0B0F19;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFont,sans-serif}.header{padding:50px 20px 30px;text-align:center}.header h1{font-size:2.2rem;color:#fff;margin-bottom:6px}.header p{color:#555;font-size:0.9rem}.header .stats{color:#0066FF;font-size:0.85rem;margin-top:8px}.search{width:100%;max-width:500px;margin:16px auto 0;padding:10px 16px;background:#11141f;border:1px solid #1a1f2e;border-radius:8px;color:#fff;font-size:0.9rem;display:block}.search:focus{outline:none;border-color:#0066FF}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;max-width:1000px;margin:0 auto;padding:30px 20px}.cat-card{background:#131722;border:1px solid #1a1f2e;border-radius:12px;padding:24px 20px;text-decoration:none;color:#ccc;transition:transform 0.15s,border-color 0.15s;display:flex;justify-content:space-between;align-items:center}.cat-card:hover{transform:translateY(-3px);border-color:#0066FF}.cat-card .cat-name{font-size:0.95rem;font-weight:500}.cat-card .cat-count{font-size:0.8rem;color:#0066FF;font-family:monospace;font-weight:bold;background:#0B0F19;padding:3px 10px;border-radius:8px}.footer{text-align:center;padding:40px 20px;color:#333;font-size:0.75rem}</style></head><body><div class="header"><h1>Component Catalog</h1><p>2601 components across 24 categories</p><p class="stats">Browse by category, pick a number, tell Hermy</p><input class="search" type="text" placeholder="Search categories..." id="search" oninput="document.querySelectorAll(&#39;.cat-card&#39;).forEach(c=>c.style.display=c.textContent.toLowerCase().includes(this.value.toLowerCase())?&#39;&#39;:&#39;none&#39;)"></div><div class="grid">    <a href="scroll-animation.html" class="cat-card"><div class="cat-name">Scroll Animation</div><div class="cat-count">90</div></a>
+    <a href="hero-animations.html" class="cat-card"><div class="cat-name">Hero Animations</div><div class="cat-count">45</div></a>
+    <a href="sliders.html" class="cat-card"><div class="cat-name">Sliders</div><div class="cat-count">45</div></a>
+    <a href="navigation-menus.html" class="cat-card"><div class="cat-name">Navigation Menus</div><div class="cat-count">165</div></a>
+    <a href="hover-effects.html" class="cat-card"><div class="cat-name">Hover Effects</div><div class="cat-count">44</div></a>
+    <a href="mouse-effects.html" class="cat-card"><div class="cat-name">Mouse Effects</div><div class="cat-count">22</div></a>
+    <a href="webgl-threejs.html" class="cat-card"><div class="cat-name">Webgl & ThreeJS Effects</div><div class="cat-count">39</div></a>
+    <a href="text-animations.html" class="cat-card"><div class="cat-name">Text Animations</div><div class="cat-count">97</div></a>
+    <a href="page-transitions.html" class="cat-card"><div class="cat-name">Page Transitions</div><div class="cat-count">17</div></a>
+    <a href="svg-animations.html" class="cat-card"><div class="cat-name">SVG Animations</div><div class="cat-count">11</div></a>
+    <a href="background-animations.html" class="cat-card"><div class="cat-name">Background Animations</div><div class="cat-count">54</div></a>
+    <a href="grid-animations.html" class="cat-card"><div class="cat-name">Grid Animations</div><div class="cat-count">16</div></a>
+    <a href="physics-effects.html" class="cat-card"><div class="cat-name">Physics Effects</div><div class="cat-count">16</div></a>
+    <a href="3d-animation.html" class="cat-card"><div class="cat-name">3D Animation</div><div class="cat-count">44</div></a>
+    <a href="buttons.html" class="cat-card"><div class="cat-name">Buttons</div><div class="cat-count">288</div></a>
+    <a href="inputs.html" class="cat-card"><div class="cat-name">Inputs</div><div class="cat-count">575</div></a>
+    <a href="cards.html" class="cat-card"><div class="cat-name">Cards</div><div class="cat-count">124</div></a>
+    <a href="modals-dialogs.html" class="cat-card"><div class="cat-name">Modals & Dialogs</div><div class="cat-count">58</div></a>
+    <a href="feedback.html" class="cat-card"><div class="cat-name">Feedback</div><div class="cat-count">212</div></a>
+    <a href="layout.html" class="cat-card"><div class="cat-name">Layout</div><div class="cat-count">212</div></a>
+    <a href="display.html" class="cat-card"><div class="cat-name">Display</div><div class="cat-count">162</div></a>
+    <a href="forms.html" class="cat-card"><div class="cat-name">Forms</div><div class="cat-count">37</div></a>
+    <a href="cinematic-intros.html" class="cat-card"><div class="cat-name">Cinematic Intros</div><div class="cat-count">22</div></a>
+    <a href="uncategorized.html" class="cat-card"><div class="cat-name">Uncategorized</div><div class="cat-count">206</div></a>
+</div><div class="footer">Component Catalog — 24 categories, 2601 components<br>To use: tell Hermy "use Buttons #12" or "use Scroll #05 on the testimonials section"</div></body></html>
