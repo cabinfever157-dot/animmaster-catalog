@@ -1,0 +1,2334 @@
+{
+  "Scroll Animation": [
+    {
+      "num": 1,
+      "name": "Rgb Split Distortion Scroll Effect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-1-650.webm",
+      "local": "Scroll Animation/1/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 2,
+      "name": "Textclipscroll",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-2-650.webm",
+      "local": "Scroll Animation/2/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 3,
+      "name": "Text Demo",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-3-650.webm",
+      "local": "Scroll Animation/3/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 4,
+      "name": "Fullscreenclipeffect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-4-650.webm",
+      "local": "Scroll Animation/4/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 5,
+      "name": "Scroll3Dgrid",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-5-650.webm",
+      "local": "Scroll Animation/5/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 6,
+      "name": "Staggered3Dgridanimations",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-6-650.webm",
+      "local": "Scroll Animation/6/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 7,
+      "name": "Crt Like Effect With Vfx Js",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-7-650.webm",
+      "local": "Scroll Animation/7/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 8,
+      "name": "Text Clip Mask On Scroll Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-8-650.webm",
+      "local": "Scroll Animation/8/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 9,
+      "name": "Scroll Transition",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-9-650.webm",
+      "local": "Scroll Animation/9/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 10,
+      "name": "Telescope Zoom",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-10-650.webm",
+      "local": "Scroll Animation/10/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 11,
+      "name": "Gsap Threejs Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-11-650.webm",
+      "local": "Scroll Animation/11/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 12,
+      "name": "Webgl Progressive Blur",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-12-650.webm",
+      "local": "Scroll Animation/12/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 13,
+      "name": "Pixel Scan Effect With Vfx Js",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-13-650.webm",
+      "local": "Scroll Animation/13/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 14,
+      "name": "Vfx Js Scroll Animation",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-14-650.webm",
+      "local": "Scroll Animation/14/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 15,
+      "name": "Containeranimation Splittext",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-15-650.webm",
+      "local": "Scroll Animation/15/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 16,
+      "name": "Sticky Grid Scroll",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-16-650.webm",
+      "local": "Scroll Animation/16/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 17,
+      "name": "Imageexpansiontypography",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-17-650.webm",
+      "local": "Scroll Animation/17/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 18,
+      "name": "3Dstackmotion",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-18-650.webm",
+      "local": "Scroll Animation/18/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 19,
+      "name": "Connectedgrid",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-19-650.webm",
+      "local": "Scroll Animation/19/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 20,
+      "name": "Loopscrolling",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-20-650.webm",
+      "local": "Scroll Animation/20/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 21,
+      "name": "Scrollbasedlayoutanimations",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-21-650.webm",
+      "local": "Scroll Animation/21/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 22,
+      "name": "Imagepixelloading",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-22-650.webm",
+      "local": "Scroll Animation/22/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 23,
+      "name": "Textrepetitioneffect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-23-650.webm",
+      "local": "Scroll Animation/23/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 24,
+      "name": "Animated Continuous Sections With Gsap Observer",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-24-650.webm",
+      "local": "Scroll Animation/24/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 25,
+      "name": "Backgroundshift",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-25-650.webm",
+      "local": "Scroll Animation/25/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 26,
+      "name": "Foldingdom Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-26-650.webm",
+      "local": "Scroll Animation/26/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 27,
+      "name": "Animatesvgtextpath Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-27-650.webm",
+      "local": "Scroll Animation/27/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 28,
+      "name": "Fullscreenscroll",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-28-650.webm",
+      "local": "Scroll Animation/28/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 29,
+      "name": "Gsap Pinned Image Mask Reveal On Scroll",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-29-650.webm",
+      "local": "Scroll Animation/29/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 30,
+      "name": "Oneelementscroll",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-30-650.webm",
+      "local": "Scroll Animation/30/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 31,
+      "name": "Tutorial Text Animation",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-31-650.webm",
+      "local": "Scroll Animation/31/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 32,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-32-650.webm",
+      "local": "Scroll Animation/32/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 33,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-33-650.webm",
+      "local": "Scroll Animation/33/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 34,
+      "name": "Dist",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-34-650.webm",
+      "local": "Scroll Animation/34/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 35,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-35-650.webm",
+      "local": "Scroll Animation/35/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 36,
+      "name": "Ingamana Scroll Animation Nextjs",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-36-650.webm",
+      "local": "Scroll Animation/36/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 37,
+      "name": "Ascii Image Reveal Effect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-37-650.webm",
+      "local": "Scroll Animation/37/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 38,
+      "name": "Maximatherapy Sticky Cards",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-38-650.webm",
+      "local": "Scroll Animation/38/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 39,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-39-650.webm",
+      "local": "Scroll Animation/39/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 40,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-40-650.webm",
+      "local": "Scroll Animation/40/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 41,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-41-650.webm",
+      "local": "Scroll Animation/41/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 42,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-42-650.webm",
+      "local": "Scroll Animation/42/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 43,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-43-650.webm",
+      "local": "Scroll Animation/43/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 44,
+      "name": "Code",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-44-650.webm",
+      "local": "Scroll Animation/44/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 45,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-45-650.webm",
+      "local": "Scroll Animation/45/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 46,
+      "name": "Code",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-46-650.webm",
+      "local": "Scroll Animation/46/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 47,
+      "name": "Code",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-47-650.webm",
+      "local": "Scroll Animation/47/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 48,
+      "name": "Code",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-48-650.webm",
+      "local": "Scroll Animation/48/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 49,
+      "name": "Infinite Scroll With Parallax",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-49-650.webm",
+      "local": "Scroll Animation/49/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 50,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-50-650.webm",
+      "local": "Scroll Animation/50/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 51,
+      "name": "Code",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-51-650.webm",
+      "local": "Scroll Animation/51/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 52,
+      "name": "Code",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-52-650.webm",
+      "local": "Scroll Animation/52/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 53,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-53-650.webm",
+      "local": "Scroll Animation/53/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 54,
+      "name": "Code",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-54-650.webm",
+      "local": "Scroll Animation/54/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 56,
+      "name": "Fall Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-56-650.webm",
+      "local": "Scroll Animation/56/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 57,
+      "name": "Pixel Image Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-57-650.webm",
+      "local": "Scroll Animation/57/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 58,
+      "name": "Abstract Cards",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-58-650.webm",
+      "local": "Scroll Animation/58/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 59,
+      "name": "scroll-59",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-59-650.webm",
+      "local": "Scroll Animation/59/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 60,
+      "name": "Deadspace",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-60-650.webm",
+      "local": "Scroll Animation/60/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 61,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-61-650.webm",
+      "local": "Scroll Animation/61/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 62,
+      "name": "Show Case Effect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-62-650.webm",
+      "local": "Scroll Animation/62/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 63,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-63-650.webm",
+      "local": "Scroll Animation/63/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 64,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-64-650.webm",
+      "local": "Scroll Animation/64/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 65,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-65-650.webm",
+      "local": "Scroll Animation/65/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    },
+    {
+      "num": 66,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/scroll-66-650.webm",
+      "local": "Scroll Animation/66/code.zip",
+      "category": "Scroll Animation",
+      "prefix": "scroll"
+    }
+  ],
+  "Hero Animations": [
+    {
+      "num": 1,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-1-650.webm",
+      "local": "Hero Animations/1/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 2,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-2-650.webm",
+      "local": "Hero Animations/2/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 3,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-3-650.webm",
+      "local": "Hero Animations/3/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 4,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-4-650.webm",
+      "local": "Hero Animations/4/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 5,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-5-650.webm",
+      "local": "Hero Animations/5/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 6,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-6-650.webm",
+      "local": "Hero Animations/6/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 7,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-7-650.webm",
+      "local": "Hero Animations/7/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 8,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-8-650.webm",
+      "local": "Hero Animations/8/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 9,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-9-650.webm",
+      "local": "Hero Animations/9/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 10,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-10-650.webm",
+      "local": "Hero Animations/10/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 11,
+      "name": "Entranceanimationforimages",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-11-650.webm",
+      "local": "Hero Animations/11/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 12,
+      "name": "Repetitivetypography",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-12-650.webm",
+      "local": "Hero Animations/12/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 13,
+      "name": "hero-13",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-13-650.webm",
+      "local": "Hero Animations/13/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 14,
+      "name": "Introgridmotiontransition",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-14-650.webm",
+      "local": "Hero Animations/14/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 15,
+      "name": "Introtraileffect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-15-650.webm",
+      "local": "Hero Animations/15/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 16,
+      "name": "Circulartexteffect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-16-650.webm",
+      "local": "Hero Animations/16/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 17,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-17-650.webm",
+      "local": "Hero Animations/17/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 18,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-18-650.webm",
+      "local": "Hero Animations/18/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 19,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-19-650.webm",
+      "local": "Hero Animations/19/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 20,
+      "name": "Cinematic Loader Entrance",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-20-650.webm",
+      "local": "Hero Animations/20/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 21,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-21-650.webm",
+      "local": "Hero Animations/21/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 22,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-22-650.webm",
+      "local": "Hero Animations/22/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 23,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-23-650.webm",
+      "local": "Hero Animations/23/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 24,
+      "name": "Code",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-24-650.webm",
+      "local": "Hero Animations/24/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 25,
+      "name": "Loader",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-25-650.webm",
+      "local": "Hero Animations/25/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    },
+    {
+      "num": 26,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hero-26-650.webm",
+      "local": "Hero Animations/26/code.zip",
+      "category": "Hero Animations",
+      "prefix": "hero"
+    }
+  ],
+  "Sliders": [
+    {
+      "num": 1,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-1-650.webm",
+      "local": "Sliders/1/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 2,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-2-650.webm",
+      "local": "Sliders/2/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 3,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-3-650.webm",
+      "local": "Sliders/3/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 4,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-4-650.webm",
+      "local": "Sliders/4/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 5,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-5-650.webm",
+      "local": "Sliders/5/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 6,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-6-650.webm",
+      "local": "Sliders/6/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 7,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-7-650.webm",
+      "local": "Sliders/7/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 8,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-8-650.webm",
+      "local": "Sliders/8/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 9,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-9-650.webm",
+      "local": "Sliders/9/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 10,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-10-650.webm",
+      "local": "Sliders/10/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 11,
+      "name": "Webgl Carousel",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-11-650.webm",
+      "local": "Sliders/11/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 12,
+      "name": "Crossroadsslideshow Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-12-650.webm",
+      "local": "Sliders/12/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 13,
+      "name": "Shapesslideshow",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-13-650.webm",
+      "local": "Sliders/13/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 14,
+      "name": "Ripple Displacement Slider",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-14-650.webm",
+      "local": "Sliders/14/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 15,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-15-650.webm",
+      "local": "Sliders/15/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 16,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-16-650.webm",
+      "local": "Sliders/16/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 17,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-17-650.webm",
+      "local": "Sliders/17/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 18,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-18-650.webm",
+      "local": "Sliders/18/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 19,
+      "name": "Modular Slider",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-19-650.webm",
+      "local": "Sliders/19/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 20,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-20-650.webm",
+      "local": "Sliders/20/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 21,
+      "name": "Overlapping Swiper Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-21-650.webm",
+      "local": "Sliders/21/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 22,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-22-650.webm",
+      "local": "Sliders/22/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    },
+    {
+      "num": 23,
+      "name": "Circular Gallery",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/sliders-23-650.webm",
+      "local": "Sliders/23/code.zip",
+      "category": "Sliders",
+      "prefix": "sliders"
+    }
+  ],
+  "Navigation Menus": [
+    {
+      "num": 1,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-1-650.webm",
+      "local": "Navigation Menus/1/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 2,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-2-650.webm",
+      "local": "Navigation Menus/2/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 3,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-3-650.webm",
+      "local": "Navigation Menus/3/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 4,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-4-650.webm",
+      "local": "Navigation Menus/4/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 5,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-5-650.webm",
+      "local": "Navigation Menus/5/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 6,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-6-650.webm",
+      "local": "Navigation Menus/6/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 7,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-7-650.webm",
+      "local": "Navigation Menus/7/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 8,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-8-650.webm",
+      "local": "Navigation Menus/8/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 9,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-9-650.webm",
+      "local": "Navigation Menus/9/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 10,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-10-650.webm",
+      "local": "Navigation Menus/10/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 11,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-11-650.webm",
+      "local": "Navigation Menus/11/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 12,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-12-650.webm",
+      "local": "Navigation Menus/12/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 13,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-13-650.webm",
+      "local": "Navigation Menus/13/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 14,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-14-650.webm",
+      "local": "Navigation Menus/14/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 15,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-15-650.webm",
+      "local": "Navigation Menus/15/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 16,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-16-650.webm",
+      "local": "Navigation Menus/16/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 17,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-17-650.webm",
+      "local": "Navigation Menus/17/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 18,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-18-650.webm",
+      "local": "Navigation Menus/18/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 19,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-19-650.webm",
+      "local": "Navigation Menus/19/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 20,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-20-650.webm",
+      "local": "Navigation Menus/20/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    },
+    {
+      "num": 21,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/menu-21-650.webm",
+      "local": "Navigation Menus/21/code.zip",
+      "category": "Navigation Menus",
+      "prefix": "menu"
+    }
+  ],
+  "Hover Effects": [
+    {
+      "num": 1,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-1-650.webm",
+      "local": "Hover Effects/1/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 2,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-2-650.webm",
+      "local": "Hover Effects/2/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 3,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-3-650.webm",
+      "local": "Hover Effects/3/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 4,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-4-650.webm",
+      "local": "Hover Effects/4/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 5,
+      "name": "3Dlettersmenuhover",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-5-650.webm",
+      "local": "Hover Effects/5/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 6,
+      "name": "Lettersanimationlayout",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-6-650.webm",
+      "local": "Hover Effects/6/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 7,
+      "name": "Repetitionhovereffect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-7-650.webm",
+      "local": "Hover Effects/7/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 8,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-8-650.webm",
+      "local": "Hover Effects/8/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 9,
+      "name": "Gooeytexthovereffect Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-9-650.webm",
+      "local": "Hover Effects/9/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 10,
+      "name": "Threejs Texture Transition Hover Effect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-10-650.webm",
+      "local": "Hover Effects/10/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 11,
+      "name": "Rapidimagehovermenu Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-11-650.webm",
+      "local": "Hover Effects/11/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 12,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-12-650.webm",
+      "local": "Hover Effects/12/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 13,
+      "name": "Artefakt Interactive Ascii Logo",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-13-650.webm",
+      "local": "Hover Effects/13/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 14,
+      "name": "Cappen Fluid Simulation",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-14-650.webm",
+      "local": "Hover Effects/14/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 15,
+      "name": "Griflan Hover Effect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-15-650.webm",
+      "local": "Hover Effects/15/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 16,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-16-650.webm",
+      "local": "Hover Effects/16/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 17,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-17-650.webm",
+      "local": "Hover Effects/17/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 18,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-18-650.webm",
+      "local": "Hover Effects/18/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 19,
+      "name": "Code",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-19-650.webm",
+      "local": "Hover Effects/19/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    },
+    {
+      "num": 20,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/hover-20-650.webm",
+      "local": "Hover Effects/20/code.zip",
+      "category": "Hover Effects",
+      "prefix": "hover"
+    }
+  ],
+  "Mouse Effects": [
+    {
+      "num": 1,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-1-650.webm",
+      "local": "Mouse Effects/1/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 2,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-2-650.webm",
+      "local": "Mouse Effects/2/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 3,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-3-650.webm",
+      "local": "Mouse Effects/3/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 4,
+      "name": "Three Skull",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-4-650.webm",
+      "local": "Mouse Effects/4/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 5,
+      "name": "Dist",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-5-650.webm",
+      "local": "Mouse Effects/5/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 6,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-6-650.webm",
+      "local": "Mouse Effects/6/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 7,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-7-650.webm",
+      "local": "Mouse Effects/7/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 8,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-8-650.webm",
+      "local": "Mouse Effects/8/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 9,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-9-650.webm",
+      "local": "Mouse Effects/9/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 10,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-10-650.webm",
+      "local": "Mouse Effects/10/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 11,
+      "name": "Cursor Trail",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-11-650.webm",
+      "local": "Mouse Effects/11/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 12,
+      "name": "The Spirit Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-12-650.webm",
+      "local": "Mouse Effects/12/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 13,
+      "name": "Canvas Cursor",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-13-650.webm",
+      "local": "Mouse Effects/13/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 14,
+      "name": "Satisfying Curly Cursor 3Kb Of Vanilla Js On Canvas",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-14-650.webm",
+      "local": "Mouse Effects/14/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 15,
+      "name": "Shooting Star",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-15-650.webm",
+      "local": "Mouse Effects/15/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 16,
+      "name": "Gsap Hero Section With Advanced Image Cursor Trail Effects",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-16-650.webm",
+      "local": "Mouse Effects/16/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 17,
+      "name": "Text Trail Effect On Mousemove",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-17-650.webm",
+      "local": "Mouse Effects/17/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 18,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-18-650.webm",
+      "local": "Mouse Effects/18/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 19,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-19-650.webm",
+      "local": "Mouse Effects/19/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    },
+    {
+      "num": 20,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/mouse-20-650.webm",
+      "local": "Mouse Effects/20/code.zip",
+      "category": "Mouse Effects",
+      "prefix": "mouse"
+    }
+  ],
+  "Webgl & ThreeJS Effects": [
+    {
+      "num": 1,
+      "name": "Webgpu Clair Obscur Gommage Codrops Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-1-650.webm",
+      "local": "Webgl & ThreeJS Effects/1/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 2,
+      "name": "Webgl Mouseover Effects Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-2-650.webm",
+      "local": "Webgl & ThreeJS Effects/2/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 3,
+      "name": "Gooey Hover Codrops Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-3-650.webm",
+      "local": "Webgl & ThreeJS Effects/3/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 4,
+      "name": "Stickyimageeffect Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-4-650.webm",
+      "local": "Webgl & ThreeJS Effects/4/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 5,
+      "name": "Tutorial Grid",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-5-650.webm",
+      "local": "Webgl & ThreeJS Effects/5/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 6,
+      "name": "R3F Image Reveal Effect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-6-650.webm",
+      "local": "Webgl & ThreeJS Effects/6/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 7,
+      "name": "Vfx Js Text Shadow Effect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-7-650.webm",
+      "local": "Webgl & ThreeJS Effects/7/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 8,
+      "name": "Distortedpixels Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-8-650.webm",
+      "local": "Webgl & ThreeJS Effects/8/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 9,
+      "name": "Interactive Particles Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-9-650.webm",
+      "local": "Webgl & ThreeJS Effects/9/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 10,
+      "name": "Sdf Lensblur Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-10-650.webm",
+      "local": "Webgl & ThreeJS Effects/10/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 11,
+      "name": "Webglblobs",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-11-650.webm",
+      "local": "Webgl & ThreeJS Effects/11/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 12,
+      "name": "The Substance Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-12-650.webm",
+      "local": "Webgl & ThreeJS Effects/12/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 13,
+      "name": "Morphing 2D Demo",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-13-650.webm",
+      "local": "Webgl & ThreeJS Effects/13/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 14,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-14-650.webm",
+      "local": "Webgl & ThreeJS Effects/14/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 15,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-15-650.webm",
+      "local": "Webgl & ThreeJS Effects/15/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 16,
+      "name": "Dist",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-16-650.webm",
+      "local": "Webgl & ThreeJS Effects/16/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 17,
+      "name": "Ironhill Section Rebuild",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-17-650.webm",
+      "local": "Webgl & ThreeJS Effects/17/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 18,
+      "name": "Image Distortion",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-18-650.webm",
+      "local": "Webgl & ThreeJS Effects/18/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    },
+    {
+      "num": 19,
+      "name": "Code",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/webgl-19-650.webm",
+      "local": "Webgl & ThreeJS Effects/19/code.zip",
+      "category": "Webgl & ThreeJS Effects",
+      "prefix": "webgl"
+    }
+  ],
+  "Text Animations": [
+    {
+      "num": 1,
+      "name": "Scrolltextmotion",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-1-650.webm",
+      "local": "Text Animations/1/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 2,
+      "name": "3D Text Circle Animation",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-2-650.webm",
+      "local": "Text Animations/2/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 3,
+      "name": "Sketch492",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-3-650.webm",
+      "local": "Text Animations/3/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 4,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-4-650.webm",
+      "local": "Text Animations/4/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 5,
+      "name": "Onscrolltypographyanimations",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-5-650.webm",
+      "local": "Text Animations/5/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 6,
+      "name": "Onscrolltypographyanimations",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-6-650.webm",
+      "local": "Text Animations/6/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 7,
+      "name": "Sketch491",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-7-650.webm",
+      "local": "Text Animations/7/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 8,
+      "name": "Animated Verbs Ii",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-8-650.webm",
+      "local": "Text Animations/8/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 9,
+      "name": "Morphsvg Converttopath",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-9-650.webm",
+      "local": "Text Animations/9/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 10,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-10-650.webm",
+      "local": "Text Animations/10/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 11,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-11-650.webm",
+      "local": "Text Animations/11/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 12,
+      "name": "Next Text Reveal Animation",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-12-650.webm",
+      "local": "Text Animations/12/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 13,
+      "name": "Seventeenagency Scroll Animation",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-13-650.webm",
+      "local": "Text Animations/13/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 14,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-14-650.webm",
+      "local": "Text Animations/14/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 15,
+      "name": "text-15",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-15-650.webm",
+      "local": "Text Animations/15/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 16,
+      "name": "Menuxl Text Displacement Animation",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-16-650.webm",
+      "local": "Text Animations/16/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    },
+    {
+      "num": 17,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/text-17-650.webm",
+      "local": "Text Animations/17/code.zip",
+      "category": "Text Animations",
+      "prefix": "text"
+    }
+  ],
+  "Page Transitions": [
+    {
+      "num": 1,
+      "name": "Demo",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-1-650.webm",
+      "local": "Page Transitions/1/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 2,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-2-650.webm",
+      "local": "Page Transitions/2/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 3,
+      "name": "Layersanimation",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-3-650.webm",
+      "local": "Page Transitions/3/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 4,
+      "name": "Pixeltransition",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-4-650.webm",
+      "local": "Page Transitions/4/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 5,
+      "name": "Svg Page Transition",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-5-650.webm",
+      "local": "Page Transitions/5/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 6,
+      "name": "Slicerevealer Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-6-650.webm",
+      "local": "Page Transitions/6/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 7,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-7-650.webm",
+      "local": "Page Transitions/7/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 8,
+      "name": "Barbajs Page Transition",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-8-650.webm",
+      "local": "Page Transitions/8/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 9,
+      "name": "Pagetransition Waabi",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-9-650.webm",
+      "local": "Page Transitions/9/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 10,
+      "name": "Kinetictypepagetransition",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-10-650.webm",
+      "local": "Page Transitions/10/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 11,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-11-650.webm",
+      "local": "Page Transitions/11/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 12,
+      "name": "Block Reveal Page Transition",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-12-650.webm",
+      "local": "Page Transitions/12/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 13,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-13-650.webm",
+      "local": "Page Transitions/13/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    },
+    {
+      "num": 14,
+      "name": "Svg Page Transition Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/pegetr-14-650.webm",
+      "local": "Page Transitions/14/code.zip",
+      "category": "Page Transitions",
+      "prefix": "pegetr"
+    }
+  ],
+  "SVG Animations": [
+    {
+      "num": 1,
+      "name": "Svg Shape Overlays",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/svg-1-650.webm",
+      "local": "SVG Animations/1/code.zip",
+      "category": "SVG Animations",
+      "prefix": "svg"
+    },
+    {
+      "num": 2,
+      "name": "Morphsvgcomplex Paths",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/svg-2-650.webm",
+      "local": "SVG Animations/2/code.zip",
+      "category": "SVG Animations",
+      "prefix": "svg"
+    },
+    {
+      "num": 3,
+      "name": "Onscrollsvgfiltertext",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/svg-3-650.webm",
+      "local": "SVG Animations/3/code.zip",
+      "category": "SVG Animations",
+      "prefix": "svg"
+    },
+    {
+      "num": 4,
+      "name": "Onscrollfilter",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/svg-4-650.webm",
+      "local": "SVG Animations/4/code.zip",
+      "category": "SVG Animations",
+      "prefix": "svg"
+    },
+    {
+      "num": 5,
+      "name": "Onscrollpathanimations",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/svg-5-650.webm",
+      "local": "SVG Animations/5/code.zip",
+      "category": "SVG Animations",
+      "prefix": "svg"
+    },
+    {
+      "num": 6,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/svg-6-650.webm",
+      "local": "SVG Animations/6/code.zip",
+      "category": "SVG Animations",
+      "prefix": "svg"
+    },
+    {
+      "num": 7,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/svg-7-650.webm",
+      "local": "SVG Animations/7/code.zip",
+      "category": "SVG Animations",
+      "prefix": "svg"
+    },
+    {
+      "num": 8,
+      "name": "Morphingbackgroundshapes Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/svg-8-650.webm",
+      "local": "SVG Animations/8/code.zip",
+      "category": "SVG Animations",
+      "prefix": "svg"
+    },
+    {
+      "num": 9,
+      "name": "Canvas Particles",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/svg-9-650.webm",
+      "local": "SVG Animations/9/code.zip",
+      "category": "SVG Animations",
+      "prefix": "svg"
+    },
+    {
+      "num": 10,
+      "name": "Underwater Navigation Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/svg-10-650.webm",
+      "local": "SVG Animations/10/code.zip",
+      "category": "SVG Animations",
+      "prefix": "svg"
+    },
+    {
+      "num": 11,
+      "name": "Ashleybrookecs Smudge Revealer",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/svg-11-650.webm",
+      "local": "SVG Animations/11/code.zip",
+      "category": "SVG Animations",
+      "prefix": "svg"
+    }
+  ],
+  "Background Animations": [
+    {
+      "num": 1,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/bg-1-650.webm",
+      "local": "Background Animations/1/code.zip",
+      "category": "Background Animations",
+      "prefix": "bg"
+    },
+    {
+      "num": 2,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/bg-2-650.webm",
+      "local": "Background Animations/2/code.zip",
+      "category": "Background Animations",
+      "prefix": "bg"
+    },
+    {
+      "num": 3,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/bg-3-650.webm",
+      "local": "Background Animations/3/code.zip",
+      "category": "Background Animations",
+      "prefix": "bg"
+    },
+    {
+      "num": 4,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/bg-4-650.webm",
+      "local": "Background Animations/4/code.zip",
+      "category": "Background Animations",
+      "prefix": "bg"
+    },
+    {
+      "num": 5,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/bg-5-650.webm",
+      "local": "Background Animations/5/code.zip",
+      "category": "Background Animations",
+      "prefix": "bg"
+    },
+    {
+      "num": 6,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/bg-6-650.webm",
+      "local": "Background Animations/6/code.zip",
+      "category": "Background Animations",
+      "prefix": "bg"
+    },
+    {
+      "num": 7,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/bg-7-650.webm",
+      "local": "Background Animations/7/code.zip",
+      "category": "Background Animations",
+      "prefix": "bg"
+    },
+    {
+      "num": 8,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/bg-8-650.webm",
+      "local": "Background Animations/8/code.zip",
+      "category": "Background Animations",
+      "prefix": "bg"
+    },
+    {
+      "num": 9,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/bg-9-650.webm",
+      "local": "Background Animations/9/code.zip",
+      "category": "Background Animations",
+      "prefix": "bg"
+    },
+    {
+      "num": 10,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/bg-10-650.webm",
+      "local": "Background Animations/10/code.zip",
+      "category": "Background Animations",
+      "prefix": "bg"
+    }
+  ],
+  "Grid Animations": [
+    {
+      "num": 1,
+      "name": "Grid Layout Transition",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/grid-1-650.webm",
+      "local": "Grid Animations/1/code.zip",
+      "category": "Grid Animations",
+      "prefix": "grid"
+    },
+    {
+      "num": 2,
+      "name": "Spotify Visualiser",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/grid-2-650.webm",
+      "local": "Grid Animations/2/code.zip",
+      "category": "Grid Animations",
+      "prefix": "grid"
+    },
+    {
+      "num": 3,
+      "name": "Elasticgridscroll",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/grid-3-650.webm",
+      "local": "Grid Animations/3/code.zip",
+      "category": "Grid Animations",
+      "prefix": "grid"
+    },
+    {
+      "num": 4,
+      "name": "Grid To Preview",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/grid-4-650.webm",
+      "local": "Grid Animations/4/code.zip",
+      "category": "Grid Animations",
+      "prefix": "grid"
+    },
+    {
+      "num": 5,
+      "name": "Repeatingimagetransition",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/grid-5-650.webm",
+      "local": "Grid Animations/5/code.zip",
+      "category": "Grid Animations",
+      "prefix": "grid"
+    },
+    {
+      "num": 6,
+      "name": "Add To Cart",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/grid-6-650.webm",
+      "local": "Grid Animations/6/code.zip",
+      "category": "Grid Animations",
+      "prefix": "grid"
+    },
+    {
+      "num": 7,
+      "name": "Onscrolllayoutformations",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/grid-7-650.webm",
+      "local": "Grid Animations/7/code.zip",
+      "category": "Grid Animations",
+      "prefix": "grid"
+    },
+    {
+      "num": 8,
+      "name": "Hovergrid",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/grid-8-650.webm",
+      "local": "Grid Animations/8/code.zip",
+      "category": "Grid Animations",
+      "prefix": "grid"
+    },
+    {
+      "num": 9,
+      "name": "Makewaygrideffect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/grid-9-650.webm",
+      "local": "Grid Animations/9/code.zip",
+      "category": "Grid Animations",
+      "prefix": "grid"
+    },
+    {
+      "num": 10,
+      "name": "Gridfloweffect",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/grid-10-650.webm",
+      "local": "Grid Animations/10/code.zip",
+      "category": "Grid Animations",
+      "prefix": "grid"
+    }
+  ],
+  "Physics Effects": [
+    {
+      "num": 1,
+      "name": "Sticky Cursor",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/physic-1-650.webm",
+      "local": "Physics Effects/1/code.zip",
+      "category": "Physics Effects",
+      "prefix": "physic"
+    },
+    {
+      "num": 2,
+      "name": "Svg Bezier Curve Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/physic-2-650.webm",
+      "local": "Physics Effects/2/code.zip",
+      "category": "Physics Effects",
+      "prefix": "physic"
+    },
+    {
+      "num": 3,
+      "name": "Magnetic Button",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/physic-3-650.webm",
+      "local": "Physics Effects/3/code.zip",
+      "category": "Physics Effects",
+      "prefix": "physic"
+    },
+    {
+      "num": 4,
+      "name": "Fluid Triangle",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/physic-4-650.webm",
+      "local": "Physics Effects/4/code.zip",
+      "category": "Physics Effects",
+      "prefix": "physic"
+    },
+    {
+      "num": 5,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/physic-5-650.webm",
+      "local": "Physics Effects/5/code.zip",
+      "category": "Physics Effects",
+      "prefix": "physic"
+    },
+    {
+      "num": 6,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/physic-6-650.webm",
+      "local": "Physics Effects/6/code.zip",
+      "category": "Physics Effects",
+      "prefix": "physic"
+    },
+    {
+      "num": 7,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/physic-7-650.webm",
+      "local": "Physics Effects/7/code.zip",
+      "category": "Physics Effects",
+      "prefix": "physic"
+    },
+    {
+      "num": 8,
+      "name": "Sphere Packing",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/physic-8-650.webm",
+      "local": "Physics Effects/8/code.zip",
+      "category": "Physics Effects",
+      "prefix": "physic"
+    },
+    {
+      "num": 9,
+      "name": "Works",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/physic-9-650.webm",
+      "local": "Physics Effects/9/code.zip",
+      "category": "Physics Effects",
+      "prefix": "physic"
+    },
+    {
+      "num": 10,
+      "name": "R3F Rapier Ball Of Glass",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/physic-10-650.webm",
+      "local": "Physics Effects/10/code.zip",
+      "category": "Physics Effects",
+      "prefix": "physic"
+    }
+  ],
+  "3D Animation": [
+    {
+      "num": 1,
+      "name": "Threejs Font Grid",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-1-650.webm",
+      "local": "3D Animation/1/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 2,
+      "name": "Three Html To Canvas",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-2-650.webm",
+      "local": "3D Animation/2/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 3,
+      "name": "Cinematic Scroll Animations",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-3-650.webm",
+      "local": "3D Animation/3/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 4,
+      "name": "Delphi",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-4-650.webm",
+      "local": "3D Animation/4/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 5,
+      "name": "Shoe Finder",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-5-650.webm",
+      "local": "3D Animation/5/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 6,
+      "name": "Video Projection",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-6-650.webm",
+      "local": "3D Animation/6/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 7,
+      "name": "3Dcarousel",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-7-650.webm",
+      "local": "3D Animation/7/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 8,
+      "name": "Creative 404",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-8-650.webm",
+      "local": "3D Animation/8/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 9,
+      "name": "Dithering Shader",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-9-650.webm",
+      "local": "3D Animation/9/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 10,
+      "name": "Interactive Styling Canvas",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-10-650.webm",
+      "local": "3D Animation/10/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 11,
+      "name": "Threepipe Device Mockup Codrops Master",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-11-650.webm",
+      "local": "3D Animation/11/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 12,
+      "name": "Helmet",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-12-650.webm",
+      "local": "3D Animation/12/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 13,
+      "name": "3D Earth Scroll",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-13-650.webm",
+      "local": "3D Animation/13/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 14,
+      "name": "Repetition Image Animation",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-14-650.webm",
+      "local": "3D Animation/14/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 15,
+      "name": "F",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-15-650.webm",
+      "local": "3D Animation/15/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 16,
+      "name": "Living Words",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-16-650.webm",
+      "local": "3D Animation/16/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 17,
+      "name": "Code",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-17-650.webm",
+      "local": "3D Animation/17/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 18,
+      "name": "Circular Image Layout",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-18-650.webm",
+      "local": "3D Animation/18/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 19,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-19-650.webm",
+      "local": "3D Animation/19/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 20,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-20-650.webm",
+      "local": "3D Animation/20/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 21,
+      "name": "Fiels",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-21-650.webm",
+      "local": "3D Animation/21/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    },
+    {
+      "num": 22,
+      "name": "Files",
+      "cdn": "https://animmaster-videos.b-cdn.net/files/3d-22-650.webm",
+      "local": "3D Animation/22/code.zip",
+      "category": "3D Animation",
+      "prefix": "3d"
+    }
+  ]
+}

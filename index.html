@@ -1,0 +1,3395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AnimMasterLib — Visual Component Catalog</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .header { padding: 40px 20px 20px; text-align: center; }
+  .header h1 { font-size: 2rem; color: #fff; margin-bottom: 8px; }
+  .header p { color: #666; font-size: 0.95rem; }
+  .header .stats { color: #0066FF; font-size: 0.85rem; margin-top: 8px; }
+  .layout { display: flex; max-width: 1400px; margin: 0 auto; gap: 24px; padding: 20px; }
+  .sidebar { width: 220px; flex-shrink: 0; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; }
+  .sidebar a { display: block; padding: 10px 16px; color: #999; text-decoration: none; font-size: 0.9rem; border-radius: 8px; transition: all 0.2s; }
+  .sidebar a:hover { color: #fff; background: #1a1f2e; }
+  .sidebar a.active { color: #0066FF; background: #1a1f2e; }
+  .sidebar .count { float: right; opacity: 0.5; font-size: 0.8rem; }
+  .main { flex: 1; }
+  .section { margin-bottom: 60px; scroll-margin-top: 20px; }
+  .section h2 { color: #fff; font-size: 1.4rem; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #1a1f2e; display: flex; align-items: center; gap: 10px; }
+  .section h2 .badge { background: #0066FF; color: #fff; font-size: 0.75rem; padding: 2px 10px; border-radius: 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  .card { background: #11141f; border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; border: 1px solid #1a1f2e; cursor: pointer; }
+  .card:hover { transform: translateY(-4px); border-color: #0066FF; }
+  .card .vid-wrap { position: relative; aspect-ratio: 16/10; overflow: hidden; background: #0B0F19; }
+  .card .vid-wrap video { width: 100%; height: 100%; object-fit: cover; }
+  .card .vid-wrap video.lazy-vid { opacity: 0; transition: opacity 0.4s; }
+  .card .vid-wrap video.loaded { opacity: 1; }
+  .card .label { padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; }
+  .card .label .name { font-size: 0.85rem; color: #ccc; }
+  .card .label .num { font-size: 0.8rem; color: #0066FF; font-family: monospace; font-weight: bold; }
+  .custom-section h2 { color: #ff9500; }
+  .custom-section .badge { background: #ff9500; }
+  .custom-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .custom-card { background: #11141f; border: 1px dashed #2a2f3e; border-radius: 12px; padding: 30px 14px; text-align: center; color: #555; font-size: 0.85rem; }
+  .footer { text-align: center; padding: 40px 20px; color: #444; font-size: 0.8rem; }
+  .search { width: 100%; padding: 10px 16px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.9rem; margin-bottom: 16px; }
+  .search:focus { outline: none; border-color: #0066FF; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AnimMasterLib — Visual Component Catalog</h1>
+  <p>288 components across 14 categories — point and say "use Scroll #12"</p>
+  <p class="stats">Source: animmasterlib.dev | Local: Dropbox\Google Drive\Software\animmasterlib</p>
+</div>
+
+<div class="layout">
+  <div class="sidebar">
+    <input class="search" type="text" placeholder="Search..." id="search">
+    <a href="#scroll-animation">Scroll Animation <span class="count">65</span></a>
+    <a href="#hero-animations">Hero Animations <span class="count">26</span></a>
+    <a href="#sliders">Sliders <span class="count">23</span></a>
+    <a href="#navigation-menus">Navigation Menus <span class="count">21</span></a>
+    <a href="#hover-effects">Hover Effects <span class="count">20</span></a>
+    <a href="#mouse-effects">Mouse Effects <span class="count">20</span></a>
+    <a href="#webgl-and-threejs-effects">Webgl & ThreeJS Effects <span class="count">19</span></a>
+    <a href="#text-animations">Text Animations <span class="count">17</span></a>
+    <a href="#page-transitions">Page Transitions <span class="count">14</span></a>
+    <a href="#svg-animations">SVG Animations <span class="count">11</span></a>
+    <a href="#background-animations">Background Animations <span class="count">10</span></a>
+    <a href="#grid-animations">Grid Animations <span class="count">10</span></a>
+    <a href="#physics-effects">Physics Effects <span class="count">10</span></a>
+    <a href="#3d-animation">3D Animation <span class="count">22</span></a>
+    <hr style="border-color:#1a1f2e;margin:12px 0">
+    <a href="#custom" style="color:#ff9500">Custom Effects <span class="count">0</span></a>
+  </div>
+
+  <div class="main">
+  <div class="section" id="scroll-animation">
+    <h2>Scroll Animation <span class="badge">65</span></h2>
+    <div class="grid">
+    <div class="card" data-search="rgb split distortion scroll effect scroll animation #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Rgb Split Distortion Scroll Effect</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="textclipscroll scroll animation #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Textclipscroll</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="text demo scroll animation #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Text Demo</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="fullscreenclipeffect scroll animation #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Fullscreenclipeffect</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="scroll3dgrid scroll animation #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Scroll3Dgrid</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="staggered3dgridanimations scroll animation #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Staggered3Dgridanimations</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="crt like effect with vfx js scroll animation #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Crt Like Effect With Vfx Js</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="text clip mask on scroll master scroll animation #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Text Clip Mask On Scroll Master</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="scroll transition scroll animation #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Scroll Transition</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="telescope zoom scroll animation #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Telescope Zoom</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    <div class="card" data-search="gsap threejs master scroll animation #11">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-11-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-11-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Gsap Threejs Master</span>
+        <span class="num">#11</span>
+      </div>
+    </div>
+    <div class="card" data-search="webgl progressive blur scroll animation #12">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-12-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-12-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Webgl Progressive Blur</span>
+        <span class="num">#12</span>
+      </div>
+    </div>
+    <div class="card" data-search="pixel scan effect with vfx js scroll animation #13">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-13-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-13-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Pixel Scan Effect With Vfx Js</span>
+        <span class="num">#13</span>
+      </div>
+    </div>
+    <div class="card" data-search="vfx js scroll animation scroll animation #14">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-14-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-14-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Vfx Js Scroll Animation</span>
+        <span class="num">#14</span>
+      </div>
+    </div>
+    <div class="card" data-search="containeranimation splittext scroll animation #15">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-15-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-15-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Containeranimation Splittext</span>
+        <span class="num">#15</span>
+      </div>
+    </div>
+    <div class="card" data-search="sticky grid scroll scroll animation #16">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-16-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-16-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Sticky Grid Scroll</span>
+        <span class="num">#16</span>
+      </div>
+    </div>
+    <div class="card" data-search="imageexpansiontypography scroll animation #17">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-17-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-17-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Imageexpansiontypography</span>
+        <span class="num">#17</span>
+      </div>
+    </div>
+    <div class="card" data-search="3dstackmotion scroll animation #18">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-18-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-18-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">3Dstackmotion</span>
+        <span class="num">#18</span>
+      </div>
+    </div>
+    <div class="card" data-search="connectedgrid scroll animation #19">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-19-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-19-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Connectedgrid</span>
+        <span class="num">#19</span>
+      </div>
+    </div>
+    <div class="card" data-search="loopscrolling scroll animation #20">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-20-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-20-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Loopscrolling</span>
+        <span class="num">#20</span>
+      </div>
+    </div>
+    <div class="card" data-search="scrollbasedlayoutanimations scroll animation #21">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-21-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-21-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Scrollbasedlayoutanimations</span>
+        <span class="num">#21</span>
+      </div>
+    </div>
+    <div class="card" data-search="imagepixelloading scroll animation #22">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-22-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-22-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Imagepixelloading</span>
+        <span class="num">#22</span>
+      </div>
+    </div>
+    <div class="card" data-search="textrepetitioneffect scroll animation #23">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-23-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-23-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Textrepetitioneffect</span>
+        <span class="num">#23</span>
+      </div>
+    </div>
+    <div class="card" data-search="animated continuous sections with gsap observer scroll animation #24">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-24-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-24-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Animated Continuous Sections With Gsap Observer</span>
+        <span class="num">#24</span>
+      </div>
+    </div>
+    <div class="card" data-search="backgroundshift scroll animation #25">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-25-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-25-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Backgroundshift</span>
+        <span class="num">#25</span>
+      </div>
+    </div>
+    <div class="card" data-search="foldingdom master scroll animation #26">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-26-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-26-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Foldingdom Master</span>
+        <span class="num">#26</span>
+      </div>
+    </div>
+    <div class="card" data-search="animatesvgtextpath master scroll animation #27">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-27-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-27-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Animatesvgtextpath Master</span>
+        <span class="num">#27</span>
+      </div>
+    </div>
+    <div class="card" data-search="fullscreenscroll scroll animation #28">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-28-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-28-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Fullscreenscroll</span>
+        <span class="num">#28</span>
+      </div>
+    </div>
+    <div class="card" data-search="gsap pinned image mask reveal on scroll scroll animation #29">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-29-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-29-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Gsap Pinned Image Mask Reveal On Scroll</span>
+        <span class="num">#29</span>
+      </div>
+    </div>
+    <div class="card" data-search="oneelementscroll scroll animation #30">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-30-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-30-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Oneelementscroll</span>
+        <span class="num">#30</span>
+      </div>
+    </div>
+    <div class="card" data-search="tutorial text animation scroll animation #31">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-31-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-31-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Tutorial Text Animation</span>
+        <span class="num">#31</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #32">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-32-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-32-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#32</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #33">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-33-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-33-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#33</span>
+      </div>
+    </div>
+    <div class="card" data-search="dist scroll animation #34">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-34-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-34-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Dist</span>
+        <span class="num">#34</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #35">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-35-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-35-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#35</span>
+      </div>
+    </div>
+    <div class="card" data-search="ingamana scroll animation nextjs scroll animation #36">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-36-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-36-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Ingamana Scroll Animation Nextjs</span>
+        <span class="num">#36</span>
+      </div>
+    </div>
+    <div class="card" data-search="ascii image reveal effect scroll animation #37">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-37-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-37-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Ascii Image Reveal Effect</span>
+        <span class="num">#37</span>
+      </div>
+    </div>
+    <div class="card" data-search="maximatherapy sticky cards scroll animation #38">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-38-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-38-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Maximatherapy Sticky Cards</span>
+        <span class="num">#38</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #39">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-39-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-39-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#39</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #40">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-40-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-40-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#40</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #41">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-41-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-41-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#41</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #42">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-42-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-42-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#42</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #43">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-43-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-43-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#43</span>
+      </div>
+    </div>
+    <div class="card" data-search="code scroll animation #44">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-44-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-44-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Code</span>
+        <span class="num">#44</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #45">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-45-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-45-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#45</span>
+      </div>
+    </div>
+    <div class="card" data-search="code scroll animation #46">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-46-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-46-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Code</span>
+        <span class="num">#46</span>
+      </div>
+    </div>
+    <div class="card" data-search="code scroll animation #47">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-47-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-47-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Code</span>
+        <span class="num">#47</span>
+      </div>
+    </div>
+    <div class="card" data-search="code scroll animation #48">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-48-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-48-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Code</span>
+        <span class="num">#48</span>
+      </div>
+    </div>
+    <div class="card" data-search="infinite scroll with parallax scroll animation #49">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-49-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-49-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Infinite Scroll With Parallax</span>
+        <span class="num">#49</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #50">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-50-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-50-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#50</span>
+      </div>
+    </div>
+    <div class="card" data-search="code scroll animation #51">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-51-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-51-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Code</span>
+        <span class="num">#51</span>
+      </div>
+    </div>
+    <div class="card" data-search="code scroll animation #52">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-52-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-52-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Code</span>
+        <span class="num">#52</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #53">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-53-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-53-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#53</span>
+      </div>
+    </div>
+    <div class="card" data-search="code scroll animation #54">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-54-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-54-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Code</span>
+        <span class="num">#54</span>
+      </div>
+    </div>
+    <div class="card" data-search="fall master scroll animation #56">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-56-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-56-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Fall Master</span>
+        <span class="num">#56</span>
+      </div>
+    </div>
+    <div class="card" data-search="pixel image master scroll animation #57">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-57-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-57-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Pixel Image Master</span>
+        <span class="num">#57</span>
+      </div>
+    </div>
+    <div class="card" data-search="abstract cards scroll animation #58">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-58-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-58-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Abstract Cards</span>
+        <span class="num">#58</span>
+      </div>
+    </div>
+    <div class="card" data-search="scroll-59 scroll animation #59">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-59-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-59-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">scroll-59</span>
+        <span class="num">#59</span>
+      </div>
+    </div>
+    <div class="card" data-search="deadspace scroll animation #60">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-60-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-60-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Deadspace</span>
+        <span class="num">#60</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #61">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-61-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-61-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#61</span>
+      </div>
+    </div>
+    <div class="card" data-search="show case effect scroll animation #62">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-62-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-62-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Show Case Effect</span>
+        <span class="num">#62</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #63">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-63-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-63-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#63</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #64">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-64-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-64-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#64</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #65">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-65-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-65-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#65</span>
+      </div>
+    </div>
+    <div class="card" data-search="files scroll animation #66">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/scroll-66-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/scroll-66-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#66</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="hero-animations">
+    <h2>Hero Animations <span class="badge">26</span></h2>
+    <div class="grid">
+    <div class="card" data-search="files hero animations #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    <div class="card" data-search="entranceanimationforimages hero animations #11">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-11-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-11-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Entranceanimationforimages</span>
+        <span class="num">#11</span>
+      </div>
+    </div>
+    <div class="card" data-search="repetitivetypography hero animations #12">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-12-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-12-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Repetitivetypography</span>
+        <span class="num">#12</span>
+      </div>
+    </div>
+    <div class="card" data-search="hero-13 hero animations #13">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-13-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-13-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">hero-13</span>
+        <span class="num">#13</span>
+      </div>
+    </div>
+    <div class="card" data-search="introgridmotiontransition hero animations #14">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-14-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-14-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Introgridmotiontransition</span>
+        <span class="num">#14</span>
+      </div>
+    </div>
+    <div class="card" data-search="introtraileffect hero animations #15">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-15-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-15-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Introtraileffect</span>
+        <span class="num">#15</span>
+      </div>
+    </div>
+    <div class="card" data-search="circulartexteffect hero animations #16">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-16-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-16-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Circulartexteffect</span>
+        <span class="num">#16</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #17">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-17-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-17-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#17</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #18">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-18-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-18-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#18</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #19">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-19-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-19-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#19</span>
+      </div>
+    </div>
+    <div class="card" data-search="cinematic loader entrance hero animations #20">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-20-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-20-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Cinematic Loader Entrance</span>
+        <span class="num">#20</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #21">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-21-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-21-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#21</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #22">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-22-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-22-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#22</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #23">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-23-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-23-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#23</span>
+      </div>
+    </div>
+    <div class="card" data-search="code hero animations #24">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-24-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-24-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Code</span>
+        <span class="num">#24</span>
+      </div>
+    </div>
+    <div class="card" data-search="loader hero animations #25">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-25-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-25-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Loader</span>
+        <span class="num">#25</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hero animations #26">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hero-26-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hero-26-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#26</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="sliders">
+    <h2>Sliders <span class="badge">23</span></h2>
+    <div class="grid">
+    <div class="card" data-search="files sliders #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    <div class="card" data-search="webgl carousel sliders #11">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-11-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-11-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Webgl Carousel</span>
+        <span class="num">#11</span>
+      </div>
+    </div>
+    <div class="card" data-search="crossroadsslideshow master sliders #12">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-12-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-12-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Crossroadsslideshow Master</span>
+        <span class="num">#12</span>
+      </div>
+    </div>
+    <div class="card" data-search="shapesslideshow sliders #13">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-13-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-13-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Shapesslideshow</span>
+        <span class="num">#13</span>
+      </div>
+    </div>
+    <div class="card" data-search="ripple displacement slider sliders #14">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-14-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-14-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Ripple Displacement Slider</span>
+        <span class="num">#14</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #15">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-15-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-15-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#15</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #16">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-16-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-16-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#16</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #17">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-17-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-17-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#17</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #18">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-18-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-18-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#18</span>
+      </div>
+    </div>
+    <div class="card" data-search="modular slider sliders #19">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-19-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-19-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Modular Slider</span>
+        <span class="num">#19</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #20">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-20-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-20-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#20</span>
+      </div>
+    </div>
+    <div class="card" data-search="overlapping swiper master sliders #21">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-21-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-21-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Overlapping Swiper Master</span>
+        <span class="num">#21</span>
+      </div>
+    </div>
+    <div class="card" data-search="files sliders #22">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-22-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-22-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#22</span>
+      </div>
+    </div>
+    <div class="card" data-search="circular gallery sliders #23">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-23-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/sliders-23-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Circular Gallery</span>
+        <span class="num">#23</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="navigation-menus">
+    <h2>Navigation Menus <span class="badge">21</span></h2>
+    <div class="grid">
+    <div class="card" data-search="files navigation menus #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #11">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-11-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-11-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#11</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #12">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-12-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-12-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#12</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #13">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-13-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-13-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#13</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #14">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-14-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-14-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#14</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #15">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-15-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-15-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#15</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #16">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-16-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-16-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#16</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #17">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-17-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-17-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#17</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #18">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-18-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-18-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#18</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #19">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-19-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-19-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#19</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #20">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-20-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-20-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#20</span>
+      </div>
+    </div>
+    <div class="card" data-search="files navigation menus #21">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/menu-21-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/menu-21-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#21</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="hover-effects">
+    <h2>Hover Effects <span class="badge">20</span></h2>
+    <div class="grid">
+    <div class="card" data-search="files hover effects #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hover effects #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hover effects #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hover effects #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="3dlettersmenuhover hover effects #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">3Dlettersmenuhover</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="lettersanimationlayout hover effects #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Lettersanimationlayout</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="repetitionhovereffect hover effects #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Repetitionhovereffect</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hover effects #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="gooeytexthovereffect master hover effects #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Gooeytexthovereffect Master</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="threejs texture transition hover effect hover effects #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Threejs Texture Transition Hover Effect</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    <div class="card" data-search="rapidimagehovermenu master hover effects #11">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-11-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-11-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Rapidimagehovermenu Master</span>
+        <span class="num">#11</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hover effects #12">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-12-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-12-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#12</span>
+      </div>
+    </div>
+    <div class="card" data-search="artefakt interactive ascii logo hover effects #13">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-13-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-13-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Artefakt Interactive Ascii Logo</span>
+        <span class="num">#13</span>
+      </div>
+    </div>
+    <div class="card" data-search="cappen fluid simulation hover effects #14">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-14-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-14-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Cappen Fluid Simulation</span>
+        <span class="num">#14</span>
+      </div>
+    </div>
+    <div class="card" data-search="griflan hover effect hover effects #15">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-15-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-15-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Griflan Hover Effect</span>
+        <span class="num">#15</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hover effects #16">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-16-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-16-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#16</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hover effects #17">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-17-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-17-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#17</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hover effects #18">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-18-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-18-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#18</span>
+      </div>
+    </div>
+    <div class="card" data-search="code hover effects #19">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-19-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-19-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Code</span>
+        <span class="num">#19</span>
+      </div>
+    </div>
+    <div class="card" data-search="files hover effects #20">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/hover-20-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/hover-20-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#20</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="mouse-effects">
+    <h2>Mouse Effects <span class="badge">20</span></h2>
+    <div class="grid">
+    <div class="card" data-search="files mouse effects #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="files mouse effects #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="files mouse effects #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="three skull mouse effects #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Three Skull</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="dist mouse effects #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Dist</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="files mouse effects #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="files mouse effects #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="files mouse effects #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="files mouse effects #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="files mouse effects #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    <div class="card" data-search="cursor trail mouse effects #11">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-11-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-11-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Cursor Trail</span>
+        <span class="num">#11</span>
+      </div>
+    </div>
+    <div class="card" data-search="the spirit master mouse effects #12">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-12-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-12-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">The Spirit Master</span>
+        <span class="num">#12</span>
+      </div>
+    </div>
+    <div class="card" data-search="canvas cursor mouse effects #13">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-13-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-13-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Canvas Cursor</span>
+        <span class="num">#13</span>
+      </div>
+    </div>
+    <div class="card" data-search="satisfying curly cursor 3kb of vanilla js on canvas mouse effects #14">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-14-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-14-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Satisfying Curly Cursor 3Kb Of Vanilla Js On Canvas</span>
+        <span class="num">#14</span>
+      </div>
+    </div>
+    <div class="card" data-search="shooting star mouse effects #15">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-15-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-15-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Shooting Star</span>
+        <span class="num">#15</span>
+      </div>
+    </div>
+    <div class="card" data-search="gsap hero section with advanced image cursor trail effects mouse effects #16">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-16-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-16-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Gsap Hero Section With Advanced Image Cursor Trail Effects</span>
+        <span class="num">#16</span>
+      </div>
+    </div>
+    <div class="card" data-search="text trail effect on mousemove mouse effects #17">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-17-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-17-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Text Trail Effect On Mousemove</span>
+        <span class="num">#17</span>
+      </div>
+    </div>
+    <div class="card" data-search="files mouse effects #18">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-18-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-18-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#18</span>
+      </div>
+    </div>
+    <div class="card" data-search="files mouse effects #19">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-19-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-19-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#19</span>
+      </div>
+    </div>
+    <div class="card" data-search="files mouse effects #20">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/mouse-20-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/mouse-20-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#20</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="webgl-and-threejs-effects">
+    <h2>Webgl & ThreeJS Effects <span class="badge">19</span></h2>
+    <div class="grid">
+    <div class="card" data-search="webgpu clair obscur gommage codrops master webgl & threejs effects #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Webgpu Clair Obscur Gommage Codrops Master</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="webgl mouseover effects master webgl & threejs effects #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Webgl Mouseover Effects Master</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="gooey hover codrops master webgl & threejs effects #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Gooey Hover Codrops Master</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="stickyimageeffect master webgl & threejs effects #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Stickyimageeffect Master</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="tutorial grid webgl & threejs effects #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Tutorial Grid</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="r3f image reveal effect webgl & threejs effects #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">R3F Image Reveal Effect</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="vfx js text shadow effect webgl & threejs effects #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Vfx Js Text Shadow Effect</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="distortedpixels master webgl & threejs effects #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Distortedpixels Master</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="interactive particles master webgl & threejs effects #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Interactive Particles Master</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="sdf lensblur master webgl & threejs effects #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Sdf Lensblur Master</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    <div class="card" data-search="webglblobs webgl & threejs effects #11">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-11-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-11-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Webglblobs</span>
+        <span class="num">#11</span>
+      </div>
+    </div>
+    <div class="card" data-search="the substance master webgl & threejs effects #12">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-12-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-12-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">The Substance Master</span>
+        <span class="num">#12</span>
+      </div>
+    </div>
+    <div class="card" data-search="morphing 2d demo webgl & threejs effects #13">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-13-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-13-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Morphing 2D Demo</span>
+        <span class="num">#13</span>
+      </div>
+    </div>
+    <div class="card" data-search="files webgl & threejs effects #14">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-14-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-14-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#14</span>
+      </div>
+    </div>
+    <div class="card" data-search="files webgl & threejs effects #15">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-15-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-15-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#15</span>
+      </div>
+    </div>
+    <div class="card" data-search="dist webgl & threejs effects #16">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-16-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-16-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Dist</span>
+        <span class="num">#16</span>
+      </div>
+    </div>
+    <div class="card" data-search="ironhill section rebuild webgl & threejs effects #17">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-17-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-17-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Ironhill Section Rebuild</span>
+        <span class="num">#17</span>
+      </div>
+    </div>
+    <div class="card" data-search="image distortion webgl & threejs effects #18">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-18-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-18-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Image Distortion</span>
+        <span class="num">#18</span>
+      </div>
+    </div>
+    <div class="card" data-search="code webgl & threejs effects #19">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/webgl-19-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/webgl-19-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Code</span>
+        <span class="num">#19</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="text-animations">
+    <h2>Text Animations <span class="badge">17</span></h2>
+    <div class="grid">
+    <div class="card" data-search="scrolltextmotion text animations #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Scrolltextmotion</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="3d text circle animation text animations #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">3D Text Circle Animation</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="sketch492 text animations #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Sketch492</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="files text animations #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="onscrolltypographyanimations text animations #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Onscrolltypographyanimations</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="onscrolltypographyanimations text animations #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Onscrolltypographyanimations</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="sketch491 text animations #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Sketch491</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="animated verbs ii text animations #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Animated Verbs Ii</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="morphsvg converttopath text animations #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Morphsvg Converttopath</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="files text animations #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    <div class="card" data-search="files text animations #11">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-11-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-11-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#11</span>
+      </div>
+    </div>
+    <div class="card" data-search="next text reveal animation text animations #12">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-12-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-12-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Next Text Reveal Animation</span>
+        <span class="num">#12</span>
+      </div>
+    </div>
+    <div class="card" data-search="seventeenagency scroll animation text animations #13">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-13-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-13-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Seventeenagency Scroll Animation</span>
+        <span class="num">#13</span>
+      </div>
+    </div>
+    <div class="card" data-search="files text animations #14">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-14-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-14-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#14</span>
+      </div>
+    </div>
+    <div class="card" data-search="text-15 text animations #15">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-15-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-15-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">text-15</span>
+        <span class="num">#15</span>
+      </div>
+    </div>
+    <div class="card" data-search="menuxl text displacement animation text animations #16">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-16-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-16-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Menuxl Text Displacement Animation</span>
+        <span class="num">#16</span>
+      </div>
+    </div>
+    <div class="card" data-search="files text animations #17">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/text-17-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/text-17-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#17</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="page-transitions">
+    <h2>Page Transitions <span class="badge">14</span></h2>
+    <div class="grid">
+    <div class="card" data-search="demo page transitions #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Demo</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="files page transitions #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="layersanimation page transitions #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Layersanimation</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="pixeltransition page transitions #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Pixeltransition</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="svg page transition page transitions #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Svg Page Transition</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="slicerevealer master page transitions #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Slicerevealer Master</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="files page transitions #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="barbajs page transition page transitions #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Barbajs Page Transition</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="pagetransition waabi page transitions #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Pagetransition Waabi</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="kinetictypepagetransition page transitions #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Kinetictypepagetransition</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    <div class="card" data-search="files page transitions #11">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-11-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-11-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#11</span>
+      </div>
+    </div>
+    <div class="card" data-search="block reveal page transition page transitions #12">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-12-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-12-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Block Reveal Page Transition</span>
+        <span class="num">#12</span>
+      </div>
+    </div>
+    <div class="card" data-search="files page transitions #13">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-13-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-13-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#13</span>
+      </div>
+    </div>
+    <div class="card" data-search="svg page transition master page transitions #14">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/pegetr-14-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/pegetr-14-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Svg Page Transition Master</span>
+        <span class="num">#14</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="svg-animations">
+    <h2>SVG Animations <span class="badge">11</span></h2>
+    <div class="grid">
+    <div class="card" data-search="svg shape overlays svg animations #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/svg-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/svg-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Svg Shape Overlays</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="morphsvgcomplex paths svg animations #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/svg-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/svg-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Morphsvgcomplex Paths</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="onscrollsvgfiltertext svg animations #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/svg-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/svg-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Onscrollsvgfiltertext</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="onscrollfilter svg animations #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/svg-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/svg-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Onscrollfilter</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="onscrollpathanimations svg animations #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/svg-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/svg-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Onscrollpathanimations</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="files svg animations #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/svg-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/svg-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="files svg animations #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/svg-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/svg-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="morphingbackgroundshapes master svg animations #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/svg-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/svg-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Morphingbackgroundshapes Master</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="canvas particles svg animations #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/svg-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/svg-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Canvas Particles</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="underwater navigation master svg animations #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/svg-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/svg-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Underwater Navigation Master</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    <div class="card" data-search="ashleybrookecs smudge revealer svg animations #11">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/svg-11-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/svg-11-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Ashleybrookecs Smudge Revealer</span>
+        <span class="num">#11</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="background-animations">
+    <h2>Background Animations <span class="badge">10</span></h2>
+    <div class="grid">
+    <div class="card" data-search="files background animations #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/bg-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="files background animations #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/bg-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="files background animations #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/bg-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="files background animations #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/bg-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="files background animations #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/bg-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="files background animations #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/bg-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="files background animations #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/bg-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="files background animations #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/bg-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="files background animations #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/bg-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="files background animations #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/bg-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/bg-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="grid-animations">
+    <h2>Grid Animations <span class="badge">10</span></h2>
+    <div class="grid">
+    <div class="card" data-search="grid layout transition grid animations #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/grid-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/grid-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Grid Layout Transition</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="spotify visualiser grid animations #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/grid-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/grid-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Spotify Visualiser</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="elasticgridscroll grid animations #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/grid-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/grid-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Elasticgridscroll</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="grid to preview grid animations #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/grid-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/grid-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Grid To Preview</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="repeatingimagetransition grid animations #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/grid-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/grid-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Repeatingimagetransition</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="add to cart grid animations #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/grid-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/grid-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Add To Cart</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="onscrolllayoutformations grid animations #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/grid-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/grid-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Onscrolllayoutformations</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="hovergrid grid animations #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/grid-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/grid-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Hovergrid</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="makewaygrideffect grid animations #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/grid-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/grid-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Makewaygrideffect</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="gridfloweffect grid animations #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/grid-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/grid-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Gridfloweffect</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="physics-effects">
+    <h2>Physics Effects <span class="badge">10</span></h2>
+    <div class="grid">
+    <div class="card" data-search="sticky cursor physics effects #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/physic-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Sticky Cursor</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="svg bezier curve master physics effects #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/physic-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Svg Bezier Curve Master</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="magnetic button physics effects #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/physic-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Magnetic Button</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="fluid triangle physics effects #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/physic-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Fluid Triangle</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="files physics effects #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/physic-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="files physics effects #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/physic-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="files physics effects #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/physic-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="sphere packing physics effects #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/physic-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Sphere Packing</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="works physics effects #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/physic-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Works</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="r3f rapier ball of glass physics effects #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/physic-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/physic-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">R3F Rapier Ball Of Glass</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section" id="3d-animation">
+    <h2>3D Animation <span class="badge">22</span></h2>
+    <div class="grid">
+    <div class="card" data-search="threejs font grid 3d animation #1">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-1-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-1-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Threejs Font Grid</span>
+        <span class="num">#01</span>
+      </div>
+    </div>
+    <div class="card" data-search="three html to canvas 3d animation #2">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-2-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-2-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Three Html To Canvas</span>
+        <span class="num">#02</span>
+      </div>
+    </div>
+    <div class="card" data-search="cinematic scroll animations 3d animation #3">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-3-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-3-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Cinematic Scroll Animations</span>
+        <span class="num">#03</span>
+      </div>
+    </div>
+    <div class="card" data-search="delphi 3d animation #4">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-4-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-4-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Delphi</span>
+        <span class="num">#04</span>
+      </div>
+    </div>
+    <div class="card" data-search="shoe finder 3d animation #5">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-5-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-5-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Shoe Finder</span>
+        <span class="num">#05</span>
+      </div>
+    </div>
+    <div class="card" data-search="video projection 3d animation #6">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-6-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-6-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Video Projection</span>
+        <span class="num">#06</span>
+      </div>
+    </div>
+    <div class="card" data-search="3dcarousel 3d animation #7">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-7-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-7-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">3Dcarousel</span>
+        <span class="num">#07</span>
+      </div>
+    </div>
+    <div class="card" data-search="creative 404 3d animation #8">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-8-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-8-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Creative 404</span>
+        <span class="num">#08</span>
+      </div>
+    </div>
+    <div class="card" data-search="dithering shader 3d animation #9">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-9-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-9-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Dithering Shader</span>
+        <span class="num">#09</span>
+      </div>
+    </div>
+    <div class="card" data-search="interactive styling canvas 3d animation #10">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-10-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-10-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Interactive Styling Canvas</span>
+        <span class="num">#10</span>
+      </div>
+    </div>
+    <div class="card" data-search="threepipe device mockup codrops master 3d animation #11">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-11-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-11-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Threepipe Device Mockup Codrops Master</span>
+        <span class="num">#11</span>
+      </div>
+    </div>
+    <div class="card" data-search="helmet 3d animation #12">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-12-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-12-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Helmet</span>
+        <span class="num">#12</span>
+      </div>
+    </div>
+    <div class="card" data-search="3d earth scroll 3d animation #13">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-13-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-13-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">3D Earth Scroll</span>
+        <span class="num">#13</span>
+      </div>
+    </div>
+    <div class="card" data-search="repetition image animation 3d animation #14">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-14-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-14-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Repetition Image Animation</span>
+        <span class="num">#14</span>
+      </div>
+    </div>
+    <div class="card" data-search="f 3d animation #15">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-15-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-15-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">F</span>
+        <span class="num">#15</span>
+      </div>
+    </div>
+    <div class="card" data-search="living words 3d animation #16">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-16-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-16-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Living Words</span>
+        <span class="num">#16</span>
+      </div>
+    </div>
+    <div class="card" data-search="code 3d animation #17">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-17-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-17-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Code</span>
+        <span class="num">#17</span>
+      </div>
+    </div>
+    <div class="card" data-search="circular image layout 3d animation #18">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-18-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-18-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Circular Image Layout</span>
+        <span class="num">#18</span>
+      </div>
+    </div>
+    <div class="card" data-search="files 3d animation #19">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-19-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-19-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#19</span>
+      </div>
+    </div>
+    <div class="card" data-search="files 3d animation #20">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-20-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-20-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#20</span>
+      </div>
+    </div>
+    <div class="card" data-search="fiels 3d animation #21">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-21-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-21-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Fiels</span>
+        <span class="num">#21</span>
+      </div>
+    </div>
+    <div class="card" data-search="files 3d animation #22">
+      <div class="vid-wrap">
+        <video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/3d-22-500.webp">
+          <source data-src="https://animmaster-videos.b-cdn.net/files/3d-22-650.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="label">
+        <span class="name">Files</span>
+        <span class="num">#22</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="section custom-section" id="custom">
+    <h2>Custom Effects <span class="badge">0</span></h2>
+    <p style="color:#555;margin-bottom:16px">Custom effects from Manus, AG, Vengence UI, and project-specific builds. To add an effect, ask Hermy to catalog it here.</p>
+    <div class="custom-grid">
+      <div class="custom-card">Vengence UI — radial-glow-button, liquid-metal, generate-button</div>
+      <div class="custom-card">Aceternity — 149 components (Phase 2)</div>
+      <div class="custom-card">MagicUI — 24 components (Phase 2)</div>
+      <div class="custom-card">CultUI — 333 components (Phase 2)</div>
+      <div class="custom-card">SmoothUI — 73 components (Phase 2)</div>
+      <div class="custom-card">Add more custom effects here</div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="footer">
+  AnimMasterLib Visual Catalog — generated 2026-07-28<br>
+  To use: tell Hermy "use Scroll #12 on the testimonials section" or "use Hero #4 for the landing hero"<br>
+  Hermy has the local code paths — you just need to pick the number
+</div>
+
+<script>
+// Lazy load videos
+const vidObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const video = entry.target;
+      const source = video.querySelector('source');
+      if (source && source.dataset.src) {
+        source.src = source.dataset.src;
+        video.load();
+        video.play().catch(() => {});
+        video.classList.add('loaded');
+        vidObserver.unobserve(video);
+      }
+    }
+  });
+}, { rootMargin: '300px' });
+
+document.querySelectorAll('video.lazy-vid').forEach(v => vidObserver.observe(v));
+
+// Search filter
+document.getElementById('search').addEventListener('input', (e) => {
+  const q = e.target.value.toLowerCase();
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.display = card.dataset.search.includes(q) ? '' : 'none';
+  });
+  document.querySelectorAll('.section').forEach(section => {
+    const visible = section.querySelectorAll('.card:not([style*="none"])').length;
+    section.style.display = visible > 0 ? '' : 'none';
+  });
+});
+
+// Sidebar active state
+const sections = document.querySelectorAll('.section');
+const sidebarLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 100) {
+      current = section.id;
+    }
+  });
+  sidebarLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+
+</body>
+</html>
