@@ -12,15 +12,16 @@
   .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
   .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
   .search:focus { outline: none; border-color: #0066FF; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
   .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
   .card:hover { transform: translateY(-3px); border-color: #0066FF; }
-  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); position: relative; overflow: hidden; }
   .card .preview video { width: 100%; height: 100%; object-fit: cover; }
-  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
-  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .preview iframe { width: 100%; height: 100%; border: 0; pointer-events: none; }
+  .card .preview .placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .ext-link { position: absolute; bottom: 6px; right: 6px; font-size: 0.6rem; color: #0066FF; opacity: 0.4; text-decoration: none; }
   .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
-  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
   .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
@@ -120,127 +121,127 @@
       <div class="label"><span class="name">Files</span><span class="num">#22</span></div>
     </div>
     <div class="card" data-search="3d card effect #23 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">3D Card Effect</span><span class="num">#23</span></div>
     </div>
     <div class="card" data-search="3d card #24 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">3D Card</span><span class="num">#24</span></div>
     </div>
     <div class="card" data-search="3d globe #25 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">3D Globe</span><span class="num">#25</span></div>
     </div>
     <div class="card" data-search="3d marquee #26 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">3D Marquee</span><span class="num">#26</span></div>
     </div>
     <div class="card" data-search="3d pin #27 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">3D Pin</span><span class="num">#27</span></div>
     </div>
     <div class="card" data-search="apple cards carousel #28 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Apple Cards Carousel</span><span class="num">#28</span></div>
     </div>
     <div class="card" data-search="apple #29 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Apple</span><span class="num">#29</span></div>
     </div>
     <div class="card" data-search="comet card #30 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Comet Card</span><span class="num">#30</span></div>
     </div>
     <div class="card" data-search="evervault card #31 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Evervault Card</span><span class="num">#31</span></div>
     </div>
     <div class="card" data-search="focus cards #32 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Focus Cards</span><span class="num">#32</span></div>
     </div>
     <div class="card" data-search="glare card #33 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Glare Card</span><span class="num">#33</span></div>
     </div>
     <div class="card" data-search="globe #34 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Globe</span><span class="num">#34</span></div>
     </div>
     <div class="card" data-search="lens #35 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Lens</span><span class="num">#35</span></div>
     </div>
     <div class="card" data-search="notch #36 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Notch</span><span class="num">#36</span></div>
     </div>
     <div class="card" data-search="pixelated canvas #37 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Pixelated Canvas</span><span class="num">#37</span></div>
     </div>
     <div class="card" data-search="scales #38 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Scales</span><span class="num">#38</span></div>
     </div>
     <div class="card" data-search="three element #39 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Three Element</span><span class="num">#39</span></div>
     </div>
     <div class="card" data-search="webcam pixel grid #40 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Webcam Pixel Grid</span><span class="num">#40</span></div>
     </div>
     <div class="card" data-search="world map #41 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">World Map</span><span class="num">#41</span></div>
     </div>
     <div class="card" data-search="dither image demo upload #42 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Dither Image Demo Upload</span><span class="num">#42</span></div>
     </div>
     <div class="card" data-search="dither image demo #43 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Dither Image Demo</span><span class="num">#43</span></div>
     </div>
     <div class="card" data-search="dither image #44 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Dither Image</span><span class="num">#44</span></div>
     </div>
     <div class="card" data-search="hero dithering demo #45 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Hero Dithering Demo</span><span class="num">#45</span></div>
     </div>
     <div class="card" data-search="hero dithering #46 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Hero Dithering</span><span class="num">#46</span></div>
     </div>
     <div class="card" data-search="shader lens blur demo #47 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Shader Lens Blur Demo</span><span class="num">#47</span></div>
     </div>
     <div class="card" data-search="shader lens blur #48 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Shader Lens Blur</span><span class="num">#48</span></div>
     </div>
     <div class="card" data-search="three d carousel demo #49 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Three D Carousel Demo</span><span class="num">#49</span></div>
     </div>
     <div class="card" data-search="three d carousel #50 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Three D Carousel</span><span class="num">#50</span></div>
     </div>
     <div class="card" data-search="hover 3d #51 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Hover 3D</span><span class="num">#51</span></div>
     </div>
     <div class="card" data-search="3d carousel 3d carousel #52 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">3D Carousel 3D Carousel</span><span class="num">#52</span></div>
     </div>
     <div class="card" data-search="threed card threed card #53 3d animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Threed Card Threed Card</span><span class="num">#53</span></div>
     </div>
 </div>

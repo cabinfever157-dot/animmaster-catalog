@@ -12,15 +12,16 @@
   .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
   .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
   .search:focus { outline: none; border-color: #0066FF; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
   .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
   .card:hover { transform: translateY(-3px); border-color: #0066FF; }
-  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); position: relative; overflow: hidden; }
   .card .preview video { width: 100%; height: 100%; object-fit: cover; }
-  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
-  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .preview iframe { width: 100%; height: 100%; border: 0; pointer-events: none; }
+  .card .preview .placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .ext-link { position: absolute; bottom: 6px; right: 6px; font-size: 0.6rem; color: #0066FF; opacity: 0.4; text-decoration: none; }
   .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
-  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
   .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
@@ -292,107 +293,107 @@
       <div class="label"><span class="name">Files</span><span class="num">#66</span></div>
     </div>
     <div class="card" data-search="container scroll animation #67 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Container Scroll Animation</span><span class="num">#67</span></div>
     </div>
     <div class="card" data-search="parallax hero images #68 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Parallax Hero Images</span><span class="num">#68</span></div>
     </div>
     <div class="card" data-search="parallax scroll 2 #69 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Parallax Scroll 2</span><span class="num">#69</span></div>
     </div>
     <div class="card" data-search="parallax scroll #70 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Parallax Scroll</span><span class="num">#70</span></div>
     </div>
     <div class="card" data-search="sticky banner #71 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Sticky Banner</span><span class="num">#71</span></div>
     </div>
     <div class="card" data-search="sticky scroll reveal #72 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Sticky Scroll Reveal</span><span class="num">#72</span></div>
     </div>
     <div class="card" data-search="timeline #73 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Timeline</span><span class="num">#73</span></div>
     </div>
     <div class="card" data-search="marquee #74 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Marquee</span><span class="num">#74</span></div>
     </div>
     <div class="card" data-search="progress #75 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Progress</span><span class="num">#75</span></div>
     </div>
     <div class="card" data-search="scroll reveal paragraph #76 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Scroll Reveal Paragraph</span><span class="num">#76</span></div>
     </div>
     <div class="card" data-search="scrollable card stack #77 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Scrollable Card Stack</span><span class="num">#77</span></div>
     </div>
     <div class="card" data-search="application timelines 1 dark #78 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Application Timelines 1 Dark</span><span class="num">#78</span></div>
     </div>
     <div class="card" data-search="application timelines 1 #79 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Application Timelines 1</span><span class="num">#79</span></div>
     </div>
     <div class="card" data-search="application timelines 2 dark #80 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Application Timelines 2 Dark</span><span class="num">#80</span></div>
     </div>
     <div class="card" data-search="application timelines 2 #81 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Application Timelines 2</span><span class="num">#81</span></div>
     </div>
     <div class="card" data-search="application timelines 3 dark #82 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Application Timelines 3 Dark</span><span class="num">#82</span></div>
     </div>
     <div class="card" data-search="application timelines 3 #83 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Application Timelines 3</span><span class="num">#83</span></div>
     </div>
     <div class="card" data-search="countdown #84 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Countdown</span><span class="num">#84</span></div>
     </div>
     <div class="card" data-search="radial progress #85 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Radial Progress</span><span class="num">#85</span></div>
     </div>
     <div class="card" data-search="stack #86 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Stack</span><span class="num">#86</span></div>
     </div>
     <div class="card" data-search="marquee view #87 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Marquee View</span><span class="num">#87</span></div>
     </div>
     <div class="card" data-search="marquee marqueetext #88 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Marquee Marqueetext</span><span class="num">#88</span></div>
     </div>
     <div class="card" data-search="progress view #89 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Progress View</span><span class="num">#89</span></div>
     </div>
     <div class="card" data-search="timeline timeline2 #90 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Timeline Timeline2</span><span class="num">#90</span></div>
     </div>
     <div class="card" data-search="timeline timeline3 #91 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Timeline Timeline3</span><span class="num">#91</span></div>
     </div>
     <div class="card" data-search="scrollprogress #92 scroll animation">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Scrollprogress</span><span class="num">#92</span></div>
     </div>
 </div>

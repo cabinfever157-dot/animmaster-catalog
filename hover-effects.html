@@ -12,15 +12,16 @@
   .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
   .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
   .search:focus { outline: none; border-color: #0066FF; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
   .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
   .card:hover { transform: translateY(-3px); border-color: #0066FF; }
-  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); position: relative; overflow: hidden; }
   .card .preview video { width: 100%; height: 100%; object-fit: cover; }
-  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
-  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .preview iframe { width: 100%; height: 100%; border: 0; pointer-events: none; }
+  .card .preview .placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .ext-link { position: absolute; bottom: 6px; right: 6px; font-size: 0.6rem; color: #0066FF; opacity: 0.4; text-decoration: none; }
   .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
-  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
   .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
@@ -112,127 +113,127 @@
       <div class="label"><span class="name">Files</span><span class="num">#20</span></div>
     </div>
     <div class="card" data-search="radial glow button #21 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Radial Glow Button</span><span class="num">#21</span></div>
     </div>
     <div class="card" data-search="generate button #22 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Generate Button</span><span class="num">#22</span></div>
     </div>
     <div class="card" data-search="liquid metal button #23 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Liquid Metal Button</span><span class="num">#23</span></div>
     </div>
     <div class="card" data-search="bento grid #24 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Bento Grid</span><span class="num">#24</span></div>
     </div>
     <div class="card" data-search="card hover effect #25 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Card Hover Effect</span><span class="num">#25</span></div>
     </div>
     <div class="card" data-search="compare #26 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Compare</span><span class="num">#26</span></div>
     </div>
     <div class="card" data-search="direction aware hover #27 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Direction Aware Hover</span><span class="num">#27</span></div>
     </div>
     <div class="card" data-search="following pointer #28 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Following Pointer</span><span class="num">#28</span></div>
     </div>
     <div class="card" data-search="glowing effect #29 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Glowing Effect</span><span class="num">#29</span></div>
     </div>
     <div class="card" data-search="hover effect #30 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Hover Effect</span><span class="num">#30</span></div>
     </div>
     <div class="card" data-search="layout grid #31 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Layout Grid</span><span class="num">#31</span></div>
     </div>
     <div class="card" data-search="pulsating dot #32 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Pulsating Dot</span><span class="num">#32</span></div>
     </div>
     <div class="card" data-search="wobble card #33 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Wobble Card</span><span class="num">#33</span></div>
     </div>
     <div class="card" data-search="magic card #34 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Magic Card</span><span class="num">#34</span></div>
     </div>
     <div class="card" data-search="direction aware tabs demo #35 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Direction Aware Tabs Demo</span><span class="num">#35</span></div>
     </div>
     <div class="card" data-search="direction aware tabs #36 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Direction Aware Tabs</span><span class="num">#36</span></div>
     </div>
     <div class="card" data-search="expandable card #37 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Expandable Card</span><span class="num">#37</span></div>
     </div>
     <div class="card" data-search="expandable #38 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Expandable</span><span class="num">#38</span></div>
     </div>
     <div class="card" data-search="hover card #39 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Hover Card</span><span class="num">#39</span></div>
     </div>
     <div class="card" data-search="morph surface demo #40 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Morph Surface Demo</span><span class="num">#40</span></div>
     </div>
     <div class="card" data-search="morph surface #41 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Morph Surface</span><span class="num">#41</span></div>
     </div>
     <div class="card" data-search="figma comment #42 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Figma Comment</span><span class="num">#42</span></div>
     </div>
     <div class="card" data-search="glow hover card #43 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Glow Hover Card</span><span class="num">#43</span></div>
     </div>
     <div class="card" data-search="hover gallery #44 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Hover Gallery</span><span class="num">#44</span></div>
     </div>
     <div class="card" data-search="bento grid bento grid #45 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Bento Grid Bento Grid</span><span class="num">#45</span></div>
     </div>
     <div class="card" data-search="magic magiccard #46 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Magic Magiccard</span><span class="num">#46</span></div>
     </div>
     <div class="card" data-search="teammember #47 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Teammember</span><span class="num">#47</span></div>
     </div>
     <div class="card" data-search="teammember teammember3 #48 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Teammember Teammember3</span><span class="num">#48</span></div>
     </div>
     <div class="card" data-search="teammember teammember4 #49 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Teammember Teammember4</span><span class="num">#49</span></div>
     </div>
     <div class="card" data-search="hovercard #50 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Hovercard</span><span class="num">#50</span></div>
     </div>
     <div class="card" data-search="teamcard #51 hover effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Teamcard</span><span class="num">#51</span></div>
     </div>
 </div>

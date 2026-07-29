@@ -12,15 +12,16 @@
   .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
   .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
   .search:focus { outline: none; border-color: #0066FF; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
   .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
   .card:hover { transform: translateY(-3px); border-color: #0066FF; }
-  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); position: relative; overflow: hidden; }
   .card .preview video { width: 100%; height: 100%; object-fit: cover; }
-  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
-  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .preview iframe { width: 100%; height: 100%; border: 0; pointer-events: none; }
+  .card .preview .placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .ext-link { position: absolute; bottom: 6px; right: 6px; font-size: 0.6rem; color: #0066FF; opacity: 0.4; text-decoration: none; }
   .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
-  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
   .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
@@ -72,255 +73,255 @@
       <div class="label"><span class="name">Files</span><span class="num">#10</span></div>
     </div>
     <div class="card" data-search="aurora background #11 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Aurora Background</span><span class="num">#11</span></div>
     </div>
     <div class="card" data-search="background beams with collision #12 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Background Beams With Collision</span><span class="num">#12</span></div>
     </div>
     <div class="card" data-search="background beams #13 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Background Beams</span><span class="num">#13</span></div>
     </div>
     <div class="card" data-search="background boxes #14 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Background Boxes</span><span class="num">#14</span></div>
     </div>
     <div class="card" data-search="background gradient animation #15 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Background Gradient Animation</span><span class="num">#15</span></div>
     </div>
     <div class="card" data-search="background gradient #16 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Background Gradient</span><span class="num">#16</span></div>
     </div>
     <div class="card" data-search="background lines #17 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Background Lines</span><span class="num">#17</span></div>
     </div>
     <div class="card" data-search="background ripple effect #18 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Background Ripple Effect</span><span class="num">#18</span></div>
     </div>
     <div class="card" data-search="dither shader #19 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Dither Shader</span><span class="num">#19</span></div>
     </div>
     <div class="card" data-search="dot background demo #20 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Dot Background Demo</span><span class="num">#20</span></div>
     </div>
     <div class="card" data-search="dot pattern #21 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Dot Pattern</span><span class="num">#21</span></div>
     </div>
     <div class="card" data-search="dots background #22 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Dots Background</span><span class="num">#22</span></div>
     </div>
     <div class="card" data-search="dotted glow background #23 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Dotted Glow Background</span><span class="num">#23</span></div>
     </div>
     <div class="card" data-search="glowing background stars card #24 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Glowing Background Stars Card</span><span class="num">#24</span></div>
     </div>
     <div class="card" data-search="glowing stars #25 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Glowing Stars</span><span class="num">#25</span></div>
     </div>
     <div class="card" data-search="grid background demo #26 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Grid Background Demo</span><span class="num">#26</span></div>
     </div>
     <div class="card" data-search="grid pattern #27 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Grid Pattern</span><span class="num">#27</span></div>
     </div>
     <div class="card" data-search="grid small background demo #28 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Grid Small Background Demo</span><span class="num">#28</span></div>
     </div>
     <div class="card" data-search="meteors #29 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Meteors</span><span class="num">#29</span></div>
     </div>
     <div class="card" data-search="noise background #30 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Noise Background</span><span class="num">#30</span></div>
     </div>
     <div class="card" data-search="shooting stars and stars background #31 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Shooting Stars And Stars Background</span><span class="num">#31</span></div>
     </div>
     <div class="card" data-search="shooting stars #32 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Shooting Stars</span><span class="num">#32</span></div>
     </div>
     <div class="card" data-search="sparkles #33 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Sparkles</span><span class="num">#33</span></div>
     </div>
     <div class="card" data-search="stars background #34 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Stars Background</span><span class="num">#34</span></div>
     </div>
     <div class="card" data-search="tracing beam #35 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Tracing Beam</span><span class="num">#35</span></div>
     </div>
     <div class="card" data-search="vortex background #36 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Vortex Background</span><span class="num">#36</span></div>
     </div>
     <div class="card" data-search="vortex #37 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Vortex</span><span class="num">#37</span></div>
     </div>
     <div class="card" data-search="wavy background #38 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Wavy Background</span><span class="num">#38</span></div>
     </div>
     <div class="card" data-search="animated beam #39 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Animated Beam</span><span class="num">#39</span></div>
     </div>
     <div class="card" data-search="border beam #40 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Border Beam</span><span class="num">#40</span></div>
     </div>
     <div class="card" data-search="flickering grid #41 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Flickering Grid</span><span class="num">#41</span></div>
     </div>
     <div class="card" data-search="particles #42 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Particles</span><span class="num">#42</span></div>
     </div>
     <div class="card" data-search="shine border #43 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Shine Border</span><span class="num">#43</span></div>
     </div>
     <div class="card" data-search="background guides #44 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Background Guides</span><span class="num">#44</span></div>
     </div>
     <div class="card" data-search="background texture client #45 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Background Texture Client</span><span class="num">#45</span></div>
     </div>
     <div class="card" data-search="bg animated gradient demo #46 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Bg Animated Gradient Demo</span><span class="num">#46</span></div>
     </div>
     <div class="card" data-search="bg animated gradient #47 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Bg Animated Gradient</span><span class="num">#47</span></div>
     </div>
     <div class="card" data-search="bg image texture demo #48 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Bg Image Texture Demo</span><span class="num">#48</span></div>
     </div>
     <div class="card" data-search="bg image texture #49 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Bg Image Texture</span><span class="num">#49</span></div>
     </div>
     <div class="card" data-search="bg media demo #50 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Bg Media Demo</span><span class="num">#50</span></div>
     </div>
     <div class="card" data-search="bg media #51 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Bg Media</span><span class="num">#51</span></div>
     </div>
     <div class="card" data-search="gradient heading demo #52 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Gradient Heading Demo</span><span class="num">#52</span></div>
     </div>
     <div class="card" data-search="gradient heading #53 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Gradient Heading</span><span class="num">#53</span></div>
     </div>
     <div class="card" data-search="grid beam demo #54 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Grid Beam Demo</span><span class="num">#54</span></div>
     </div>
     <div class="card" data-search="grid beam #55 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Grid Beam</span><span class="num">#55</span></div>
     </div>
     <div class="card" data-search="stripe bg guides demo #56 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Stripe Bg Guides Demo</span><span class="num">#56</span></div>
     </div>
     <div class="card" data-search="stripe bg guides #57 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Stripe Bg Guides</span><span class="num">#57</span></div>
     </div>
     <div class="card" data-search="aurora #58 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Aurora</span><span class="num">#58</span></div>
     </div>
     <div class="card" data-search="sparklestext view #59 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Sparklestext View</span><span class="num">#59</span></div>
     </div>
     <div class="card" data-search="sparklestext #60 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Sparklestext</span><span class="num">#60</span></div>
     </div>
     <div class="card" data-search="svg bands #61 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">SVG Bands</span><span class="num">#61</span></div>
     </div>
     <div class="card" data-search="svg shapes animated demo #62 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Svg Shapes Animated Demo</span><span class="num">#62</span></div>
     </div>
     <div class="card" data-search="svg shapes animated #63 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">SVG Shapes Animated</span><span class="num">#63</span></div>
     </div>
     <div class="card" data-search="svg shapes demo #64 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Svg Shapes Demo</span><span class="num">#64</span></div>
     </div>
     <div class="card" data-search="svg shapes #65 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">SVG Shapes</span><span class="num">#65</span></div>
     </div>
     <div class="card" data-search="infinite grid infinite grid #66 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Infinite Grid Infinite Grid</span><span class="num">#66</span></div>
     </div>
     <div class="card" data-search="letter glitch letter glitch #67 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Letter Glitch Letter Glitch</span><span class="num">#67</span></div>
     </div>
     <div class="card" data-search="liquid glass liquid glass demo #68 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Liquid Glass Liquid Glass Demo</span><span class="num">#68</span></div>
     </div>
     <div class="card" data-search="liquid glass liquid glass #69 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Liquid Glass Liquid Glass</span><span class="num">#69</span></div>
     </div>
     <div class="card" data-search="moving grid moving grid #70 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Moving Grid Moving Grid</span><span class="num">#70</span></div>
     </div>
     <div class="card" data-search="noise noise #71 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Noise Noise</span><span class="num">#71</span></div>
     </div>
     <div class="card" data-search="pattern pattern craft interface #72 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Pattern Pattern Craft Interface</span><span class="num">#72</span></div>
     </div>
     <div class="card" data-search="form pattern #73 background animations">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Form Pattern</span><span class="num">#73</span></div>
     </div>
 </div>

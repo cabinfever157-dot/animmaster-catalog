@@ -12,15 +12,16 @@
   .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
   .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
   .search:focus { outline: none; border-color: #0066FF; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
   .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
   .card:hover { transform: translateY(-3px); border-color: #0066FF; }
-  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); position: relative; overflow: hidden; }
   .card .preview video { width: 100%; height: 100%; object-fit: cover; }
-  .card .preview .placeholder { color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
-  .card .preview .code-avail { position: absolute; bottom: 8px; right: 8px; font-size: 0.6rem; color: #0066FF; opacity: 0.5; }
+  .card .preview iframe { width: 100%; height: 100%; border: 0; pointer-events: none; }
+  .card .preview .placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+  .card .preview .ext-link { position: absolute; bottom: 6px; right: 6px; font-size: 0.6rem; color: #0066FF; opacity: 0.4; text-decoration: none; }
   .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
-  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
   .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
 </style>
 </head>
@@ -72,27 +73,27 @@
       <div class="label"><span class="name">R3F Rapier Ball Of Glass</span><span class="num">#10</span></div>
     </div>
     <div class="card" data-search="ripple #11 physics effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Ripple</span><span class="num">#11</span></div>
     </div>
     <div class="card" data-search="siri orb #12 physics effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Siri ORB</span><span class="num">#12</span></div>
     </div>
     <div class="card" data-search="orbiting #13 physics effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Orbiting</span><span class="num">#13</span></div>
     </div>
     <div class="card" data-search="orbits nexusorb #14 physics effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Orbits Nexusorb</span><span class="num">#14</span></div>
     </div>
     <div class="card" data-search="orbits nexusorbsup #15 physics effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Orbits Nexusorbsup</span><span class="num">#15</span></div>
     </div>
     <div class="card" data-search="orbits spider #16 physics effects">
-      <div class="preview"><div class="placeholder">Code Available</div><div class="code-avail">●</div></div>
+      <div class="preview"><div class="placeholder">No Preview</div></div>
       <div class="label"><span class="name">Orbits Spider</span><span class="num">#16</span></div>
     </div>
 </div>
