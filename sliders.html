@@ -1,225 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sliders — Component Catalog</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
-  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
-  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
-  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
-  .search:focus { outline: none; border-color: #0066FF; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
-  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
-  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
-  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); position: relative; overflow: hidden; }
-  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
-  .card .preview iframe { width: 100%; height: 100%; border: 0; pointer-events: none; }
-  .card .preview .placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
-  .card .preview .ext-link { position: absolute; bottom: 6px; right: 6px; font-size: 0.6rem; color: #0066FF; opacity: 0.4; text-decoration: none; }
-  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
-  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
-  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
-</style>
-</head>
-<body>
-<div class="header">
-  <h1>Sliders <span style="color:#555;font-size:0.8rem">(46)</span></h1>
-  <a href="index.html">← All Categories</a>
-  <input class="search" type="text" placeholder="Search Sliders..." id="search">
-</div>
-<div class="grid" id="grid">
-    <div class="card" data-search="files #01 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-1-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-1-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#01</span></div>
-    </div>
-    <div class="card" data-search="files #02 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-2-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-2-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#02</span></div>
-    </div>
-    <div class="card" data-search="files #03 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-3-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-3-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#03</span></div>
-    </div>
-    <div class="card" data-search="files #04 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-4-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-4-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#04</span></div>
-    </div>
-    <div class="card" data-search="files #05 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-5-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-5-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#05</span></div>
-    </div>
-    <div class="card" data-search="files #06 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-6-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-6-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#06</span></div>
-    </div>
-    <div class="card" data-search="files #07 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-7-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-7-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#07</span></div>
-    </div>
-    <div class="card" data-search="files #08 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-8-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-8-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#08</span></div>
-    </div>
-    <div class="card" data-search="files #09 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-9-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-9-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#09</span></div>
-    </div>
-    <div class="card" data-search="files #10 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-10-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-10-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#10</span></div>
-    </div>
-    <div class="card" data-search="webgl carousel #11 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-11-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-11-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Webgl Carousel</span><span class="num">#11</span></div>
-    </div>
-    <div class="card" data-search="crossroadsslideshow master #12 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-12-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-12-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Crossroadsslideshow Master</span><span class="num">#12</span></div>
-    </div>
-    <div class="card" data-search="shapesslideshow #13 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-13-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-13-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Shapesslideshow</span><span class="num">#13</span></div>
-    </div>
-    <div class="card" data-search="ripple displacement slider #14 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-14-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-14-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Ripple Displacement Slider</span><span class="num">#14</span></div>
-    </div>
-    <div class="card" data-search="files #15 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-15-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-15-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#15</span></div>
-    </div>
-    <div class="card" data-search="files #16 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-16-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-16-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#16</span></div>
-    </div>
-    <div class="card" data-search="files #17 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-17-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-17-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#17</span></div>
-    </div>
-    <div class="card" data-search="files #18 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-18-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-18-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#18</span></div>
-    </div>
-    <div class="card" data-search="modular slider #19 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-19-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-19-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Modular Slider</span><span class="num">#19</span></div>
-    </div>
-    <div class="card" data-search="files #20 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-20-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-20-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#20</span></div>
-    </div>
-    <div class="card" data-search="overlapping swiper master #21 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-21-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-21-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Overlapping Swiper Master</span><span class="num">#21</span></div>
-    </div>
-    <div class="card" data-search="files #22 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-22-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-22-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Files</span><span class="num">#22</span></div>
-    </div>
-    <div class="card" data-search="circular gallery #23 sliders">
-      <div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-23-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-23-650.webm" type="video/webm"></video></div>
-      <div class="label"><span class="name">Circular Gallery</span><span class="num">#23</span></div>
-    </div>
-    <div class="card" data-search="animated testimonials #24 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Animated Testimonials</span><span class="num">#24</span></div>
-    </div>
-    <div class="card" data-search="card stack #25 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Card Stack</span><span class="num">#25</span></div>
-    </div>
-    <div class="card" data-search="carousel #26 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Carousel</span><span class="num">#26</span></div>
-    </div>
-    <div class="card" data-search="draggable card #27 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Draggable Card</span><span class="num">#27</span></div>
-    </div>
-    <div class="card" data-search="expandable cards #28 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Expandable Cards</span><span class="num">#28</span></div>
-    </div>
-    <div class="card" data-search="images slider #29 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Images Slider</span><span class="num">#29</span></div>
-    </div>
-    <div class="card" data-search="infinite moving cards #30 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Infinite Moving Cards</span><span class="num">#30</span></div>
-    </div>
-    <div class="card" data-search="slider #31 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Slider</span><span class="num">#31</span></div>
-    </div>
-    <div class="card" data-search="exposure slider #32 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Exposure Slider</span><span class="num">#32</span></div>
-    </div>
-    <div class="card" data-search="infinite slider #33 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Infinite Slider</span><span class="num">#33</span></div>
-    </div>
-    <div class="card" data-search="reviews carousel #34 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Reviews Carousel</span><span class="num">#34</span></div>
-    </div>
-    <div class="card" data-search="scrubber #35 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Scrubber</span><span class="num">#35</span></div>
-    </div>
-    <div class="card" data-search="carousel carousel2 #36 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Carousel Carousel2</span><span class="num">#36</span></div>
-    </div>
-    <div class="card" data-search="carousel enhanced carousel #37 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Carousel Enhanced Carousel</span><span class="num">#37</span></div>
-    </div>
-    <div class="card" data-search="carousel imagecarousel #38 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Carousel Imagecarousel</span><span class="num">#38</span></div>
-    </div>
-    <div class="card" data-search="imageswiper #39 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Imageswiper</span><span class="num">#39</span></div>
-    </div>
-    <div class="card" data-search="masonary #40 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Masonary</span><span class="num">#40</span></div>
-    </div>
-    <div class="card" data-search="nftmarketplace #41 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Nftmarketplace</span><span class="num">#41</span></div>
-    </div>
-    <div class="card" data-search="orbit carousel orbit carousel #42 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Orbit Carousel Orbit Carousel</span><span class="num">#42</span></div>
-    </div>
-    <div class="card" data-search="orbit carousel orbit carousel2 #43 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Orbit Carousel Orbit Carousel2</span><span class="num">#43</span></div>
-    </div>
-    <div class="card" data-search="testimonial testimonial2 #44 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Testimonial Testimonial2</span><span class="num">#44</span></div>
-    </div>
-    <div class="card" data-search="video gallery video gallery #45 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Video Gallery Video Gallery</span><span class="num">#45</span></div>
-    </div>
-    <div class="card" data-search="carousel2 #46 sliders">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Carousel2</span><span class="num">#46</span></div>
-    </div>
-</div>
-<script>
-const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
-document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
-</script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sliders — Component Catalog</title><style>* { margin: 0; padding: 0; box-sizing: border-box; } body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; } .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; } .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; } .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; } .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; } .search:focus { outline: none; border-color: #0066FF; } .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; } .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; } .card:hover { transform: translateY(-3px); border-color: #0066FF; } .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); position: relative; overflow: hidden; } .card .preview video { width: 100%; height: 100%; object-fit: cover; } .card .preview iframe { width: 100%; height: 100%; border: 0; pointer-events: none; } .card .preview .placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; } .card .preview .ext-link { position: absolute; bottom: 6px; right: 6px; font-size: 0.6rem; color: #0066FF; opacity: 0.4; text-decoration: none; } .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; } .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; } .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }</style></head><body><div class="header"><h1>Sliders <span style="color:#555;font-size:0.8rem">(46)</span></h1><a href="index.html">← All Categories</a><input class="search" type="text" placeholder="Search Sliders..." id="search"></div><div class="grid" id="grid">    <div class="card" data-search="files #01 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-1-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-1-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#01</span></div></div>
+    <div class="card" data-search="files #02 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-2-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-2-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#02</span></div></div>
+    <div class="card" data-search="files #03 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-3-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-3-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#03</span></div></div>
+    <div class="card" data-search="files #04 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-4-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-4-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#04</span></div></div>
+    <div class="card" data-search="files #05 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-5-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-5-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#05</span></div></div>
+    <div class="card" data-search="files #06 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-6-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-6-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#06</span></div></div>
+    <div class="card" data-search="files #07 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-7-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-7-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#07</span></div></div>
+    <div class="card" data-search="files #08 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-8-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-8-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#08</span></div></div>
+    <div class="card" data-search="files #09 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-9-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-9-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#09</span></div></div>
+    <div class="card" data-search="files #10 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-10-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-10-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#10</span></div></div>
+    <div class="card" data-search="webgl carousel #11 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-11-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-11-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Webgl Carousel</span><span class="num">#11</span></div></div>
+    <div class="card" data-search="crossroadsslideshow master #12 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-12-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-12-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Crossroadsslideshow Master</span><span class="num">#12</span></div></div>
+    <div class="card" data-search="shapesslideshow #13 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-13-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-13-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Shapesslideshow</span><span class="num">#13</span></div></div>
+    <div class="card" data-search="ripple displacement slider #14 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-14-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-14-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Ripple Displacement Slider</span><span class="num">#14</span></div></div>
+    <div class="card" data-search="files #15 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-15-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-15-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#15</span></div></div>
+    <div class="card" data-search="files #16 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-16-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-16-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#16</span></div></div>
+    <div class="card" data-search="files #17 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-17-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-17-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#17</span></div></div>
+    <div class="card" data-search="files #18 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-18-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-18-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#18</span></div></div>
+    <div class="card" data-search="modular slider #19 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-19-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-19-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Modular Slider</span><span class="num">#19</span></div></div>
+    <div class="card" data-search="files #20 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-20-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-20-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#20</span></div></div>
+    <div class="card" data-search="overlapping swiper master #21 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-21-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-21-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Overlapping Swiper Master</span><span class="num">#21</span></div></div>
+    <div class="card" data-search="files #22 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-22-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-22-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Files</span><span class="num">#22</span></div></div>
+    <div class="card" data-search="circular gallery #23 sliders"><div class="preview"><video class="lazy-vid" loop muted playsinline preload="none" poster="https://animmasterlib.dev/assets/img/sliders-23-500.webp"><source data-src="https://animmaster-videos.b-cdn.net/files/sliders-23-650.webm" type="video/webm"></video></div><div class="label"><span class="name">Circular Gallery</span><span class="num">#23</span></div></div>
+    <div class="card" data-search="animated testimonials #24 sliders"><div class="preview"><iframe src="https://www.aceternity.com/components/animated-testimonials" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.aceternity.com/components/animated-testimonials" target="_blank">↗</a></div><div class="label"><span class="name">Animated Testimonials</span><span class="num">#24</span></div></div>
+    <div class="card" data-search="card stack #25 sliders"><div class="preview"><iframe src="https://www.aceternity.com/components/card-stack" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.aceternity.com/components/card-stack" target="_blank">↗</a></div><div class="label"><span class="name">Card Stack</span><span class="num">#25</span></div></div>
+    <div class="card" data-search="carousel #26 sliders"><div class="preview"><iframe src="https://www.aceternity.com/components/carousel" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.aceternity.com/components/carousel" target="_blank">↗</a></div><div class="label"><span class="name">Carousel</span><span class="num">#26</span></div></div>
+    <div class="card" data-search="draggable card #27 sliders"><div class="preview"><iframe src="https://www.aceternity.com/components/draggable-card" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.aceternity.com/components/draggable-card" target="_blank">↗</a></div><div class="label"><span class="name">Draggable Card</span><span class="num">#27</span></div></div>
+    <div class="card" data-search="expandable cards #28 sliders"><div class="preview"><iframe src="https://www.aceternity.com/components/expandable-cards" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.aceternity.com/components/expandable-cards" target="_blank">↗</a></div><div class="label"><span class="name">Expandable Cards</span><span class="num">#28</span></div></div>
+    <div class="card" data-search="images slider #29 sliders"><div class="preview"><iframe src="https://www.aceternity.com/components/images-slider" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.aceternity.com/components/images-slider" target="_blank">↗</a></div><div class="label"><span class="name">Images Slider</span><span class="num">#29</span></div></div>
+    <div class="card" data-search="infinite moving cards #30 sliders"><div class="preview"><iframe src="https://www.aceternity.com/components/infinite-moving-cards" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.aceternity.com/components/infinite-moving-cards" target="_blank">↗</a></div><div class="label"><span class="name">Infinite Moving Cards</span><span class="num">#30</span></div></div>
+    <div class="card" data-search="slider #31 sliders"><div class="preview"><div class="placeholder">No Preview</div></div><div class="label"><span class="name">Slider</span><span class="num">#31</span></div></div>
+    <div class="card" data-search="exposure slider #32 sliders"><div class="preview"><iframe src="https://smoothui.dev/docs/components/exposure-slider" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://smoothui.dev/docs/components/exposure-slider" target="_blank">↗</a></div><div class="label"><span class="name">Exposure Slider</span><span class="num">#32</span></div></div>
+    <div class="card" data-search="infinite slider #33 sliders"><div class="preview"><iframe src="https://smoothui.dev/docs/components/infinite-slider" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://smoothui.dev/docs/components/infinite-slider" target="_blank">↗</a></div><div class="label"><span class="name">Infinite Slider</span><span class="num">#33</span></div></div>
+    <div class="card" data-search="reviews carousel #34 sliders"><div class="preview"><iframe src="https://smoothui.dev/docs/components/reviews-carousel" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://smoothui.dev/docs/components/reviews-carousel" target="_blank">↗</a></div><div class="label"><span class="name">Reviews Carousel</span><span class="num">#34</span></div></div>
+    <div class="card" data-search="scrubber #35 sliders"><div class="preview"><iframe src="https://smoothui.dev/docs/components/scrubber" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://smoothui.dev/docs/components/scrubber" target="_blank">↗</a></div><div class="label"><span class="name">Scrubber</span><span class="num">#35</span></div></div>
+    <div class="card" data-search="carousel carousel2 #36 sliders"><div class="preview"><iframe src="https://seraui.com/docs/carousel-carousel2" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/carousel-carousel2" target="_blank">↗</a></div><div class="label"><span class="name">Carousel Carousel2</span><span class="num">#36</span></div></div>
+    <div class="card" data-search="carousel enhanced carousel #37 sliders"><div class="preview"><iframe src="https://seraui.com/docs/carousel-enhanced-carousel" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/carousel-enhanced-carousel" target="_blank">↗</a></div><div class="label"><span class="name">Carousel Enhanced Carousel</span><span class="num">#37</span></div></div>
+    <div class="card" data-search="carousel imagecarousel #38 sliders"><div class="preview"><iframe src="https://seraui.com/docs/carousel-imagecarousel" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/carousel-imagecarousel" target="_blank">↗</a></div><div class="label"><span class="name">Carousel Imagecarousel</span><span class="num">#38</span></div></div>
+    <div class="card" data-search="imageswiper #39 sliders"><div class="preview"><iframe src="https://seraui.com/docs/imageswiper" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/imageswiper" target="_blank">↗</a></div><div class="label"><span class="name">Imageswiper</span><span class="num">#39</span></div></div>
+    <div class="card" data-search="masonary #40 sliders"><div class="preview"><iframe src="https://seraui.com/docs/masonary" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/masonary" target="_blank">↗</a></div><div class="label"><span class="name">Masonary</span><span class="num">#40</span></div></div>
+    <div class="card" data-search="nftmarketplace #41 sliders"><div class="preview"><iframe src="https://seraui.com/docs/nftmarketplace" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/nftmarketplace" target="_blank">↗</a></div><div class="label"><span class="name">Nftmarketplace</span><span class="num">#41</span></div></div>
+    <div class="card" data-search="orbit carousel orbit carousel #42 sliders"><div class="preview"><iframe src="https://seraui.com/docs/orbit-carousel" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/orbit-carousel" target="_blank">↗</a></div><div class="label"><span class="name">Orbit Carousel Orbit Carousel</span><span class="num">#42</span></div></div>
+    <div class="card" data-search="orbit carousel orbit carousel2 #43 sliders"><div class="preview"><iframe src="https://seraui.com/docs/orbit-carousel-orbit-carousel2" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/orbit-carousel-orbit-carousel2" target="_blank">↗</a></div><div class="label"><span class="name">Orbit Carousel Orbit Carousel2</span><span class="num">#43</span></div></div>
+    <div class="card" data-search="testimonial testimonial2 #44 sliders"><div class="preview"><iframe src="https://seraui.com/docs/testimonial-testimonial2" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/testimonial-testimonial2" target="_blank">↗</a></div><div class="label"><span class="name">Testimonial Testimonial2</span><span class="num">#44</span></div></div>
+    <div class="card" data-search="video gallery video gallery #45 sliders"><div class="preview"><iframe src="https://seraui.com/docs/video-gallery-Video-Gallery" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/video-gallery-Video-Gallery" target="_blank">↗</a></div><div class="label"><span class="name">Video Gallery Video Gallery</span><span class="num">#45</span></div></div>
+    <div class="card" data-search="carousel2 #46 sliders"><div class="preview"><div class="placeholder">No Preview</div></div><div class="label"><span class="name">Carousel2</span><span class="num">#46</span></div></div>
+</div><script>const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector("source");if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:"300px"});document.querySelectorAll("video.lazy-vid").forEach(v=>vo.observe(v));document.getElementById("search").addEventListener("input",e=>{const q=e.target.value.toLowerCase();document.querySelectorAll(".card").forEach(c=>c.style.display=c.dataset.search.includes(q)?"":"none")});</script></body></html>

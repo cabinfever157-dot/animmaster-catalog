@@ -1,137 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cinematic Intros — Component Catalog</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-  .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; }
-  .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; }
-  .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; }
-  .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; }
-  .search:focus { outline: none; border-color: #0066FF; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; }
-  .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; }
-  .card:hover { transform: translateY(-3px); border-color: #0066FF; }
-  .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); position: relative; overflow: hidden; }
-  .card .preview video { width: 100%; height: 100%; object-fit: cover; }
-  .card .preview iframe { width: 100%; height: 100%; border: 0; pointer-events: none; }
-  .card .preview .placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
-  .card .preview .ext-link { position: absolute; bottom: 6px; right: 6px; font-size: 0.6rem; color: #0066FF; opacity: 0.4; text-decoration: none; }
-  .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; }
-  .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
-  .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }
-</style>
-</head>
-<body>
-<div class="header">
-  <h1>Cinematic Intros <span style="color:#555;font-size:0.8rem">(24)</span></h1>
-  <a href="index.html">← All Categories</a>
-  <input class="search" type="text" placeholder="Search Cinematic Intros..." id="search">
-</div>
-<div class="grid" id="grid">
-    <div class="card" data-search="loader #01 cinematic intros">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Loader</span><span class="num">#01</span></div>
-    </div>
-    <div class="card" data-search="multi step loader #02 cinematic intros">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Multi Step Loader</span><span class="num">#02</span></div>
-    </div>
-    <div class="card" data-search="intro disclosure demo #03 cinematic intros">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Intro Disclosure Demo</span><span class="num">#03</span></div>
-    </div>
-    <div class="card" data-search="intro disclosure #04 cinematic intros">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Intro Disclosure</span><span class="num">#04</span></div>
-    </div>
-    <div class="card" data-search="grid loader #05 cinematic intros">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Grid Loader</span><span class="num">#05</span></div>
-    </div>
-    <div class="card" data-search="loading #06 cinematic intros">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Loading</span><span class="num">#06</span></div>
-    </div>
-    <div class="card" data-search="loaders #07 cinematic intros">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Loaders</span><span class="num">#07</span></div>
-    </div>
-    <div class="card" data-search="walkthroughcomposition #08 cinematic intros">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Walkthroughcomposition</span><span class="num">#08</span></div>
-    </div>
-    <div class="card" data-search="loaders 1 #09 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-1-dark.html/application-loaders-1-dark" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-1-dark.html/application-loaders-1-dark" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 1</span><span class="num">#09</span></div>
-    </div>
-    <div class="card" data-search="loaders 1 #10 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-1.html/application-loaders-1" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-1.html/application-loaders-1" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 1</span><span class="num">#10</span></div>
-    </div>
-    <div class="card" data-search="loaders 2 #11 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-2-dark.html/application-loaders-2-dark" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-2-dark.html/application-loaders-2-dark" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 2</span><span class="num">#11</span></div>
-    </div>
-    <div class="card" data-search="loaders 2 #12 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-2.html/application-loaders-2" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-2.html/application-loaders-2" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 2</span><span class="num">#12</span></div>
-    </div>
-    <div class="card" data-search="loaders 3 #13 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-3-dark.html/application-loaders-3-dark" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-3-dark.html/application-loaders-3-dark" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 3</span><span class="num">#13</span></div>
-    </div>
-    <div class="card" data-search="loaders 3 #14 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-3.html/application-loaders-3" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-3.html/application-loaders-3" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 3</span><span class="num">#14</span></div>
-    </div>
-    <div class="card" data-search="loaders 4 #15 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-4-dark.html/application-loaders-4-dark" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-4-dark.html/application-loaders-4-dark" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 4</span><span class="num">#15</span></div>
-    </div>
-    <div class="card" data-search="loaders 4 #16 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-4.html/application-loaders-4" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-4.html/application-loaders-4" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 4</span><span class="num">#16</span></div>
-    </div>
-    <div class="card" data-search="loaders 5 #17 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-5-dark.html/application-loaders-5-dark" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-5-dark.html/application-loaders-5-dark" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 5</span><span class="num">#17</span></div>
-    </div>
-    <div class="card" data-search="loaders 5 #18 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-5.html/application-loaders-5" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-5.html/application-loaders-5" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 5</span><span class="num">#18</span></div>
-    </div>
-    <div class="card" data-search="loaders 6 #19 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-6-dark.html/application-loaders-6-dark" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-6-dark.html/application-loaders-6-dark" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 6</span><span class="num">#19</span></div>
-    </div>
-    <div class="card" data-search="loaders 6 #20 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-6.html/application-loaders-6" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-6.html/application-loaders-6" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 6</span><span class="num">#20</span></div>
-    </div>
-    <div class="card" data-search="loaders 7 #21 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-7-dark.html/application-loaders-7-dark" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-7-dark.html/application-loaders-7-dark" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 7</span><span class="num">#21</span></div>
-    </div>
-    <div class="card" data-search="loaders 7 #22 cinematic intros">
-      <div class="preview"><iframe src="https://www.hyperui.dev/components/application-loaders-7.html/application-loaders-7" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application-loaders-7.html/application-loaders-7" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loaders 7</span><span class="num">#22</span></div>
-    </div>
-    <div class="card" data-search="loading #23 cinematic intros">
-      <div class="preview"><iframe src="https://daisyui.com/components/loading" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://daisyui.com/components/loading" target="_blank">↗</a></div>
-      <div class="label"><span class="name">Loading</span><span class="num">#23</span></div>
-    </div>
-    <div class="card" data-search="loaders loaders #24 cinematic intros">
-      <div class="preview"><div class="placeholder">No Preview</div></div>
-      <div class="label"><span class="name">Loaders Loaders</span><span class="num">#24</span></div>
-    </div>
-</div>
-<script>
-const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector('source');if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:'300px'});document.querySelectorAll('video.lazy-vid').forEach(v=>vo.observe(v));
-document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.search.includes(q)?'':'none')});
-</script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cinematic Intros — Component Catalog</title><style>* { margin: 0; padding: 0; box-sizing: border-box; } body { background: #0B0F19; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; } .header { padding: 30px 20px 20px; text-align: center; position: sticky; top: 0; background: #0B0F19; z-index: 100; border-bottom: 1px solid #1a1f2e; } .header h1 { font-size: 1.6rem; color: #fff; margin-bottom: 4px; } .header a { color: #0066FF; text-decoration: none; font-size: 0.85rem; } .search { width: 100%; max-width: 500px; margin: 12px auto 0; padding: 8px 14px; background: #11141f; border: 1px solid #1a1f2e; border-radius: 8px; color: #fff; font-size: 0.85rem; display: block; } .search:focus { outline: none; border-color: #0066FF; } .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 20px; max-width: 1400px; margin: 0 auto; } .card { background: #131722; border-radius: 10px; overflow: hidden; border: 1px solid #1a1f2e; transition: transform 0.15s, border-color 0.15s; cursor: pointer; } .card:hover { transform: translateY(-3px); border-color: #0066FF; } .card .preview { aspect-ratio: 16/10; background: linear-gradient(135deg, #131722, #0B0F19); position: relative; overflow: hidden; } .card .preview video { width: 100%; height: 100%; object-fit: cover; } .card .preview iframe { width: 100%; height: 100%; border: 0; pointer-events: none; } .card .preview .placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #2a3050; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; } .card .preview .ext-link { position: absolute; bottom: 6px; right: 6px; font-size: 0.6rem; color: #0066FF; opacity: 0.4; text-decoration: none; } .card .label { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; } .card .label .name { font-size: 0.75rem; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; } .card .label .num { font-size: 0.7rem; color: #0066FF; font-family: monospace; font-weight: bold; }</style></head><body><div class="header"><h1>Cinematic Intros <span style="color:#555;font-size:0.8rem">(24)</span></h1><a href="index.html">← All Categories</a><input class="search" type="text" placeholder="Search Cinematic Intros..." id="search"></div><div class="grid" id="grid">    <div class="card" data-search="loader #01 cinematic intros"><div class="preview"><iframe src="https://www.aceternity.com/components/loader" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.aceternity.com/components/loader" target="_blank">↗</a></div><div class="label"><span class="name">Loader</span><span class="num">#01</span></div></div>
+    <div class="card" data-search="multi step loader #02 cinematic intros"><div class="preview"><iframe src="https://www.aceternity.com/components/multi-step-loader" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.aceternity.com/components/multi-step-loader" target="_blank">↗</a></div><div class="label"><span class="name">Multi Step Loader</span><span class="num">#02</span></div></div>
+    <div class="card" data-search="intro disclosure demo #03 cinematic intros"><div class="preview"><div class="placeholder">No Preview</div></div><div class="label"><span class="name">Intro Disclosure Demo</span><span class="num">#03</span></div></div>
+    <div class="card" data-search="intro disclosure #04 cinematic intros"><div class="preview"><div class="placeholder">No Preview</div></div><div class="label"><span class="name">Intro Disclosure</span><span class="num">#04</span></div></div>
+    <div class="card" data-search="grid loader #05 cinematic intros"><div class="preview"><iframe src="https://smoothui.dev/docs/components/grid-loader" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://smoothui.dev/docs/components/grid-loader" target="_blank">↗</a></div><div class="label"><span class="name">Grid Loader</span><span class="num">#05</span></div></div>
+    <div class="card" data-search="loading #06 cinematic intros"><div class="preview"><iframe src="https://daisyui.com/components/loading/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://daisyui.com/components/loading/" target="_blank">↗</a></div><div class="label"><span class="name">Loading</span><span class="num">#06</span></div></div>
+    <div class="card" data-search="loaders #07 cinematic intros"><div class="preview"><iframe src="https://seraui.com/docs/loaders" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/loaders" target="_blank">↗</a></div><div class="label"><span class="name">Loaders</span><span class="num">#07</span></div></div>
+    <div class="card" data-search="walkthroughcomposition #08 cinematic intros"><div class="preview"><div class="placeholder">No Preview</div></div><div class="label"><span class="name">Walkthroughcomposition</span><span class="num">#08</span></div></div>
+    <div class="card" data-search="loaders 1 #09 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 1</span><span class="num">#09</span></div></div>
+    <div class="card" data-search="loaders 1 #10 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 1</span><span class="num">#10</span></div></div>
+    <div class="card" data-search="loaders 2 #11 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 2</span><span class="num">#11</span></div></div>
+    <div class="card" data-search="loaders 2 #12 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 2</span><span class="num">#12</span></div></div>
+    <div class="card" data-search="loaders 3 #13 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 3</span><span class="num">#13</span></div></div>
+    <div class="card" data-search="loaders 3 #14 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 3</span><span class="num">#14</span></div></div>
+    <div class="card" data-search="loaders 4 #15 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 4</span><span class="num">#15</span></div></div>
+    <div class="card" data-search="loaders 4 #16 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 4</span><span class="num">#16</span></div></div>
+    <div class="card" data-search="loaders 5 #17 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 5</span><span class="num">#17</span></div></div>
+    <div class="card" data-search="loaders 5 #18 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 5</span><span class="num">#18</span></div></div>
+    <div class="card" data-search="loaders 6 #19 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 6</span><span class="num">#19</span></div></div>
+    <div class="card" data-search="loaders 6 #20 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 6</span><span class="num">#20</span></div></div>
+    <div class="card" data-search="loaders 7 #21 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 7</span><span class="num">#21</span></div></div>
+    <div class="card" data-search="loaders 7 #22 cinematic intros"><div class="preview"><iframe src="https://www.hyperui.dev/components/application/loaders/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://www.hyperui.dev/components/application/loaders/" target="_blank">↗</a></div><div class="label"><span class="name">Loaders 7</span><span class="num">#22</span></div></div>
+    <div class="card" data-search="loading #23 cinematic intros"><div class="preview"><iframe src="https://daisyui.com/components/loading/" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://daisyui.com/components/loading/" target="_blank">↗</a></div><div class="label"><span class="name">Loading</span><span class="num">#23</span></div></div>
+    <div class="card" data-search="loaders loaders #24 cinematic intros"><div class="preview"><iframe src="https://seraui.com/docs/loaders" scrolling="no" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe><a class="ext-link" href="https://seraui.com/docs/loaders" target="_blank">↗</a></div><div class="label"><span class="name">Loaders Loaders</span><span class="num">#24</span></div></div>
+</div><script>const vo=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){const v=en.target,s=v.querySelector("source");if(s&&s.dataset.src){s.src=s.dataset.src;v.load();v.play().catch(()=>{});v.style.opacity=1;vo.unobserve(v)}}}),{rootMargin:"300px"});document.querySelectorAll("video.lazy-vid").forEach(v=>vo.observe(v));document.getElementById("search").addEventListener("input",e=>{const q=e.target.value.toLowerCase();document.querySelectorAll(".card").forEach(c=>c.style.display=c.dataset.search.includes(q)?"":"none")});</script></body></html>
